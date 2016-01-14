@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>我关注的爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+		<div id="content">
+			<div class="diagnose">
+				<ul class="diagnoseNav list-unstyled">
+					<li><a class="current">公众号诊断</a></li>
+					<li><a>诊断历史</a></li>
+				</ul>
+				<div class="standardSearch">
+					<input type="text" placeholder="请输入需要诊断的公众号名称/微信ID/文章链接地址" class="form-control">
+					<button class="standardSearchBtn"><i class="fa fa-fw fa-lg fa-search"></i></button>
+				</div>
+				<div class="diagnoseWelcome clearfix">
+					<h3>为您提供最专业的公众号运营质量分析</h3>
+					<dl>
+						<dt><i class="fa fa-users"></i></dt>
+						<dd><strong>活跃粉丝预估</strong>快速了解公众号活跃粉丝数</dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-clock-o"></i></dt>
+						<dd><strong>发文习惯分析</strong>掌握公众号发文内容偏好和习惯</dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-bug"></i></dt>
+						<dd><strong>违规文章检测</strong>检测近期文章违规情况，让公众号运营更安全</dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-diamond"></i></dt>
+						<dd><strong>流量收益预估</strong>了解流量主最佳收入，提供流量主收入优化建议</dd>
+					</dl>
+				</div>
+				<div class="diagnoseResult" style="display:none;">
+					<div class="resultInfo">为您找到<strong>4</strong>个结果:</div>
+					<section>
+						<div class="mpAvatar"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<div class="mpInfo"><strong>每天一首好音乐</strong><em>微信号：buqiurenvip</em><a class="btnDiagnose">诊断</a></div>
+						<div class="mpIntro">最具传播力的微生活门户，生活本该多姿多彩，这里有酷炫的音乐照片Show、有唯美的祝福微卡、有暖心的文
+章分享，关注我吧，卡娃带你任性带你飞~</div>
+					</section>
+					<section>
+						<div class="mpAvatar"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<div class="mpInfo"><strong>每天一首好音乐</strong><em>微信号：buqiurenvip</em><a class="btnDiagnose">诊断</a></div>
+						<div class="mpIntro">最具传播力的微生活门户，生活本该多姿多彩，这里有酷炫的音乐照片Show、有唯美的祝福微卡、有暖心的文
+章分享，关注我吧，卡娃带你任性带你飞~</div>
+					</section>
+					<section>
+						<div class="mpAvatar"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<div class="mpInfo"><strong>每天一首好音乐</strong><em>微信号：buqiurenvip</em><a class="btnDiagnose">诊断</a></div>
+						<div class="mpIntro">最具传播力的微生活门户，生活本该多姿多彩，这里有酷炫的音乐照片Show、有唯美的祝福微卡、有暖心的文
+章分享，关注我吧，卡娃带你任性带你飞~</div>
+					</section>
+					<section>
+						<div class="mpAvatar"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<div class="mpInfo"><strong>每天一首好音乐</strong><em>微信号：buqiurenvip</em><a class="btnDiagnose">诊断</a></div>
+						<div class="mpIntro">最具传播力的微生活门户，生活本该多姿多彩，这里有酷炫的音乐照片Show、有唯美的祝福微卡、有暖心的文
+章分享，关注我吧，卡娃带你任性带你飞~</div>
+					</section>
+					<section>
+						<div class="mpAvatar"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<div class="mpInfo"><strong>每天一首好音乐</strong><em>微信号：buqiurenvip</em><a class="btnDiagnose">诊断</a></div>
+						<div class="mpIntro">最具传播力的微生活门</div>
+					</section>
+				</div>
+				<div class="diagnoseResult" style="display:none">
+					<div class="noResult">
+						<div class="resultIcon"><i class="fa fa-frown-o"></i></div>
+						未找到相关公众号，请重新输入。
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">提示</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="diagnoseWarn">
+					<div class="resultIcon"><i class="fa fa-frown-o"></i></div>
+					对不起，您的诊断次数超出上限，基础版每天可诊断3次，高级版每天可诊断10次。请升级版本以获得相应诊断次数。
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">
+					购买升级
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					关闭
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">提示</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="diagnoseWarn">
+					<div class="resultIcon"><i class="fa fa-smile-o"></i></div>
+					【搞笑精选】提交诊断成功，进入诊断历史页面可查看诊断结果。
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">
+					查看诊断历史
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					关闭
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

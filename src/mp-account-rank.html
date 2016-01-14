@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="popularTimer clearfix">
+				<ul class="timerSelector list-unstyled">
+					<li class="disabled"><a class="timerBtns timerBtnsPre"><i class="fa fa-long-arrow-left"></i></a></li>
+					<li class="timerSelectorList dropdown">
+						<a>2015年05月11日公众号榜单 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">2015年05月10日公众号榜单</a></li>
+							<li><a href="javascript:void(0);">2015年05月09日公众号榜单</a></li>
+							<li><a href="javascript:void(0);">2015年05月08日公众号榜单</a></li>
+							<li><a href="javascript:void(0);">2015年05月07日公众号榜单</a></li>
+							<li><a href="javascript:void(0);">2015年05月06日公众号榜单</a></li>
+							<li><a href="javascript:void(0);">2015年05月05日公众号榜单</a></li>
+							<li class="rankSelectorLast"><a href="javascript:void(0);">2015年05月11日公众号榜单</a></li>
+						</ul>
+					</li>
+					<li><a class="timerBtns timerBtnsNext"><i class="fa fa-long-arrow-right"></i></a></li>
+				</ul>
+				<div class="timerLatest">榜单最近更新时间：2015-04-15 01:10</div>
+			</div>
+			<div class="popularTab">
+				<ul class="list-unstyled">
+					<li><a>搞笑趣闻</a></li>
+					<li class="current"><a>财经时政</a></li>
+					<li><a>旅游</a></li>
+					<li><a>汽车</a></li>
+					<li><a>运动健康</a></li>
+					<li><a>数码科技</a></li>
+					<li><a>影音娱乐</a></li>
+					<li><a>餐饮美食</a></li>
+					<li><a>女人时尚</a></li>
+					<li><a>职场教育</a></li>
+					<li><a>情感励志</a></li>
+					<li><a>母婴生活</a></li>
+					<li><a>无节操</a></li>
+					<li><a>地方</a></li>
+					<li><a>房产家居</a></li>
+				</ul>
+			</div>
+			<div class="popularArticleList">
+				<table class="table table-hover">
+					<colgroup>
+						<col width="80">
+						<col>
+						<col width="100">
+						<col width="120">
+						<col width="120">
+						<col width="140">
+						<col width="140">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="text-align-center">排名</th>
+							<th>公众号</th>
+							<th>文章数</th>
+							<th>平均阅读</th>
+							<th>平均点赞</th>
+							<th>发文时间</th>
+							<th>查看详情</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank1">1</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt3pqmVo7dmpTmpERLryiOOo"></div>
+								<div class="rankMpName">冷笑话<em>lengxiaohua2012</em></div>
+							</td>
+							<td>8</td>
+							<td>100000+</td>
+							<td>3250</td>
+							<td>12:03:27<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank2">2</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-tpLvUummaYswws-0LFTDc"></div>
+								<div class="rankMpName">冷笑话精选<em>lengiii</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank3">3</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+								<div class="rankMpName">全球搞笑笑话榜<em>gaoxiao10086</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank4">4</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+								<div class="rankMpName">搞笑视频<em>gxsp88</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank5">5</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM"></div>
+								<div class="rankMpName">搞笑集中营<em>WeiGaoXiao</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank4">6</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+								<div class="rankMpName">搞笑视频<em>gxsp88</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank5">7</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM"></div>
+								<div class="rankMpName">搞笑集中营<em>WeiGaoXiao</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank4">8</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+								<div class="rankMpName">搞笑视频<em>gxsp88</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank5">9</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM"></div>
+								<div class="rankMpName">搞笑集中营<em>WeiGaoXiao</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank4">10</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+								<div class="rankMpName">搞笑视频<em>gxsp88</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank5">11</span></td>
+							<td>
+								<div class="rankMpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM"></div>
+								<div class="rankMpName">搞笑集中营<em>WeiGaoXiao</em></div>
+							</td>
+							<td>6</td>
+							<td>98600</td>
+							<td>2160</td>
+							<td>21:04:29<div class="pubDay">2015/4/25</div></td>
+							<td><a href="#" class="btn btn-default">查看详情</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-<span class="badge bg-color-blueLight">8</span>">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2015</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+</body>
+</html>

@@ -1,0 +1,811 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+<!-- Standard Script Includes -->
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-plus"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content" class="clearfix">
+			<div class="follwedArticleHeader clearfix">
+				<div class="row">
+					<div class="col col-lg-4">
+						<div class="follwedArticleSearch"><input type="text" name="TitleKeyword" placeholder="搜索关注的公众号" class="form-control" value=""></div>
+						<button class="btn btn-primary" id="btnKeyword">搜索</button>
+					</div>
+					<div class="col col-lg-8"><a class="btn btn-default" href="/MyMBiz/Add" data-toggle="modal" data-target="#remoteModal"><i class="fa fa-plus"></i> 添加关注公众号</a><a class="btn btn-default" href="#/MyMBiz/MBizSearch"><i class="fa fa-cog"></i> 管理已关注的公众号</a></div>
+				</div>
+			</div>
+			<div class="follwedArticleSide">
+				<ul class="list-unstyled itemScroll">
+					<li class="expanded">
+						<div class="itemGroup">
+							<div class="itemBtn"><a class="itemSearchResult"><i class="fa fa-search"></i>搜索结果</a><span class="collapseIcon"><i class="fa fa-times"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>心灵鸡汤</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a class="current"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM" class="avatar">搞笑集中营</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt1sT7UB3WgapFp74dPEOHLI" class="avatar">奔波儿灞与灞波儿奔</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_KnVyRLXmGJZYewuSDe7XE" class="avatar">大风哥</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk" class="avatar">全球搞笑笑话榜</a></li>
+						</ul>
+					</li>
+					<li class="expanded">
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>女人号</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt3pqmVo7dmpTmpERLryiOOo" class="avatar">冷笑话</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="avatar">不贱不散</a></li>
+							<li><a class="current"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt6LfpVNN6Eg7nX-oxTl3tPI" class="avatar">我与老公的日常</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2ISMhl83ak8mHB3aHbvjhM" class="avatar">搞笑集中营</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc" class="avatar">搞笑视频</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk" class="avatar">全球搞笑笑话榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>搞笑号</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>开开心心快快乐乐嘻嘻哈哈</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>地方收藏</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li class="expanded">
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>旅游</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>刘编辑</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="itemGroup">
+							<div class="itemBtn"><a href="#"><i class="fa fa-tag"></i>总编辑时间</a><span class="collapseIcon"><i class="fa fa-plus"></i></span></div>
+						</div>
+						<ul class="list-unstyled itemList">
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt-Tli9xTkP03Znl202xC5dc" class="avatar">微信路况</a></li>
+							<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4" class="avatar">全球搞笑视频榜</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="follwedArticleMain">
+				<div class="follwedArticleMp">
+					<div class="mpSide">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFtyMBDWQMJV-Nb72FmD-2z_E"></div>
+					</div>
+					<h3 class="mpName">坏女人短片<span class="mpId">[微信号：JQ44229]</span></h3>
+					<div class="mpDateFreshTime">
+						数据最新更新时间: 2015/6/26 10:36:02 <a class="btn btn-success btn-xs"><i class="fa fa-refresh"></i> 刷新数据</a>
+					</div>
+					<div class="mpNav">
+						<ul class="nav nav-tabs" id="myTab1">
+							<li class="active">
+								<a data-toggle="tab" href="#s1">按传播指数排序</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#s2">按时间排序</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mpUserArticleTimer" id="mpArticleList">
+					<div class="topArticleSwitch">
+						<section>
+							<span>只显示头条: </span>
+							<span class="onoffswitch">
+								<input name="filterOnlyTopArticle" id="filterOnlyTopArticle" type="checkbox" class="onoffswitch-checkbox trigger-article-filter">
+								<label class="onoffswitch-label" for="filterOnlyTopArticle">
+									<span class="onoffswitch-inner"></span>
+									<span class="onoffswitch-switch"></span>
+								</label>
+							</span>
+							<a rel="tooltip" data-placement="bottom" data-original-title="该选项开启时，系统将只显示头条文章"><i class="fa fa-exclamation-circle"></i></a>
+						</section>
+					</div>
+					<ul class="list-unstyled" id="recentlyDate">
+						<li><a data-id="0.08">最近12小时</a></li>
+						<li><a data-id="1" class="current">最近24小时</a></li>
+						<li><a data-id="2">最近3天</a></li>
+						<li><a data-id="6">最近7天</a></li>
+						<li><a data-id="14">最近15天</a></li>
+						<li><a data-id="29">最近30天</a></li>
+					</ul>
+				</div>
+				<div class="mpUserArticleNone" style="display:none;">
+					正在更新文章数据，请稍后。请切换分组或公众号查看已更新的内容。
+					<div class="progress progress-xs progress-striped active">
+						<div class="progress-bar" role="progressbar" style="width:100%"></div>
+					</div>
+				</div>
+				<div class="mpArticleList" id="articleExploreListBody">
+					<table class="table table-hover">
+						<colgroup>
+							<col width="95">
+							<col>
+							<col width="90">
+							<col width="90">
+							<col width="120">
+							<col width="160">
+						</colgroup>
+						<thead>
+							<tr id="articleHeader">
+								<th><a class="orderBy current" data-id="pointer">传播指数 <i class="fa fa-sort"></i></a></th>
+								<th>文章标题</th>
+								<th><a class="orderBy" data-id="ReadNumber">阅读数 <i class="fa fa-sort"></i></a></th>
+								<th><a class="orderBy" data-id="LikeNumber">赞数 <i class="fa fa-sort"></i></a></th>
+								<th>发文公众号</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="articleExploreListBodyLst">
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.21</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTExMTUzNw==&amp;mid=213630579&amp;idx=1&amp;sn=d48cfe45532e07588b26cb98b4cc4420&amp;scene=4#wechat_redirect" target="_blank">林志颖靠边站，揭秘法国45岁美女不老术</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>7110</td>
+								<td>9</td>
+								<td><a href="#/MBiz/Detail/?mBizId=35605" target="_blank">聪明女人必修课</a><span class="artPostTime">06月24日</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12411928" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12411928"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12411928" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12411928" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.92</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=5&amp;sn=d9f4ca65fcbe51ec65ba5adad37fc6ee&amp;scene=4#wechat_redirect" target="_blank">千亿证券军工分级迎来上交所新品</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>768</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365133" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365133"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365133" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365133" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.62</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=3&amp;sn=bb14664b44cabd7f3dfad5092cdf69a1&amp;scene=4#wechat_redirect" target="_blank">既然差生那么有前途，你咋不鼓励你儿子当差生（深度好文）</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>720</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365131" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365131"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365131" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365131" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.41</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5Njc4MDIzNw==&amp;mid=217071221&amp;idx=5&amp;sn=1a91fd4c8cd241c42e0e9372c3ac7895&amp;scene=4#wechat_redirect" target="_blank">?李嘉诚劝告女人们：如果你感觉累了，不想再工作了，那么我建议你做三件事情!</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>103</td>
+								<td><a href="#/MBiz/Detail/?mBizId=516" target="_blank">时尚女装搭配</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12372993" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12372993"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12372993" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12372993" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.06</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=2&amp;sn=6545ab23e6d8508d24ee5fc05feae019&amp;scene=4#wechat_redirect" target="_blank">只送货不理货？铺完货不回访？这样下去，市场开一个死一个！	</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>640</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365130" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365130"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365130" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365130" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.21</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTExMTUzNw==&amp;mid=213630579&amp;idx=1&amp;sn=d48cfe45532e07588b26cb98b4cc4420&amp;scene=4#wechat_redirect" target="_blank">林志颖靠边站，揭秘法国45岁美女不老术</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>7110</td>
+								<td>9</td>
+								<td><a href="#/MBiz/Detail/?mBizId=35605" target="_blank">聪明女人必修课</a><span class="artPostTime">06月24日</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12411928" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12411928"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12411928" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12411928" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.92</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=5&amp;sn=d9f4ca65fcbe51ec65ba5adad37fc6ee&amp;scene=4#wechat_redirect" target="_blank">千亿证券军工分级迎来上交所新品</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>768</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365133" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365133"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365133" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365133" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.62</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=3&amp;sn=bb14664b44cabd7f3dfad5092cdf69a1&amp;scene=4#wechat_redirect" target="_blank">既然差生那么有前途，你咋不鼓励你儿子当差生（深度好文）</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>720</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365131" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365131"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365131" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365131" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.41</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5Njc4MDIzNw==&amp;mid=217071221&amp;idx=5&amp;sn=1a91fd4c8cd241c42e0e9372c3ac7895&amp;scene=4#wechat_redirect" target="_blank">?李嘉诚劝告女人们：如果你感觉累了，不想再工作了，那么我建议你做三件事情!</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>103</td>
+								<td><a href="#/MBiz/Detail/?mBizId=516" target="_blank">时尚女装搭配</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12372993" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12372993"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12372993" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12372993" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.06</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=2&amp;sn=6545ab23e6d8508d24ee5fc05feae019&amp;scene=4#wechat_redirect" target="_blank">只送货不理货？铺完货不回访？这样下去，市场开一个死一个！	</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>640</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365130" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365130"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365130" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365130" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.21</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTExMTUzNw==&amp;mid=213630579&amp;idx=1&amp;sn=d48cfe45532e07588b26cb98b4cc4420&amp;scene=4#wechat_redirect" target="_blank">林志颖靠边站，揭秘法国45岁美女不老术</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>7110</td>
+								<td>9</td>
+								<td><a href="#/MBiz/Detail/?mBizId=35605" target="_blank">聪明女人必修课</a><span class="artPostTime">06月24日</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12411928" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12411928"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12411928" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12411928" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.92</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=5&amp;sn=d9f4ca65fcbe51ec65ba5adad37fc6ee&amp;scene=4#wechat_redirect" target="_blank">千亿证券军工分级迎来上交所新品</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>768</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365133" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365133"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365133" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365133" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.62</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=3&amp;sn=bb14664b44cabd7f3dfad5092cdf69a1&amp;scene=4#wechat_redirect" target="_blank">既然差生那么有前途，你咋不鼓励你儿子当差生（深度好文）</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>720</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365131" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365131"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365131" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365131" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.41</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5Njc4MDIzNw==&amp;mid=217071221&amp;idx=5&amp;sn=1a91fd4c8cd241c42e0e9372c3ac7895&amp;scene=4#wechat_redirect" target="_blank">?李嘉诚劝告女人们：如果你感觉累了，不想再工作了，那么我建议你做三件事情!</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>103</td>
+								<td><a href="#/MBiz/Detail/?mBizId=516" target="_blank">时尚女装搭配</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12372993" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12372993"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12372993" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12372993" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.06</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=2&amp;sn=6545ab23e6d8508d24ee5fc05feae019&amp;scene=4#wechat_redirect" target="_blank">只送货不理货？铺完货不回访？这样下去，市场开一个死一个！	</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>640</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365130" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365130"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365130" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365130" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.21</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTExMTUzNw==&amp;mid=213630579&amp;idx=1&amp;sn=d48cfe45532e07588b26cb98b4cc4420&amp;scene=4#wechat_redirect" target="_blank">林志颖靠边站，揭秘法国45岁美女不老术</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>7110</td>
+								<td>9</td>
+								<td><a href="#/MBiz/Detail/?mBizId=35605" target="_blank">聪明女人必修课</a><span class="artPostTime">06月24日</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12411928" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12411928"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12411928" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12411928" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.92</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=5&amp;sn=d9f4ca65fcbe51ec65ba5adad37fc6ee&amp;scene=4#wechat_redirect" target="_blank">千亿证券军工分级迎来上交所新品</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>768</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365133" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365133"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365133" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365133" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.62</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=3&amp;sn=bb14664b44cabd7f3dfad5092cdf69a1&amp;scene=4#wechat_redirect" target="_blank">既然差生那么有前途，你咋不鼓励你儿子当差生（深度好文）</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>720</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365131" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365131"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365131" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365131" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.41</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5Njc4MDIzNw==&amp;mid=217071221&amp;idx=5&amp;sn=1a91fd4c8cd241c42e0e9372c3ac7895&amp;scene=4#wechat_redirect" target="_blank">?李嘉诚劝告女人们：如果你感觉累了，不想再工作了，那么我建议你做三件事情!</a>
+									<span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>103</td>
+								<td><a href="#/MBiz/Detail/?mBizId=516" target="_blank">时尚女装搭配</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12372993" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12372993"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12372993" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12372993" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>52.06</span></td>
+								<td>
+									<a href="http://mp.weixin.qq.com/s?__biz=MjM5MTM0NTc2MA==&amp;mid=224430394&amp;idx=2&amp;sn=6545ab23e6d8508d24ee5fc05feae019&amp;scene=4#wechat_redirect" target="_blank">只送货不理货？铺完货不回访？这样下去，市场开一个死一个！	</a>
+									<span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span>
+									
+								</td>
+								<td>100001+</td>
+								<td>640</td>
+								<td><a href="#/MBiz/Detail/?mBizId=150" target="_blank">不贱不散</a><span class="artPostTime">17 小时前</span></td>
+								<td>
+									<div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="12365130" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="426" data-articleid="12365130"><i class="fa fa-check"></i>女人</a></li></ul></div>
+									<a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="12365130" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+									<a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=12365130" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+				</div>
+        	</div>
+		</div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog modal-dialog-wide">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">文章详情</h4>
+			</div>
+			<div class="modal-body">
+				 <header class="mpArticleHeader">
+					<div class="cover"><img src="http://mmbiz.qpic.cn/mmbiz/3aSrzVWrESuxkqvgMSoU2mZD3k9D4nLzQjhz3bBSp1PMMq1yUrMvcoXhCz1CkSavYmlNExajhib5oicv9zXFfPqA/0"></div>
+					<h3 class="mpArticleTitle">
+						每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药
+						<div class="mpArticleRate">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						</div>
+					</h3>
+					<h4 class="mpArticleTime">
+						<span><i class="fa fa-clock-o"></i> 推文时间: 2015/2/9 7:53:57</span><span><i class="fa fa-history"></i> 数据更新时间: 2015/2/9 14:56:55</span>
+					</h4>
+					<div class="mpArticleInfo clearfix">
+						<section class="col col-sm-4 no-padding"><i class="fa fa-trophy"></i> 爆文指数: <strong class="txt-color-orange">89.67</strong></section>
+						<section class="col col-sm-4 no-padding"><i class="fa fa-eye"></i> 总阅读数: <strong class="txt-color-green">100000+</strong></section>
+						<section class="col col-sm-4 no-padding"><i class="fa fa-thumbs-o-up"></i> 总点赞数: <strong class="txt-color-blue">5632</strong></section>
+					</div>
+				</header>
+				<h4 class="mpArticleColTitle"><i class="fa fa-file-text-o"></i> 该公众号当日推文</h4>
+				<div class="mpArticleRelated">
+					<table class="table table-hover no-margin">
+						<colgroup>
+							<col width="6%">
+							<col width="64%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>顺序</th>
+								<th>文章标题</th>
+								<th>爆文指数</th>
+								<th>阅读数</th>
+								<th>赞数</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="artPostOrder">头条</span></td>
+								<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="flagIcon flagRead">阅读最高</span></td>
+								<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+								<td>2568</td>
+								<td>36</td>
+							</tr>
+							<tr>
+								<td><span class="artPostOrder">2</span></td>
+								<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="flagIcon flagLike">赞数最高</span><span class="flagIcon flagAd">广告嫌疑</span></td>
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>89.67</span></td>
+								<td>100000+</td>
+								<td>36</td>
+							</tr>
+							<tr>
+								<td><span class="artPostOrder">3</span></td>
+								<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+								<td><span class="artRank rank3"><i class="fa fa-trophy"></i>70.36</span></td>
+								<td>2568</td>
+								<td>36</td>
+							</tr>
+							<tr>
+								<td><span class="artPostOrder">4</span></td>
+								<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.92</span></td>
+								<td>2568</td>
+								<td>36</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h4 class="mpArticleColTitle"><i class="fa fa-align-left"></i> 该文章指数对比分析</h4>
+				<div class="mpArticleCanvas">
+					<section class="col col-sm-6 no-padding"></section>
+					<section class="col col-sm-6 no-padding"></section>
+				</div>
+				<div class="mpArticleCompare">
+					<table class="table table-hover no-margin">
+						<colgroup>
+							<col width="12%">
+							<col width="20%">
+							<col width="12%">
+							<col width="32%">
+							<col width="12%">
+							<col width="12%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>爆文指数</th>
+								<th>发文公众号</th>
+								<th>推文次序</th>
+								<th>推文时间</th>
+								<th>阅读数</th>
+								<th>点赞数</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+								<td><a href="#">搞笑精选</a></td>
+								<td>2/8</td>
+								<td>2015/2/9 7:53:57</td>
+								<td>25680</td>
+								<td>3619</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>89.67</span></td>
+								<td><a href="#">奇乐窝</a></td>
+								<td>1/5</td>
+								<td>2015/2/7 20:16:32 <span class="mostEarly">最早发文</span></td>
+								<td>25680</td>
+								<td>3619</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank3"><i class="fa fa-trophy"></i>70.36</span></td>
+								<td><a href="#">搞笑精选</a></td>
+								<td>2/8</td>
+								<td>2015/2/9 7:53:57</td>
+								<td>25680</td>
+								<td>3619</td>
+							</tr>
+							<tr>
+								<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.92</span></td>
+								<td><a href="#">搞笑精选</a></td>
+								<td>2/8</td>
+								<td>2015/2/9 7:53:57</td>
+								<td>25680</td>
+								<td>3619</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary"><i class="fa fa-star"></i> 收藏</a>
+				<a class="btn btn-primary btnArtFavorited"><i class="fa fa-star"></i> 已收藏</a>
+				<a class="btn btn-default"><i class="fa fa-hand-o-down"></i> 不喜欢</a>
+			</div>
+		</div>
+    </div>
+</div>
+<script type="text/javascript" src="http://vlifun.xiguaji.com/js/libs/jquery-2.0.2.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+	   $('.itemScroll').height($(window).height() - 210);
+	   $('.itemScroll').scroll(function(){
+		   var $container = $('.itemScroll');
+		   var targetHeight = 0;
+		   var flag = false;
+		   var height;
+		   $('.itemGroup').each(function(i){
+			   targetHeight += $(this).outerHeight() + $(this).next('.itemList').outerHeight();
+				if (flag == false && targetHeight >= $container.scrollTop())
+				{
+					flag = true;
+					height = targetHeight;
+					$('.itemGroup').removeClass('fixed').css('top', '0');
+					$(this).addClass('fixed').css('top', $container.scrollTop() + 'px');
+				}
+		   });
+		   console.log($container.scrollTop() + ',' + height);
+	   });
+   });
+   $(function(){   
+	  $(window).scroll(function() {
+		if($(window).scrollTop()>=100){
+			$(".follwedArticleSide").addClass("fixedSide");
+		}else{
+			$(".follwedArticleSide").removeClass("fixedSide");
+		} 
+	  });
+	});
+</script>
+</body>
+</html>

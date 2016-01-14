@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="illegalHeader">
+				<h3>违规文章曝光平台</h3>
+				<p>违规文章曝光平台记录了近30天内平台违规文章，运营者可用随时进行查看，更清晰了解账号违规情况及相关规则</p>
+				<div class="clearfix">
+					<div class="illegalIcon"><i></i></div>
+					<div class="illegalStat">
+						<dl class="col col-lg-3">
+							<dt>256</dt>
+							<dd>昨日违规文章</dd>
+						</dl>
+						<dl class="col col-lg-3">
+							<dt>388</dt>
+							<dd>昨日涉及违规公众号</dd>
+						</dl>
+						<dl class="col col-lg-3">
+							<dt>7415</dt>
+							<dd>近30天违规文章</dd>
+						</dl>
+						<dl class="col col-lg-3">
+							<dt>8910</dt>
+							<dd>近30天涉及违规公众号</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="illegalMain clearfix">
+				<ul class="illegalNav list-unstyled">
+					<li><a href="#/Diagnosis/Index">违规文章曝光台</a></li>
+					<li><a class="current">全网违规文章搜索</a></li>
+				</ul>
+				<div class="illegalSearchWrap" style="display:none;">
+					<div class="noResult">
+						<div class="resultIcon"><i class="fa fa-frown-o"></i></div>
+						非常抱歉，该功能仅限高级版用户使用，请升级版本后使用
+					</div>
+				</div>
+				<div class="illegalSearchWrap" style="display:none;">
+					<div class="standardSearch">
+						<input type="text" class="form-control" placeholder="请输入需要搜索的违规文章标题">
+						<button class="standardSearchBtn"><i class="fa fa-fw fa-lg fa-search"></i></button>
+					</div>
+					<div class="noResult">
+						<div class="resultIcon"><i class="fa fa-frown-o"></i></div>
+						未找到相关违规文章，请重新输入。
+					</div>
+				</div>
+				<div class="illegalSearchWrap">
+					<div class="standardSearch">
+						<input type="text" class="form-control" placeholder="请输入需要搜索的违规文章标题">
+						<button class="standardSearchBtn"><i class="fa fa-fw fa-lg fa-search"></i></button>
+					</div>
+					<div class="illegalArticleList">
+						<table class="table table-hover">
+							<colgroup>
+								<col width="80">
+								<col>
+								<col width="140">
+								<col width="120">
+								<col width="120">
+								<col width="100">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>封面</th>
+									<th class="textTitle">文章标题</th>
+									<th>涉及公众号数</th>
+									<th>发文时间</th>
+									<th>违规时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>谣言</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>色情低俗</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>违法违规</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+					</div>
+				</div>
+				<div style="display:none;">
+					<div class="illegalTab">
+						<div class="illegalTabHead">违规分类</div>
+						<ul class="list-unstyled">
+							<li><a>全部</a></li>
+							<li class="current"><a>谣言</a></li>
+							<li><a>违法违规</a></li>
+							<li><a>色情低俗</a></li>
+							<li><a>欺诈</a></li>
+							<li><a>举报</a></li>
+							<li><a>其它</a></li>
+	
+						</ul>
+					</div>
+					<div class="illegalArticleList">
+						<table class="table table-hover">
+							<colgroup>
+								<col width="80">
+								<col>
+								<col width="140">
+								<col width="120">
+								<col width="120">
+								<col width="100">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>封面</th>
+									<th class="textTitle">文章标题</th>
+									<th>涉及公众号数</th>
+									<th>发文时间</th>
+									<th>违规时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>谣言</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>色情低俗</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+								<tr>
+									<td><div class="illegalArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"></div></td>
+									<td class="textTitle"><span class="illegalType"><i>违法违规</i></span><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td>126</td>
+									<td>10月15日</td>
+									<td>10月15日</td>
+									<td><a class="btn btn-default">查看内容</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-<span class="badge bg-color-blueLight">8</span>">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2015</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+</body>
+</html>

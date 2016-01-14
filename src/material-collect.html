@@ -1,0 +1,315 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+<!-- Standard Script Includes -->
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul style="display: block;">
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文 <span class="badge inbox-badge bg-color-red">强力推荐</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>文章编辑</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="articleGuideCart">
+				<h3 class="articleGuideCartHeader"><a class="goBack">返回</a>已选文章</h3>
+				<div class="cartView" style="display:none;">
+					<div class="cartViewTips">
+						请从右侧素材库挑选文章，或者<a href="#">新建空白图文</a>
+					</div>
+					<div class="cartItemBtn">
+						<a class="disabled">保存并编辑</a>
+					</div>
+				</div>
+				<div class="cartView">
+					<section class="cartItem topItem">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题标题标题标题标题标题标题标题标题标题标题标题标</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn" href="#"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">他离开40年，却依然被14亿中国人深深怀念（周总理罕见照片珍藏）</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<section class="cartItem itemSelected">
+						<div class="appmsgWrap">
+							<h4 class="appmsgTitle">标题</h4>
+							<div class="appmsgCover">
+								<img src="http://www.sinaimg.cn/qc/2008-03-13/157/U1822P33T157D1668F2738DT20081024194418.jpg">
+							</div>
+						</div>
+						<div class="appmsgMark">
+							<a class="appmsgBtn"><i class="fa fa-trash-o"></i></a>
+							<p class="appmsgTips">按住拖动可上下调整位置</p>
+						</div>
+					</section>
+					<div class="cartItemBtn">
+						<a>保存并编辑</a>
+					</div>
+				</div>
+			</div>
+			<div class="articleGuideList">
+				<div class="pageGuideArticle" style="display:none;">
+					<h3>素材库暂无文章</h3>
+					<div class="intro">
+						在文章列表点击“加入素材库”即可添加文章至我的素材库
+					</div>
+					<dl class="footerNav">
+						<dt>从以下页面开始收集文章:</dt>
+						<dd><a href="#">全网优质素材</a></dd>
+						<dd><a href="#">我关注的</a></dd>
+						<dd><a href="#">黑马爆文</a></dd>
+						<dd><a href="#">专享素材</a></dd>
+						<dd><a href="#">原创优选</a></dd>
+					</dl>
+				</div>
+				<div class="mpArticleFilter clearfix">
+					<div class="row artTagsFilter">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-folder"></i> 素材文件夹:</label>
+						<div id="tagPool" class="col col-lg-11 artTagsSelector">
+							<a class="selectable selectedTag" data-tagid="0">未归类<em>126</em></a>
+							<a class="selectable hasUsed" data-tagid="-1">已使用<em>23</em></a>
+							<a class="selectable" data-tagid="649">备用<em>21</em></a>
+							<a class="selectable" data-tagid="1">搞笑<em>2</em></a>
+						</div>
+					</div>
+				</div>
+				<div id="ArticleUseListContent">
+					<div class="mpArticleList">
+						<table class="table table-hover">
+							<colgroup>
+								<col width="100">
+								<col>
+								<col width="100">
+								<col width="120">
+								<col width="120">
+								<col width="80">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>传播指数</th>
+									<th>文章标题</th>
+									<th class="text-align-center">内容类别</th>
+									<th>文章封面图</th>
+									<th>推文时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr data-articleid="49412028">
+										<td>
+											<span class="artRank rank2"><i class="fa fa-trophy"></i>80.25</span>    
+										</td>
+										<td>
+											<a href="http://mp.weixin.qq.com/s?__biz=MzAxMzExNTI1Mg==&amp;mid=404146571&amp;idx=8&amp;sn=3f12d912063eb54c92c762f1ef749822&amp;scene=4#wechat_redirect" target="_blank" onclick="event.stopPropagation();">小媳妇真猛，吃不消！</a>
+											<ul class="list-unstyled artMpUser">
+											</ul>
+										</td>
+										<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+										<td><a href="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49412028" target="_blank" class="myArticleCover" onclick="event.stopPropagation();" rel="noreferrer"><img class="WechatImage" data-src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49412028-logo80" src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49412028-logo80?rndx=xg"><span>下载封面</span></a></td>
+										<td>2015年12月26日</td>
+										<td>
+											<a class="btn btn-success addToCar btnIcon" data-articleid="49412028" data-url="http://mmbiz.qpic.cn/mmbiz/8wAt9NuhMIBhfftxrJY8slBujkeYPVRcZDu3k5V09uO3vAfmN1dnFSzQETOdFhqk2fooZgZlFRMKwchJ4ocBpg/0?wx_fmt=jpeg" data-title="小媳妇真猛，吃不消！" rel="tooltip" data-placement="top" data-original-title="加入图文生成器"><i class="fa fa-cart-plus"></i>加入到图文生成器后，同步到微信后台</a>
+										</td>
+									</tr>
+									<tr data-articleid="49224314">
+										<td>
+											<span class="artRank rank2"><i class="fa fa-trophy"></i>89.46</span>    
+										</td>
+										<td>
+											<a href="http://mp.weixin.qq.com/s?__biz=MzA3MjExMjI5MQ==&amp;mid=401240453&amp;idx=2&amp;sn=8f409e16a1b020c12e8da1933abbb5b1&amp;scene=4#wechat_redirect" target="_blank" onclick="event.stopPropagation();">【宫平视听】毛泽东主席的最后一首诗《诉衷情》，让我们泪流满面</a>
+											<ul class="list-unstyled artMpUser">
+											</ul>
+										</td>
+										<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+										<td><a href="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49224314" target="_blank" class="myArticleCover" onclick="event.stopPropagation();" rel="noreferrer"><img class="WechatImage" data-src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49224314-logo80" src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20151226/49224314-logo80?rndx=xg"><span>下载封面</span></a></td>
+										<td>2015年12月26日</td>
+										<td>
+											<a class="btn btn-success addToCar btnIcon" data-articleid="49224314" data-url="http://mmbiz.qpic.cn/mmbiz/2eYUCj4bTEdTwCwMcb56GZOib15Iyoj1ufSx58l0wgxoxS7AiaLFMIAMbt06AibHnMoicUPejqggyE632kfohFQQNA/0?wx_fmt=jpeg" data-title="【宫平视听】毛泽东主席的最后一首诗《诉衷情》，让我们泪流满面" rel="tooltip" data-placement="top" data-original-title="加入图文生成器"><i class="fa fa-cart-plus"></i>加入到图文生成器后，同步到微信后台</a>
+										</td>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+</body>
+</html>

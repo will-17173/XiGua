@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>我关注的爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="userProfile clearfix">
+				<ul class="userProfileNav list-unstyled">
+					<li><a href="#"><i class="fa fa-user"></i> 账户信息</a></li>
+					<li><a href="#"><i class="fa fa-bookmark"></i> 设置公众号类型</a></li>
+					<li><a href="#"><i class="fa fa-dollar"></i> 索取发票</a></li>
+					<li><a href="#" class="current"><i class="fa fa-user-plus"></i> 邀请好友</a></li>
+				</ul>
+				<div class="userProfileSettings">
+					<div style="display:none;">
+						<div class="userProfileInfo">
+							<div class="avatar"><i></i></div>
+							<div class="userProfileDetail">
+								<section class="name">7588759@qq.com</section>
+								<section>
+									<label>版本:</label>基础版
+								</section>
+								<section>
+									<label>账号到期时间:</label>2015-3-25 23:15:32
+								</section>
+								<section>
+									<label>可绑定公众号个数:</label>20
+								</section>
+								<section>
+									<label>所选公众号标签:</label>搞笑趣闻
+								</section>
+								<section>
+									<label>当前登录IP:</label>117.25.74.47
+								</section>
+							</div>
+						</div>
+						<div class="userProfileItem">
+							<section>
+								<div class="userProfileItemBtn"><a class="btn btn-primary">修改</a></div>
+								<div class="userProfileItemMain">
+									<div class="userProfileItemIcon"><i class="fa fa-envelope"></i></div>
+									<div class="userProfileItemContent">s*******4@gmail.com</div>
+									<div class="userProfileItemIntro"><strong>邮箱</strong>可以用作登录、找回密码及其它安全保护！</div>
+								</div>
+								
+							</section>
+							<section>
+								<div class="userProfileItemBtn"><a class="btn btn-primary">修改</a></div>
+								<div class="userProfileItemMain">
+									<div class="userProfileItemIcon"><i class="fa fa-mobile-phone"></i></div>
+									<div class="userProfileItemContent">186****8200</div>
+									<div class="userProfileItemIntro"><strong>手机</strong>可以用作登录、找回密码、定时群发提醒及其它安全保护！</div>
+								</div>
+							</section>
+							<section style="display:none;">
+								<div class="userProfileItemBtn"><a class="btn btn-primary">设置</a></div>
+								<div class="userProfileItemMain">
+									<div class="userProfileItemIcon"><i class="fa fa-mobile-phone"></i></div>
+									<div class="userProfileItemContent">未设置</div>
+									<div class="userProfileItemIntro"><strong>手机</strong>可以用作登录、找回密码、定时群发提醒及其它安全保护！</div>
+								</div>
+							</section>
+							<section>
+								<div class="userProfileItemBtn"><a class="btn btn-primary">修改</a></div>
+								<div class="userProfileItemMain">
+									<div class="userProfileItemIcon"><i class="fa fa-lock"></i></div>
+									<div class="userProfileItemIntro"><strong>密码</strong>不定期修改密码可提高账户安全性</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div style=" display:none;">
+						<h3 class="formHeader">绑定手机号</h3>
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-md-2 control-label">已验证手机</label>
+									<div class="col-md-4">
+										<p class="form-control-text">18650358200</p>
+										<a class="btn btn-success">获取短信验证码</a>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">短信验证码</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label"></label>
+									<div class="col-md-4">
+										<button type="submit" class="btn btn-primary">
+											确认
+										</button>
+										<button type="submit" class="btn btn-default">
+											取消
+										</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						<form class="form-horizontal" style="display:none;">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-md-2 control-label">输入手机号码</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control">
+										<a class="btn btn-success">获取短信验证码</a>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">短信验证码</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label"></label>
+									<div class="col-md-4">
+										<button type="submit" class="btn btn-primary">
+											绑定
+										</button>
+										<button type="submit" class="btn btn-default">
+											取消
+										</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div>
+						<h3 class="formHeader">修改密码</h3>
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-md-2 control-label">旧密码</label>
+									<div class="col-md-4">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">新密码</label>
+									<div class="col-md-4">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">确认新密码</label>
+									<div class="col-md-4">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label"></label>
+									<div class="col-md-4">
+										<button type="submit" class="btn btn-primary">
+											确认
+										</button>
+										<button type="submit" class="btn btn-default">
+											取消
+										</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="userProfileSettings" style="display:none;">
+					<form class="form-horizontal settingTags">
+						<fieldset>
+							<label class="label">设置您的公众号类型标签</label>
+							<div class="selectTag">
+								<ul class="list-unstyled">
+									<li>财经时政</li>
+									<li class="selected">搞笑趣闻</li>
+									<li>汽车</li>
+									<li>运动健康</li>
+									<li>数码科技</li>
+									<li>影音娱乐</li>
+									<li>餐饮美食</li>
+									<li>女人时尚</li>
+									<li>职场教育</li>
+									<li>情感励志</li>
+									<li>母婴生活</li>
+									<li>地方</li>
+									<li>旅游</li>
+									<li>无节操</li>
+									<li>房产家居</li>
+								</ul>
+							</div>
+							<div class="note txt-color-orange">基础版只可选择1个公众号类型标签，每月可修改1次。</div>
+							<div class="settingTagsBtn">
+								<button type="submit" class="btn btn-primary">
+									确认
+								</button>
+								<button type="submit" class="btn btn-default">
+									取消
+								</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="userProfileSettings" style="display:none;">
+					<!--索取发票内容开始-->
+					<div class="userInvoiceTip">
+						温馨提示：<br>
+						1. 只可开具普通发票，不可开具增值税发票。<br>
+						2. 发票基于订单开具，金额为实际支付金额。（多个订单可合并开票，单个订单不可拆分开票）。<br>
+						3. 提交开票申请后，将在3个工作日内为您寄出，<strong>默认顺丰快递，邮费到付</strong>。
+					</div>
+					<div class="userInvoiceStep1">
+						<div class="userInvoiceList">
+							<table class="table table-hover">
+								<colgroup>
+									<col width="50">
+									<col width="180">
+									<col>
+									<col width="100">
+									<col width="150">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="text-align-center"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span></span></label></th>
+										<th>订单号</th>
+										<th>产品名称</th>
+										<th>支付金额</th>
+										<th>支付时间</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="5" class="text-align-center txt-color-orange">暂无可开票订单</td>
+									</tr>
+									<tr>
+										<td class="text-align-center"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span></span></label></td>
+										<td>2-3150609123651423</td>
+										<td>西瓜公众号助手基础版1个月</td>
+										<td>¥ 1699</td>
+										<td>2015/6/9 12:38:05</td>
+									</tr>
+									<tr>
+										<td class="text-align-center"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span></span></label></td>
+										<td>2-3150609123651423</td>
+										<td>西瓜公众号助手基础版1个月</td>
+										<td>¥ 99</td>
+										<td>2015/6/9 12:38:05</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="userInvoiceTotal row">
+							<div class="col col-md-4 no-padding">
+								已选总金额：¥ 5097.36
+								<div class="note">(可开票总金额：¥ 17910.99)</div>
+							</div>
+							<div class="col col-md-8 no-padding text-align-right">待开票金额: <span class="txt-color-green">¥ 5097.36</span><a class="btn btn-primary">下一步</a></div>
+						</div>
+					</div>
+					<div class="userInvoiceStep2">
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-md-2 control-label">开票金额</label>
+									<div class="col-md-4">
+										<span class="userInvoiceNumber">¥ 5097.36</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">发票抬头</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">企业纳税识别号</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">收件地址</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">收件人姓名</label>
+									<div class="col-md-3">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">联系电话</label>
+									<div class="col-md-3">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">联系QQ</label>
+									<div class="col-md-3">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label"></label>
+									<div class="col-md-4">
+										<button type="submit" class="btn btn-primary">
+											确认
+										</button>
+										<button type="submit" class="btn btn-default">
+											上一步
+										</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="text-align-center txt-color-green"><i class="fa fa-check-circle-o"></i> 提交成功，稍后将有客服与您联系确认。</div>
+					<!--索取发票内容结束-->
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="fullLayer" style="display:none;">
+	<p class="centerLoading"><i class="fa fa-gear fa-spin"></i> 努力加载中...</p>
+</div>
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title"><div class="mpCoverSmall"><img src="http://img03.sogoucdn.com/app/a/100520090/oIWsFt-NQJJTI1l_HJBI-iEy3qbg" /></div>36KR分组设置</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="mpUserTagsSelector mpUserTags clearfix">
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							全国
+							<span class="stat">32个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a class="selectedTag">
+							<i class="fa fa-circle"></i>
+							科技
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							媒体
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							达人
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							达人
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<div class="addNewTag">
+							<a><i class="fa fa-pencil"></i>新建分组</a>
+							<div class="addNewTagArea" style="display:none;">
+								<label class="input">
+									<input class="form-control" name="TagName" placeholder="分组名称" required type="text" value="">
+								</label>
+								<button type="submit" class="btn btn-default">
+									添加
+								</button>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">
+					保存
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

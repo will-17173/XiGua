@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+<!-- Standard Script Includes -->
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul style="display: block;">
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文 <span class="badge inbox-badge bg-color-red">强力推荐</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="row no-margin smartArticleHeader">
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">全球搞笑笑话榜</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">全球搞笑笑话榜</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">全球搞笑笑话榜</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">全球搞笑笑话榜</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp smartArticleMpSelected">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">全球搞笑笑话榜</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp hasLoading">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">
+							全球搞笑笑话榜
+							<div class="progress progress-xs progress-striped active">
+								<div style="width:100%" role="progressbar" class="progress-bar">正在为您首次匹配文章，请稍后</div>
+							</div>
+						</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp hasLoading">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">
+							全球搞笑笑话榜
+							<div class="progress progress-sm firstGetList">
+								<div style="width:100%" role="progressbar" class="progress-bar bg-color-greenLight"><i class="fa fa-check"></i> 首次匹配完成，请点击查看</div>
+							</div>
+						</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">
+							<span>全球搞笑笑话榜</span>
+						</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt1SgdtTmqZ3vvrIaROJP1r4"></div>
+						<h3 class="mpName">齐乐窝</h3>
+						<i class="arrow"></i>
+					</a>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="smartArticleMp add">
+						<i class="fa fa-plus"></i> 添加我的公众号
+					</a>
+				</section>
+			</div>
+			<div class="smartArticleTips">
+				<div class="alert alert-success fade in">
+					<button data-dismiss="alert" class="close" id="btnCloseUserTypeInfo">
+						×
+					</button>
+					<i class="fa-fw fa fa-info-circle"></i>
+					系统根据您的公众号的历史文章进行智能匹配，为您推荐最适合您公众号的文章，请添加您的公众号，如果系统未收录过您的公众号，首次匹配需要等待1到10分钟。
+				</div>
+			</div>
+			<div class="mpArticleList smartArticleList">
+				<a class="btnRefreshList"><i class="fa fa-refresh"></i> 换一批</a>
+				<table class="table table-hover">
+					<colgroup>
+						<col width="8%">
+						<col width="46%">
+						<col width="8%">
+						<col width="8%">
+						<col width="10%">
+						<col width="20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>封面</th>
+							<th>文章标题</th>
+							<th>爆文指数</th>
+							<th>阅读/点赞</th>
+							<th>推文公众号</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="6" class="no-border no-margin btnfirstGetList"><a>刷新公众号文章数据<span> (最近更新时间:2015/3/9 1:40:50)</span></a></td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+	<div style="display:block;" class="modal fade in">
+		<div class="modal-dialog">
+			<div class="modal-content">     
+				<div class="modal-header">
+					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					<h4 class="modal-title">添加我关注的公众号</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<form class="smart-form">
+						<fieldset>
+							<section>
+								<div class="row">
+									<label class="label col col-2">选择添加方式</label>
+									<div class="col col-10 addMyAccountType">
+										<ul class="nav nav-tabs bordered">
+											<li class="">
+												<a href="#s1" data-toggle="tab">公众号搜狗网址</a>
+											</li>
+											<li class="active">
+												<a href="#s2" data-toggle="tab">公众号素材网址</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane fade" id="s1">
+												<label class="input">
+													<i class="icon-append fa fa-link"></i>
+													<input type="text" value="" placeholder="公众号搜狗网址" class="normalInput">
+												</label>
+												<p><a target="_blank" href="/Knowledge/ShowView/?knowledgeId=5"><i class="fa fa-exclamation-circle"></i> 如何获得公众号搜狗网址</a></p>
+											</div>
+											<div class="tab-pane fade active in" id="s2">
+												<label class="input">
+													<i class="icon-append fa fa-link"></i>
+													<input type="text" value="" placeholder="公众号素材网址" class="normalInput">
+												</label>
+												<p><a target="_blank" href="/Knowledge/ShowView/?knowledgeId=5"><i class="fa fa-exclamation-circle"></i> 如何获得公众号素材网址</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section>
+								<div class="row">
+									<label class="label col col-2">分组设置</label>
+									<div class="col col-10">
+										<div class="mpUserTags" id="mpUserTags">
+											<span id="tagContainner">
+												<section class="col col-sm-6 no-padding">
+													<a data-realid="71">
+														<i class="fa fa-circle"></i>
+														女人
+														<span class="stat">2个公众号</span>
+													</a>
+												</section>
+												<section class="col col-sm-6 no-padding">
+													<a data-realid="190">
+														<i class="fa fa-circle"></i>
+														设计
+														<span class="stat">4个公众号</span>
+													</a>
+												</section>
+												<section class="col col-sm-6 no-padding">
+													<a data-realid="54">
+														<i class="fa fa-circle"></i>
+														搞笑
+														<span class="stat">5个公众号</span>
+													</a>
+												</section>
+												<section class="col col-sm-6 no-padding">
+													<a data-realid="569">
+														<i class="fa fa-circle"></i>
+														大媒体新闻
+														<span class="stat">3个公众号</span>
+													</a>
+												</section>
+												<section class="col col-sm-6 no-padding">
+													<a data-realid="570">
+														<i class="fa fa-circle"></i>
+														生活方式
+														<span class="stat">2个公众号</span>
+													</a>
+												</section>
+											</span>
+											<section class="col col-sm-6 no-padding">
+												<div class="addNewTag">
+													<a style="display:none;"><i class="fa fa-pencil"></i>新建分组</a>
+													<div class="addNewTagArea">
+														<label class="input">
+															<input class="form-control" name="TagName" placeholder="分组名称" required type="text" value="">
+														</label>
+														<button type="button" class="btn btn-default" id="addTagBtn">
+															添加
+														</button>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</section>
+						</fieldset>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" id="addMBizBtn" type="button">
+						确定
+					</button>
+					<button data-dismiss="modal" class="btn btn-default" type="button" id="btnCancel">
+						取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

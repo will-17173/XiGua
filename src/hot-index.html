@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+<!-- Standard Script Includes -->
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul style="display: block;">
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文 <span class="badge inbox-badge bg-color-red">强力推荐</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="hotIndexLogo">热点风向标</div>
+			<div class="hotIndexHome hotIndexWidth">
+				<div class="hotIndexHomeHeader"></div>
+				<div class="hotIndexIntro collapsed">
+					<a class="closeIntro">什么是热点风向标 <i class="fa fa-angle-up"></i></a>
+					<div class="entry">热点风向标反应朋友圈文章相关的热点及持续变化，结合热点撰写原创文章或转发热点相关文章可提高文章的阅读转发，为公众号增粉增收，企业也可基于热点事件进行营销。</div>
+					<a class="btnViewPr"><i class="fa fa-rocket"></i>了解企业新媒体推广</a>
+				</div>
+				<p class="hotIndexHomeStat">最近7天热点数: 3<br>最近30天热点数: 15
+				</p>
+				<div class="hotIndexHomeList">
+					<section>
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>MH370</em></i>
+								<div class="keywordTime">7.29-7.31</div>
+							</a>
+						</div>
+					</section>
+					<section class="hotRank rank1">
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>电梯</em></i>
+								<div class="keywordTime">7.27-7.30</div>
+							</a>
+						</div>
+						<div class="keywordArticle">
+							<dl class="list-unstyled">
+								<dt><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20150729/17905122-logo80?rndx=xg"><span>典型文章</span></dt>
+								<dd class="keywordArticleTitle"><a href="#">自从?出了电梯事故，现在大家都是这样搭电梯了！！！</a></dd>
+								<dd class="keywordArticleInfo">共<strong>402560</strong>篇热点相关文章</dd>
+							</dl>
+						</div>
+					</section>
+					<section>
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>张</em></i>
+								<div class="keywordTime">7.21-7.24</div>
+							</a>
+						</div>
+					</section>
+					<section>
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>同学聚会</em></i>
+								<div class="keywordTime">7.15-7.23</div>
+							</a>
+						</div>
+					</section>
+					<div class="historyLine">
+						<div class="historyLineEntry"><span>以下为30天之前的热点，只提供大热点查询</span></div>
+					</div>
+					<section class="hotRank rank1">
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>电梯</em></i>
+								<div class="keywordTime">7.27-7.30</div>
+							</a>
+						</div>
+						<div class="keywordArticle">
+							<dl class="list-unstyled">
+								<dt><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20150729/17905122-logo80?rndx=xg"><span>典型文章</span></dt>
+								<dd class="keywordArticleTitle"><a href="#">自从?出了电梯事故，现在大家都是这样搭电梯了！！！</a></dd>
+								<dd class="keywordArticleInfo">共<strong>402560</strong>篇热点相关文章</dd>
+							</dl>
+						</div>
+					</section>
+					<section class="hotHide hotHideS3">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</section>
+					<section></section>
+					<section class="hotRank rank4">
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>优衣库</em></i>
+								<div class="keywordTime">7.15-7.23</div>
+							</a>
+						</div>
+						<div class="keywordArticle">
+							<dl class="list-unstyled">
+								<dt><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20150723/16756212-logo80?rndx=xg"></dt>
+								<dd class="keywordArticleTitle"><a href="#">优衣库的“试衣间”，若让12星座去体验一下，你觉得会有何感想呢</a></dd>
+								<dd class="keywordArticleInfo">共802篇相关文章</dd>
+							</dl>
+						</div>
+					</section>
+					<section class="hotHistory history1">
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>热点时间</em></i>
+							</a>
+						</div>
+					</section>
+					<section class="hotHistory history2">
+						<div class="keyword">
+							<a class="keywordMain">
+								<i><em>热点时间</em></i>
+							</a>
+						</div>
+					</section>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+</body>
+</html>

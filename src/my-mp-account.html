@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>我关注的爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+		<div id="content">
+			<div class="myMpAccountGuide">
+				<p>添加绑定运营的公众号，获得以下特权</p>
+				<dl class="s1">
+					<dt><i class="fa fa-user-secret"></i></dt>
+					<dd>专享素材</dd>
+				</dl>
+				<dl class="s2">
+					<dt><i class="fa fa-newspaper-o"></i></dt>
+					<dd>图文生成</dd>
+				</dl>
+				<dl class="s3">
+					<dt><i class="fa fa-edit"></i></dt>
+					<dd>高级编辑器</dd>
+				</dl>
+				<dl class="s4">
+					<dt><i class="fa fa-magic"></i></dt>
+					<dd>素材自动签名</dd>
+				</dl>
+				<dl class="s5">
+					<dt><i class="fa fa-cloud-upload"></i></dt>
+					<dd>一键同步图文</dd>
+				</dl>
+				<dl class="s6">
+					<dt><i class="fa fa-clock-o"></i></dt>
+					<dd>定时群发</dd>
+				</dl>
+				<div class="bigBtn"><a><i class="fa fa-plus"></i> 添加我运营的公众号</a></div>
+			</div>
+		</div>
+        <div id="content" style="display:none;">
+			<div class="myMpAccountTips">
+				<div class="alert alert-success no-margin fade in">
+					<button data-dismiss="alert" class="close" id="btnCloseUserTypeInfo">
+						×
+					</button>
+					<i class="fa-fw fa fa-info-circle"></i>
+					添加“我运营的公众号”用于为该公众号匹配专享素材及同步素材文章到该公众号微信公众号后台。
+				</div>
+			</div>
+			<div class="myMpAccount">
+				<section class="col no-padding col-md-3">
+					<div class="myMpAccountItem">
+						<div class="myMpAccountBtn">
+							<a class="btn btn-default btn-moving" data-original-title="更新公众号头像及资料" rel="tooltip"><i class="fa fa-list-ul"></i></a>
+							<a class="btn btn-default" data-original-title="按住并拖动可对列表进行排序" rel="tooltip"><i class="fa fa-refresh"></i></a>
+						</div>
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_kODNYpbYYbW_A6haHJUe4"></div>
+						<h3 class="mpName">内涵段子大王 <i class="iconVerify"></i></h3>
+						<p class="mpInfo">[微信号: 36kr]</p>
+						<ul class="btns no-margin list-unstyled">
+							<li><a class="btn btn-default"><i class="fa fa-cog"></i> 模板配置</a></li>
+							<li><a class="btn btn-default"><i class="fa fa-bell"></i> 群发提醒</a></li>
+							<li><a class="btn btn-default"><i class="fa fa-trello"></i> 群发日志</a></li>
+							<li><a class="btn btn-danger"><i class="fa fa-unlink"></i> 解除绑定</a></li>
+						</ul>
+					</div>
+				</section>
+				<section class="col no-padding col-md-3">
+					<div class="myMpAccountItem">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk"></div>
+						<h3 class="mpName">内涵段子大王</h3>
+						<p class="mpInfo">[微信号: gaoxiao10086]</p>
+						<ul class="btns no-margin list-unstyled">
+							<li><a class="btn btn-default disabled"><i class="fa fa-cog"></i> 群发配置</a></li>
+							<li><a class="btn btn-danger"><i class="fa fa-unlink"></i> 解除绑定</a></li>
+						</ul>
+					</div>
+				</section>
+				<section class="col no-padding col-md-3">
+					<div class="myMpAccountItem">
+						<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></div>
+						<h3 class="mpName">内涵段子大王</h3>
+						<p class="mpInfo">[微信号: aiqingmalatan]</p>
+						<ul class="btns no-margin list-unstyled">
+							<li><a class="btn btn-default"><i class="fa fa-cog"></i> 群发配置</a></li>
+							<li><a class="btn btn-danger"><i class="fa fa-unlink"></i> 解除绑定</a></li>
+						</ul>
+					</div>
+				</section>
+				<section class="col no-padding col-md-3">
+					<a class="myMpAccountAdd">
+						<i class="fa fa-plus"></i> 添加我运营的公众号
+					</a>
+				</section>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+	<!--账号添加第一步-->
+	<div class="modal fade in" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">     
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">添加我运营的公众号</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<div class="addMyAccountWarn" style="display:none;">
+						<div class="alert alert-warning no-margin">
+							<i class="fa-fw fa fa-info-circle"></i>
+							<strong>您添加的“我运营的公众号”已到达上限</strong>
+							<p>基础版可绑定1个公众号，高级版可绑定10个公众号。如需绑定超过10个公众号请联系客服购买定制版。</p> 
+						</div>
+					</div>
+					<div class="addMyAccountStep">
+						<form class="smart-form">
+							<div class="form-group">
+								<label class="input">
+									<i class="icon-append fa fa-link"></i>
+									<input type="text" value="" placeholder="我的公众号中的任意一篇微信文章网址" class="normalInput">
+								</label>
+							</div>
+							<div class="form-group"><a href="/Knowledge/ShowView/?knowledgeId=5" target="_blank"><i class="fa fa-exclamation-circle"></i>  如何获得公众号素材网址</a></div>
+						</form>
+						<p class="note">基础版可绑定1个公众号，高级版可绑定10个公众号。如需绑定超过10个公众号请联系客服购买定制版。</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="addMBizBtn" class="btn btn-primary">
+						下一步
+					</button>
+					<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+						取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--账号添加第二步-->
+	<div class="modal fade in" style="display:block;">
+		<div class="modal-dialog">
+			<div class="modal-content">     
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">添加我运营的公众号</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<div class="addMyAccountStep">
+						<dl class="mpAccountConfirm">
+							<dt><img src="http://7xim13.com1.z0.glb.clouddn.com/BizLogo/MzA3Mzk3MzEzMQ==.jpg-BizLogoCut"></dt>
+							<dd>确认添加绑定公众号【最懂女人心】？</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="addMBizBtn" class="btn btn-primary">
+						确定
+					</button>
+					<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+						上一步
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--素材模板设置-->
+	<div class="modal fade in" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">     
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">设置“搞笑精选”的文章素材模板</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<div class="articleTemp">
+						<section>
+							<h3>关注引导模板:
+								<div class="pull-right"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span>智能插入</span></label>
+									<a rel="tooltip" data-placement="top" data-original-title="勾选自动替换后，会在生成图文时自动在文章头部插入以下引导内容，并智能删除原有的引导内容。"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+							</h3>
+							<div class="articleTempEditor">
+								<textarea style="width:100%; height:200px;"></textarea>
+							</div>
+						</section>
+						<section>
+							<h3>签名模板:
+								<div class="pull-right"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span>智能插入</span></label>
+									<a rel="tooltip" data-placement="top" data-original-title="勾选自动插入后，会在生成图文时自动在文章末尾插入以下签名内容，并智能删除原有的签名内容。"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+							</h3>
+							<div class="articleTempEditor">
+								<textarea style="width:100%; height:200px;"></textarea>
+							</div>
+						</section>
+						<section>
+							<h3>阅读原文引导模板(只有阅读原文链接存在时才显示):
+								<div class="pull-right"><label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span>智能插入</span></label>
+									<a rel="tooltip" data-placement="top" data-original-title="勾选自动插入后，会在生成图文时自动在文章末尾插入以下引导内容及原文链接，并智能替换原有的原文引导内容"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+							</h3>
+							<div class="articleTempEditor">
+								<textarea style="width:100%; height:200px;"></textarea>
+							</div>
+							<h3>原文链接:</h3>
+							<div class="articleTempEditor clearfix">
+								<input type="text" placeholder="" class="form-control">
+								<p class="note">该原文链接将自动设置为所有生成的文章的原文链接，可在编辑页面单独修改，如无须所有文章都插入该链接，请留空。</p>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="addMBizBtn" class="btn btn-primary">
+						保存
+					</button>
+					<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+						取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--账号添加-->
+	<div class="modal fade in" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">     
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">设置“最懂女人心”群发提醒</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<form class="smart-form sendAlert">
+						<fieldset>
+							<section>
+								<div class="row">
+									<label class="label col col-4 text-align-right">是否开启消息提醒:</label>
+									<div class="col col-8 no-padding">
+										<span class="onoffswitch">
+											<input name="filterOnlyTopArticle" id="filterOnlyTopArticle" type="checkbox" class="onoffswitch-checkbox trigger-article-filter">
+											<label class="onoffswitch-label" for="filterOnlyTopArticle">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+											</label>
+										</span>
+										<p class="note">将在群发成功或者失败后向您的手机推送相关内容的短信。</p>
+									</div>
+								</div>
+							</section>
+							<section>
+								<div class="row">
+									<label class="label col col-4 text-align-right">手机号码:</label>
+									<div class="col col-8 no-padding">
+										<ul class="list-unstyled">
+											<li>
+												<label class="input sendAlertPhone state-disabled">
+													<i class="icon-append fa fa-mobile"></i>
+													<input id="txtBizArticleUrl" type="text" value="" disabled="disabled" placeholder="13800138000" >
+												</label>
+												<p class="note">如需更换手机号，请 <a href="#">[修改]</a>。</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section style="display:none;">
+								<div class="row">
+									<label class="label col col-4 text-align-right">手机号码:</label>
+									<div class="col col-8 no-padding">
+										<ul class="list-unstyled">
+											<li>
+												<label class="input sendAlertPhone">
+													<i class="icon-append fa fa-mobile"></i>
+													<input id="txtBizArticleUrl" type="text" value="" placeholder="手机号码" >
+												</label>
+											</li>
+											<li>
+												<label class="input sendAlertPhone">
+													<i class="icon-append fa fa-sliders"></i>
+													<input id="txtBizArticleUrl" type="text" value="" placeholder="短信校验码" >
+												</label>
+												<a class="btn btn-default">获取短信校验码</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</fieldset>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="addMBizBtn" class="btn btn-primary">
+						确定
+					</button>
+					<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+						取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

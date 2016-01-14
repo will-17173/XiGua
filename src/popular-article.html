@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="popularTimer clearfix">
+				<ul class="timerSelector list-unstyled">
+					<li class="disabled"><a class="timerBtns timerBtnsPre"><i class="fa fa-long-arrow-left"></i></a></li>
+					<li class="timerSelectorList dropdown">
+						<a>最近24小时黑马爆文 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-16黑马爆文</a></li>
+							<li><a href="javascript:void(0);">2015-03-15黑马爆文</a></li>
+						</ul>
+					</li>
+					<li><a class="timerBtns timerBtnsNext"><i class="fa fa-long-arrow-right"></i></a></li>
+				</ul>
+				<div class="timerLatest">爆文最近更新时间：2015-04-15 14:16</div>
+			</div>
+			<div class="popularTab">
+				<ul class="list-unstyled">
+					<li><a>搞笑趣闻</a></li>
+					<li class="current"><a>财经时政</a></li>
+					<li><a>旅游</a></li>
+					<li><a>汽车</a></li>
+					<li><a>运动健康</a></li>
+					<li><a>数码科技</a></li>
+					<li><a>影音娱乐</a></li>
+					<li><a>餐饮美食</a></li>
+					<li><a>女人时尚</a></li>
+					<li><a>职场教育</a></li>
+					<li><a>情感励志</a></li>
+					<li><a>母婴生活</a></li>
+					<li><a>无节操</a></li>
+					<li><a>地方</a></li>
+					<li><a>房产家居</a></li>
+				</ul>
+			</div>
+			<div class="popularArticleList">
+				<table class="table table-hover">
+					<colgroup>
+						<col class="colRank">
+						<col>
+						<col width="12%">
+						<col width="12%">
+						<col class="colBtns">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="text-align-center">排行</th>
+							<th>标题摘要</th>
+							<th class="text-align-center">内容类别</th>
+							<th>推荐封面</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank1">1</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><div class="artContentPreview">“如果你半夜醒来，发现自己好长时间没读书，而且没有任何负罪感，你就要知道，你已经堕落了。不是说书本有多了不起，而是读书意味着你没有完全认同于这个现世和现实，你还有追求，还在奋斗，还有不满，你还在寻找另一种可能性，另一种生活方式。”</div></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-picture-o"><em></em></i></span></td>
+							<td><a href="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"><span>下载封面</span></a></td>
+							<td>
+								<a class="btn btn-primary" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank2">2</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><div class="artContentPreview">关于女司机的传说，已风靡全球！除了令人闻风丧胆的“所到之处寸草不生”、“女杀手”、“车库杀手”之类的称号之外</div></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"><span>下载封面</span></a></td>
+							<td>
+								<a class="btn btn-primary" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco popularRank3">3</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><div class="artContentPreview">这种情况，你一定遇到过：手机，收到带有网址的陌生短信。那么，你是怎么处理的？打开？回复？不理？</div></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"><span>下载封面</span></a></td>
+							<td>
+								<a class="btn btn-primary" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco">4</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="artCopyrighted inlineBlock"></span></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-file-text-o"><em></em></i></span><span class="artCopyrighted"></span></td>
+							<td><a href="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"><span>下载封面</span></a></td>
+							<td>
+								<a class="btn btn-primary" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a></td>
+						</tr>
+						<tr>
+							<td class="text-align-center"><span class="popularRankIco">25</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><div class="artContentPreview">你有一个女儿吗？将来也想要个女儿吗？你也想做一个这样的父亲吗？新闻妹推荐！绝对暖心！ 图文来自@内涵大婊哥</div></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/CHowicn0FQ1YKSjwFzVtKQJz8buIZX1nm4o6zYX25mMgicvCTU6f2Ta2mE3fHUNT08WSvLibPU1FD8cXUJx5j55Ig/0"><span>下载封面</span></a></td>
+							<td>
+								<a class="btn btn-primary" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-<span class="badge bg-color-blueLight">8</span>">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2015</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+</body>
+</html>

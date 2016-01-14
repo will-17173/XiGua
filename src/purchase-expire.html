@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body>
+<div class="purchaseHeader">
+	<div class="purchaseHeaderEntry">
+		<div class="purchaseAccountInfo">当前账号: 7588759@qq.com [基础版] <span class="txt-color-pink">当前有效期: 2015-03-06</span></div>
+		<img src="img/logo.png">
+	</div>
+</div>
+<div class="purchase">
+	<div class="purchaseAlert">
+		<i class="fa fa-info fa-2x"></i>
+		<h2 class="sucess">您的账号已到期</h2>
+		<div class="purchaseAlertInfo">现在<strong class="txt-color-orange">免费赠送您3天的使用时间</strong>，重新激活后即可生效。</div>
+		<p><a class="btn btn-primary">马上激活</a>或<a class="btn btn-primary">购买续费</a></p>
+	</div>
+	<div class="purchaseNote">
+			Copyright &copy; 2014-2015 西瓜公众号助手&nbsp;&nbsp;|&nbsp;&nbsp;客服QQ：<a href="tencent://message/?uin=14952924&amp;Site=&amp;Menu=yes">14952924</a>&nbsp;&nbsp;<a href="tencent://message/?uin=278836516&amp;Site=&amp;Menu=yes">278836516</a>&nbsp;&nbsp;<a href="tencent://message/?uin=22668566&amp;Site=&amp;Menu=yes">22668566</a>
+		</div>
+</div>
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">激活账号</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="row no-margin activeBox">
+					<div class="col col-md-3">
+						<img src="img/qrcode.png" class="activeBoxQrcode">
+					</div>
+					<div class="col col-md-9">
+						<section>请扫描左侧二维码关注公众号悄悄，即可免费获得激活码，激活后将新增3天免费试用时间。</section>
+						<section>
+							<input type="text" placeholder="激活码" class="form-control" />
+							<button type="submit" class="btn btn-primary">
+								激活
+							</button>
+						</section>
+					</div>
+				</div>
+				<div class="activeSuccess" style="display:none;">
+					<i class="fa fa-check-circle"></i> 激活成功 [到期时间延长至：2015-09-01]
+					<a class="btn btn-primary">返回</a>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

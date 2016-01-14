@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>西瓜公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body>
+    <div class="purchaseHeader">
+        <div class="purchaseHeaderEntry">
+            <div class="purchaseAccountInfo">当前账号: sanvy003@qq.com [试用版]</div>
+            <a href="/"><img src="img/logo.png"></a>
+        </div>
+    </div>
+	<div class="userActiveInfo"><i class="fa fa-info-circle"></i> 系统识别到您所处的网络环境存在而已注册账号的情况，因此您的账号需要激活后才能继续使用。</div>
+	<div class="userActive">
+		<div class="userActiveHeader clearfix">
+			<a class="current">免费激活</a>
+			<a href="/Purchase/Index">购买激活</a>
+		</div>
+		<div class="userActiveEntry">
+			<div class="qrcode"><img src="img/qrcode.png"></div>
+            <div class="userActiveContent">
+				<div class="activeBox1">
+					<section>微信扫描右侧二维码关注公众号悄悄即可获取激活码。</section>
+					<section>
+						<input type="text" placeholder="激活码" class="form-control" name="activeCode">
+						<input type="button" name="activeUserAccount" class="btn btn-primary" value="激活">
+						<p class="codeError"></p>
+					</section>
+				</div>
+                <div class="userActiveSuccess" style="display:none;">
+                    <i class="fa fa-check fa-2x"></i>
+                    <p class="activeTime">激活成功 [账号到期时间：<span id="memberEndTime">2015-09-01</span>]</p>
+                    <a class="btn btn-primary beginUse">开始使用</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="userActiveFooter">
+		Copyright &copy; 2014-2015 西瓜公众号助手
+	</div>
+    <script type="text/javascript">
+        $('a.activeAccount').click(function () {
+            $('div.dynamicModel').show();
+        });
+        //激活用户
+        $('input[name=activeUserAccount]').click(function () {
+            var activeCode = $('input[name=activeCode]').val();
+            if (activeCode == "") {
+ 
+                $('p.codeError').html("请输入激活码");
+                return;
+            }
+            $.getJSON('/Login/ActiveUser/?inviteCode=' + activeCode, function (result) {
+                if (result.Status) {
+                    $('div.userActiveSuccess').show();
+                    $('div.activeBox1').hide();
+                    $('#memberEndTime').html(result.MemberEndTime);
+                }
+                else {
+                    //$.smallBox({
+                    //    title: "提示",
+                    //    content: "<i class='fa fa-clock-o'></i> <i>" + result.Message + "</i>",
+                    //    color: "#C46A69",
+                    //    iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                    //    timeout: 3000
+                    //});
+                    $('p.codeError').html(result.Message);
+                }
+            });
+        });
+        $('a.beginUse').click(function () {
+            window.location.href = '/Member/';
+        });
+        $('a.return').click(function () {
+            $('#remoteModal').hide();
+        });
+        $('button.close').click(function () {
+            $('#remoteModal').hide();
+        });
+     </script>
+</body>
+</html>

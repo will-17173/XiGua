@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="mpArticleFilter clearfix">
+				<div class="row">
+					<div class="col col-lg-4"><input type="text" name="TitleKeyword" placeholder="关键字" class="form-control" value=""></div>
+					<div class="col col-lg-8"><button class="btn btn-primary">搜索</button><a class="btn btn-default marin-left-15" href="#"><i class="fa fa-plus"></i> 导入微信文章</a></div>
+				</div>
+				<div class="row artTagsFilter">
+					<label class="filterLabel col col-lg-1"><i class="fa fa-folder"></i> 素材文件夹:</label>
+					<div class="col col-lg-11 artTagsSelector">
+						<a class="selectedTag">所有文章<em>156</em></a>
+						<a>玉米粥<em>20</em></a>
+						<a>玉米粥<em>5</em></a>
+						<a>已使用<em>20</em></a>
+						<div class="hasDropNav dropdown open">
+							<a href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-gear"></i> 文件夹 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="javascript:void(0);">批量操作</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">文件夹管理</a>
+								</li>
+							</ul>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="myArticleGroup list-unstyled">
+				<li>
+					<label class="checkbox-inline">
+						<input type="checkbox" class="checkbox style-0" indeterminate="true">
+						<span>全选</span>
+					</label>
+				</li>
+				<li><a class="btn btn-primary disabled">移动到文件夹</a></li>
+				<li><a class="btn btn-primary">从素材库移除</a></li>
+				<li><a class="btn btn-default">退出批量操作</a></li>
+				<li>已选择 1 篇 <a href="#">取消选择</a></li>
+			</ul>
+			<div class="mpArticleList">
+				<table class="table table-hover">
+					<colgroup>
+						<col width="8%">
+						<col width="42%">
+						<col width="10%">
+						<col width="10%">
+						<col width="30%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>爆文指数</th>
+							<th>文章标题</th>
+							<th>文章封面图</th>
+							<th>推文时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td><a href="#" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/zTVadxtDkFevdCj1PWefJlaD5nMa8ibu41OpMice4VlnEAI1EReRKmV4OTuTYQicszoU5JYVPZ3cWRzaUKO1iaAoRQ/0"><span>下载封面</span></a></td>
+							<td>2015/2/9 14:56:55</td>
+							<td>
+								<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+								<a class="btn btn-primary btnArtFavorited"><i class="fa fa-star"></i> 移除该素材</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank import">外部导入</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td><a href="#" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/zTVadxtDkFevdCj1PWefJlaD5nMa8ibu41OpMice4VlnEAI1EReRKmV4OTuTYQicszoU5JYVPZ3cWRzaUKO1iaAoRQ/0"><span>下载封面</span></a></td>
+							<td>2015/2/9 14:56:55</td>
+							<td>
+								<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+								<a class="btn btn-primary btnArtFavorited"><i class="fa fa-star"></i> 移除该素材</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr class="hasSelected">
+							<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a>
+								<ul class="list-unstyled artMpUser">
+									<li rel="tooltip" data-placement="top" data-original-title="[最懂女人心]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
+									<li rel="tooltip" data-placement="top" data-original-title="[搞笑精选]已使用该文章"><img src="http://7xim13.com1.z0.glb.clouddn.com/BizQrcode/zdnurenxin.jpg-BizLogo"></li>
+									<li rel="tooltip" data-placement="top" data-original-title="[搞笑动图]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
+								</ul>
+							</td>
+							<td><a href="#" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/zTVadxtDkFevdCj1PWefJlaD5nMa8ibu41OpMice4VlnEAI1EReRKmV4OTuTYQicszoU5JYVPZ3cWRzaUKO1iaAoRQ/0"><span>下载封面</span></a></td>
+							<td>2015/2/9 14:56:55</td>
+							<td>
+								<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+								<a class="btn btn-primary btnArtFavorited"><i class="fa fa-star"></i> 移除该素材</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td><a href="#" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/zTVadxtDkFevdCj1PWefJlaD5nMa8ibu41OpMice4VlnEAI1EReRKmV4OTuTYQicszoU5JYVPZ3cWRzaUKO1iaAoRQ/0"><span>下载封面</span></a></td>
+							<td>2015/2/9 14:56:55</td>
+							<td>
+								<div class="myArticleListBtn btn-group open">
+									<a class="btn btn-default"><i class="fa fa-shopping-cart"></i> 加至图文生成器</a>
+									<a href="javascript:void(0);" data-toggle="dropdown" class="btn btn-default"><b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a><i class="fa fa-wrench"></i> 标记已使用</a>
+										</li>
+										<li>
+											<a><i class="fa fa-folder-open"></i> 移动到文件夹</a>
+										</li>
+										<li>
+											<a><i class="fa fa-align-left"></i> 指数分析</a>
+										</li>
+										<li>
+											<a><i class="fa fa-link"></i> 提取视屏网址</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="articleCart">
+				<a class="cartBtn"><i class="fa fa-list-ol"></i> 素材合成器<em class="faNumber">8</em></a>
+				<div class="articleCartList">
+					<div class="articleCartNone">
+						<i class="fa fa-cloud"></i>
+						请从素材库中选择文章来合成图文
+					</div>
+					<div style="display:none;">
+						<dl>
+							<dt><img src="http://mmbiz.qpic.cn/mmbiz/vTO0TFYJTWcqJKJ0WoaJmUMzIEXnHsShbGvuFX7rZgguibD3oY69RPxhq5WUW5q0aiaFNjkm6NG7CfJibBw5DdMug/0"></dt>
+							<dd class="articleTitle">北大教授写给女儿的一封信：等爸爸有钱给你办美国户口。令人深思！</dd>
+							<dd class="btnRemove"><a><i class="fa fa-trash-o"></i></a></dd>
+						</dl>
+						<dl>
+							<dt><img src="http://mmbiz.qpic.cn/mmbiz/WW0c29ZrVkQUcgx6f8hzqxgnNCpe0qYmcCsEPYbAjIkZUmlDQs5bySPnxU7wX2V4A3OeSiaQDHqCR4InLkF6luQ/0"></dt>
+							<dd class="articleTitle">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</dd>
+							<dd class="btnRemove"><a><i class="fa fa-trash-o"></i></a></dd>
+						</dl>
+						<dl>
+							<dt><img src="http://mmbiz.qpic.cn/mmbiz/lUdhTFzrfL6tia75oZrwT3yibAdP3AjRJH6jibzTicSqB3Yw6iaxuhLM0lcExic1W0ZaTEMw2GmHzdTqPsnQFe18CbQA/0"></dt>
+							<dd class="articleTitle">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</dd>
+							<dd class="btnRemove"><a><i class="fa fa-trash-o"></i></a></dd>
+						</dl>
+						<div class="articleCartFooter">
+							<a class="btn btn-primary"><i class="fa fa-cloud"></i> 生成图文素材</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">提取视频网址</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<h3 class="videoLinkTitle"><a href="#">刚流出来的视频，太刺激，，是男人都受不了了！</a></h3>
+				<div class="videoLinkList">
+					<dl>
+						<dt><iframe width="400" height="300" frameborder="0" src="http://v.qq.com/iframe/player.html?vid=e0014xa18f3" scrolling="no"></iframe></dt>
+						<dd>http://v.qq.com/iframe/player.html?vid=e0014xa18f3&width=668&height=501&auto=0&encryptVer=6.0&platform=61001&cKey=J9IcMje93boI0rBmOxzb80ggrlnQe1LFF2QE2Rtjji4gBcRVhiK2pghm2N/CgDdV</dd>
+					</dl>
+					<p class="videoLinkTips">请选中后复制(Ctrl+C)上方视频网址，将视频网址粘贴到添加视频时弹出的输入框即可。</p>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">素材文件夹管理</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<section>
+							<div class="mpUserTags mpUserTagsEdit">
+								<span id="tagContainner">
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="71"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">2篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="71">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="54"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">9篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="54">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+								</span>
+								<section class="col col-sm-6 no-padding">
+									<div class="addNewTag">
+										<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+										<div class="addNewTagArea" style="display:none;">
+											<label class="input">
+												<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+											</label>
+											<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+											<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+										</div>
+									</div>
+								</section>
+							</div>
+						</section>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">移动到文件夹</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<div class="mpUserTags" id="mpUserTags">
+							<span id="tagContainner">
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="71">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">2篇文章</span>
+									</a>
+								</section>
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="190" class="selectedTag">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">9篇文章</span>
+									</a>
+								</section>
+							</span>
+							<section class="col col-sm-6 no-padding">
+								<div class="addNewTag">
+									<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+									<div class="addNewTagArea" style="display:none;">
+										<label class="input">
+											<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+										</label>
+										<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+										<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+									</div>
+								</div>
+							</section>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="addMBizBtn" class="btn btn-primary">
+					保存
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 class="modal-title">导入微信文章至素材库</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<section>
+							<div class="row">
+								<label class="label col col-2">微信文章网址:</label>
+								<div class="col col-10 addMyAccountType">
+									<label class="input">
+										<i class="icon-append fa fa-link"></i>
+										<input class="normalInput" name="mBizUrl" placeholder="请输入微信文章网址" type="text" value="">
+									</label>
+									
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="row">
+								<label class="label col col-2">素材文件夹:</label>
+								<div class="col col-10 addMyAccountType">
+									<label class="select">
+										<select>
+											<option value="1">设计</option>
+										</select> <i></i>
+									</label>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="row">
+								<label class="label col col-2"></label>
+								<div class="col col-10 addMyAccountType">
+									<p>请输入以http://mp.weixin.qq.com打头的微信文章网址。<br><a href="/Knowledge/ShowView/?knowledgeId=23" target="_blank"><i class="fa fa-exclamation-circle"></i> 如何将外部的微信文章导入到“我的素材库”</a></p>
+								</div>
+							</div>
+						</section>
+					</fieldset>
+				</form>
+				<div class="sendArticleResult" style="display:none" id="sendArticleLoading">
+					<div class="sending">
+						<h1><i class="fa fa-rotate-right fa-spin"></i></h1>
+						<h2>导入中，请稍后</h2>
+					</div>
+				</div>   
+				<div class="sendArticleResult" style="display:none" id="sendArticleFail">
+					<div class="sendFailed">
+						<h1><i class="fa fa-times"></i></h1>
+						<h2>很抱歉，导入失败啦</h2>
+					</div>
+				</div>   
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" id="btnLoadMPUrl" type="button">
+					确定
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

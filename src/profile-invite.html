@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>我关注的爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="userProfile clearfix">
+				<ul class="userProfileNav list-unstyled">
+					<li><a href="#"><i class="fa fa-user"></i> 账户信息</a></li>
+					<li><a href="#"><i class="fa fa-bookmark"></i> 设置公众号类型</a></li>
+					<li><a href="#"><i class="fa fa-dollar"></i> 索取发票</a></li>
+					<li><a class="current" href="#"><i class="fa fa-user-plus"></i> 邀请好友</a></li>
+				</ul>
+				<div class="userProfileSettings">
+					<div class="inviteHeader">
+						<section>
+							<strong>256</strong>
+							邀请注册人数
+						</section>
+						<section >
+							<strong>15</strong>
+							邀请付费人数
+						</section>
+						<section>
+							<strong>1230</strong>
+							已赚取西瓜币
+						</section>
+						<section>
+							<strong>356</strong>
+							可用西瓜币
+						</section>
+					</div>
+					<div class="inviteUrl">
+						<label>我的邀请链接</label>
+						<div class="btnCopy"><a class="btn">复制</a></div>
+						<div class="url"><input value="http://www.xiguaji.com/?chl=311236" type=""></div>
+					</div>
+					<div class="inviteNav">
+						<ul class="list-unstyled clearfix no-margin">
+							<li>
+								<a href="#" class="active">邀请规则</a>
+							</li>
+							<li>
+								<a href="#">金币记录</a>
+							</li>
+							<li>
+								<a href="#">金币兑换</a>
+							</li>
+						</ul>
+					</div>
+					<div class="inviteWrap" style="display:none;">
+						<table width="100%" border="0">
+							<colgroup>
+								<col width="30%">
+								<col width="35%">
+								<col width="35%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>规则</th>
+									<th>西瓜币</th>
+									<th>说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>邀请的好友成功注册</td>
+									<td>获得<strong>5</strong>西瓜币</td>
+									<td>邀请的好友成功注册后即可获得奖励</td>
+								</tr>
+								<tr>
+									<td>邀请的好友注册并付费购买注册</td>
+									<td>
+										<ul class="list-unstyled inviteReward">
+											<li>购买1个月基础版获得<strong>10</strong>西瓜币</li>
+											<li>购买3个月基础版获得<strong>25</strong>西瓜币</li>
+											<li>购买6个月基础版获得<strong>50</strong>西瓜币</li>
+											<li>购买1个月高级版获得<strong>40</strong>西瓜币</li>
+											<li>购买3个月高级版获得<strong>120</strong>西瓜币</li>
+											<li>购买6个月高级版获得<strong>200</strong>西瓜币</li>
+										</ul>
+									</td>
+									<td>仅限邀请的好友首次付费时可按相应版本获取奖励</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="inviteWrap" style="display:none;">
+						<table width="100%" border="0">
+							<colgroup>
+								<col width="20%">
+								<col width="20%">
+								<col width="60%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>时间</th>
+									<th>西瓜币</th>
+									<th>说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2015/12/5 20:18</td>
+									<td>+5</td>
+									<td>邀请的186****7688成功注册</td>
+								</tr>
+								<tr>
+									<td>2015/12/5 20:18</td>
+									<td>+40</td>
+									<td>邀请的186****@qq.com购买高级版1个月册</td>
+								</tr>
+								<tr class="reduce">
+									<td>2015/12/5 20:18</td>
+									<td>-50</td>
+									<td>兑换1张西瓜公众号助手50元代金券</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="inviteListPage">
+							<ul class="pagination pagination-lg">
+								<li class="disabled">
+									<a href="javascript:void(0);"><i class="fa fa-chevron-left"></i></a>
+								</li>
+								<li class="active">
+									<a href="#">1</a>
+								</li>
+								<li>
+									<a href="#">2</a>
+								</li>
+								<li>
+									<a href="#">3</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-chevron-right"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="inviteWrap">
+						<div class="inviteExchange row">
+							<section class="col col-lg-6">
+								<dl>
+									<dt><img src="http://cdnq.duitang.com/uploads/item/201402/22/20140222111145_GC3R5.thumb.700_0.png"></dt>
+									<dd>
+										<h3 class="rewardTitle">西瓜公众号助手50元代金券</h3>
+										<div class="rewardIntro">可用于购买西瓜公众号助手基础版/高级版，直接抵扣相应金额</div>
+										<div class="rewardPrice"><em>兑换条件:</em><strong>50西瓜币</strong><em class="line">剩余:</em>10000</div>
+										<div class="rewardBtn"><a>我要兑换</a></div>
+									</dd>
+								</dl>
+							</section>
+							<section class="col col-lg-6">
+								<dl>
+									<dt><img src="http://cdnq.duitang.com/uploads/item/201402/22/20140222111145_GC3R5.thumb.700_0.png"></dt>
+									<dd>
+										<h3 class="rewardTitle">西瓜公众号助手100元代金券</h3>
+										<div class="rewardIntro">可用于购买西瓜公众号助手高级版，直接抵扣相应金额</div>
+										<div class="rewardPrice"><em>兑换条件:</em><strong>100西瓜币</strong><em class="line">剩余:</em>10000</div>
+										<div class="rewardBtn"><a>我要兑换</a></div>
+									</dd>
+								</dl>
+							</section>
+							<section class="col col-lg-6">
+								<dl>
+									<dt><img src="http://cdnq.duitang.com/uploads/item/201402/22/20140222111145_GC3R5.thumb.700_0.png"></dt>
+									<dd>
+										<h3 class="rewardTitle">西瓜公众号助手200元代金券</h3>
+										<div class="rewardIntro">可用于购买西瓜公众号助手高级版，直接抵扣相应金额</div>
+										<div class="rewardPrice"><em>兑换条件:</em><strong>100西瓜币</strong><em class="line">剩余:</em>10000</div>
+										<div class="rewardBtn"><a>我要兑换</a></div>
+									</dd>
+								</dl>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+	<div class="modal fade in" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					<h4 class="modal-title">确认兑换</h4>
+				</div>
+				<div class="modal-body no-padding">
+					<div class="normalDialogTip">
+						<div class="icon"><i class="fa fa-credit-card"></i></div>
+						确认使用<strong>50西瓜币</strong>兑换1张西瓜公众号助手50元代金券？
+						<p class="note">兑换成功后可在消息中心查询对应礼品卡/券</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="submit">
+						确认
+					</button>
+					<button data-dismiss="modal" class="btn btn-default" type="button" id="btnCancel">
+						取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

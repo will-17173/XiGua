@@ -1,0 +1,483 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"><img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content" style="display:none;">
+			<div class="appmsgListFilter">
+				<ul class="mpList list-unstyled">
+					<li><a><span class="mpListCover all"><i class="fa fa-cloud"></i></span>全部图文列表<em>126</em></a></li>
+					<li><a class="selectedMp"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5dbe11zNm8g7fd6odGcMHg" class="mpListCover">当时<em>5</em></a></li>
+					<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="mpListCover">不贱不散<em>12</em></a></li>
+					<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt6LfpVNN6Eg7nX-oxTl3tPI" class="mpListCover">我与老公的日常<em>12</em></a></li>
+					<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt8_jYUmdw1PQgNVhH9vOEvI" class="mpListCover">人民日报<em>12</em></a></li>
+					<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt3AqaeYmZoWfQbFc5iaQuTU" class="mpListCover">設計<em>102</em></a></li>
+					<li><a><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt7AosBjwali3r0188rG9c54" class="mpListCover">WiFi万能钥匙<em>12</em></a></li>
+					<li><a class="add"><i class="fa fa-plus"></i> 添加我运营的公众号</a></li>
+				</ul>
+			</div>
+			<div class="mpUserArticleTimer appmsgListTimer">
+				<ul class="list-unstyled">
+					<li><a class="current">全部</a></li>
+					<li><a>已发送</a></li>
+					<li><a>未发送</a></li>
+				</ul>
+			</div>
+			<div class="appmsgList">
+				<section class="addAppmsgItem">
+					<i class="fa addAppmsgItemIcon">+</i>
+					<div class="addAppmsgItemBtns">
+						<a><i class="fa fa-plus"></i> 新建图文</a>
+						<a data-placement="top" rel="tooltip" data-original-title="点击素材库文章后的&lt;i class="fa fa-shopping-cart"&gt;&lt;/i&gt;图标选取文章生成图文"><i class="fa fa-shopping-cart"></i> 素材库选取</a>
+					</div>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月02日<span class="sendStatus sendToUser">已群发</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-clipboard"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月02日<span class="sendStatus">未同步</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-clipboard"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月02日<span class="sendStatus sendPostFailed"><i class="fa fa-minus-circle"></i> 群发失败</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-clipboard"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5dbe11zNm8g7fd6odGcMHg" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月02日<span class="sendStatus sendInProcess">定时群发 <i class="fa fa-clock-o" rel="tooltip" data-placement="top" data-original-title="定时群发时间: 2015-5-28 12:19"></i></span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-send"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt6LfpVNN6Eg7nX-oxTl3tPI" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月03日<span class="sendStatus sending"><i class="fa fa-refresh fa-spin"></i> 同步中</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-send"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt7AosBjwali3r0188rG9c54" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月04日<span class="sendStatus sendDone">已同步</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-send"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<div class="appmsgListInfo"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k" class="mpCover" rel="tooltip" data-placement="top" data-original-title="搞笑视频">04月03日<span class="sendStatus sendFailed"><i class="fa fa-warning"></i> 同步失败</span></div>
+					<div class="appmsgListContent">
+						<div class="appmsgItemTop">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">微信运营者注意：2015年微信平台最全封号规定</a></h4>
+							<div class="appmsgItemThumbWrp"><img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></div>
+						</div>
+						<div class="appmsgItem">
+							<img class="appmsgItemThumb" src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg">
+							<h4 class="appmsgItemTitle"><a target="_blank" href="#">你知道企业"吸粉"的最佳时间嘛？</a></h4>
+						</div>
+					</div>
+					<ul class="appmsgListOpr list-unstyled">
+						<li>
+							<a><i class="fa fa-pencil"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-send"></i></a>
+						</li>
+						<li>
+							<a><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="text-center">
+				<ul class="pagination pagination-lg">
+					<li class="disabled">
+						<a href="javascript:void(0);"><i class="fa fa-chevron-left"></i></a>
+					</li>
+					<li class="active">
+						<a href="/MArticleUse/ArticleUseList/?page=1&amp;partial=1&amp;onlyUnused=True&amp;tagId=8&amp;keyword=">1</a>
+					</li>
+					<li>
+						<a href="/MArticleUse/ArticleUseList/?page=2&amp;partial=1&amp;onlyUnused=True&amp;tagId=8&amp;keyword=">2</a>
+					</li>
+					<li>
+						<a href="/MArticleUse/ArticleUseList/?page=2&amp;partial=1&amp;onlyUnused=True&amp;tagId=8&amp;keyword="><i class="fa fa-chevron-right"></i></a>
+					</li>
+				</ul>
+			</div>
+        </div>
+		<div id="content">
+			<div class="pageGuideArticle">
+				<h3>素材库暂无文章</h3>
+				<div class="intro">
+					在文章列表点击“加入素材库”即可添加文章至我的素材库
+				</div>
+				<dl class="footerNav">
+					<dt>从以下页面开始收集文章:</dt>
+					<dd><a href="#">全网优质素材</a></dd>
+					<dd><a href="#">我关注的</a></dd>
+					<dd><a href="#">黑马爆文</a></dd>
+					<dd><a href="#">专享素材</a></dd>
+					<dd><a href="#">原创优选</a></dd>
+				</dl>
+			</div>
+			<div class="pageGuide" style="display:none;">
+				<div class="pageGuideStep">
+					<ul class="list-unstyled">
+						<li class="step1"><div class="stepIcon"></div></li>
+						<li class="stepArrow"></li>
+						<li class="step2"><div class="stepIcon"></div></li>
+					</ul>
+				</div>
+				<h3 class="pageGuideTitle">一键同步多图文至微信后台</h3>
+				<div class="pageGuideIntro">一键同步至微信公众号后台，无须复制粘贴，同时支持自动在文章内容头部尾部加入签名信息，更有快速编辑、导入外部微信文章、有定时群发等功能。</div>
+				<div class="bigBtn"><a href="#"><i class="fa fa-plus"></i> 立即新建图文</a></div>
+			</div>
+		</div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">素材文件夹管理</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<section>
+							<div class="mpUserTags mpUserTagsEdit">
+								<span id="tagContainner">
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="71"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">2篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="71">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="54"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">9篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="54">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+								</span>
+								<section class="col col-sm-6 no-padding">
+									<div class="addNewTag">
+										<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+										<div class="addNewTagArea" style="display:none;">
+											<label class="input">
+												<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+											</label>
+											<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+											<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+										</div>
+									</div>
+								</section>
+							</div>
+						</section>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">移动到文件夹</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<div class="mpUserTags" id="mpUserTags">
+							<span id="tagContainner">
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="71">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">2篇文章</span>
+									</a>
+								</section>
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="190" class="selectedTag">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">9篇文章</span>
+									</a>
+								</section>
+							</span>
+							<section class="col col-sm-6 no-padding">
+								<div class="addNewTag">
+									<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+									<div class="addNewTagArea" style="display:none;">
+										<label class="input">
+											<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+										</label>
+										<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+										<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+									</div>
+								</div>
+							</section>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="addMBizBtn" class="btn btn-primary">
+					保存
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

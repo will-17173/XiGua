@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>我关注的爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="logoutTips">
+				<h3><i class="fa fa-info"></i> 您的账号已在另一台电脑登录。</h3>
+				<p>基础版允许1台电脑同时登录，高级版最多可允许10台电脑同时登录。</p>
+				<p><a class="btn btn-default">重新登录</a></p>
+			</div>
+		</div>
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="fullLayer" style="display:none;">
+	<p class="centerLoading"><i class="fa fa-gear fa-spin"></i> 努力加载中...</p>
+</div>
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title"><div class="mpCoverSmall"><img src="http://img03.sogoucdn.com/app/a/100520090/oIWsFt-NQJJTI1l_HJBI-iEy3qbg" /></div>36KR分组设置</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="mpUserTagsSelector mpUserTags clearfix">
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							全国
+							<span class="stat">32个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a class="selectedTag">
+							<i class="fa fa-circle"></i>
+							科技
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							媒体
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							达人
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<a>
+							<i class="fa fa-circle"></i>
+							达人
+							<span class="stat">0个公众号</span>
+						</a>
+					</section>
+					<section class="col col-sm-6 no-padding">
+						<div class="addNewTag">
+							<a><i class="fa fa-pencil"></i>新建分组</a>
+							<div class="addNewTagArea" style="display:none;">
+								<label class="input">
+									<input class="form-control" name="TagName" placeholder="分组名称" required type="text" value="">
+								</label>
+								<button type="submit" class="btn btn-default">
+									添加
+								</button>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">
+					保存
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

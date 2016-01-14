@@ -1,0 +1,953 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/intro.css" />
+<!-- Standard Script Includes -->
+<script type="text/javascript" src="js/intro.js"></script>
+<script type="text/javascript" src="js/libs/jquery-2.0.2.min.js"></script>
+</head>
+<body class="fixed-navigation fixed-header fixed-footer fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <span id="logo"><img src="img/logo.png" alt="西瓜公众号助手"></span>
+        </div>
+        <div class="pull-right">
+            <div id="hide-menu" class="btn-header pull-right">
+                <span><a><i class="fa fa-reorder"></i></a></span>
+            </div>
+            <div id="logout" class="btn-header transparent pull-right">
+                <span><a><i class="fa fa-sign-out"></i></a></span>
+            </div>
+            <div id="search-mobile" class="btn-header transparent pull-right">
+                <span><a><i class="fa fa-search"></i></a></span>
+            </div>
+            <div class="header-search pull-right">
+            	<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="search-fld" type="text" name="bizName" placeholder="请输入公众号名称" class="ui-autocomplete-input" autocomplete="off">
+				<button type="button" name="btnSearchMBiz" id="btnSearchMBiz">
+					<i class="fa fa-search"></i>
+				</button>
+            </div>
+            <div id="fullscreen" class="btn-header transparent pull-right">
+                <span><a><i class="fa fa-arrows-alt"></i></a></span>
+            </div>
+        </div>
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <div class="login-info">
+            <span>
+                <a id="show-shortcut">
+                    <img src="img/avatars/watermelon.jpg" alt="" class="online">
+                    <span>
+                        Watermelon [高级版]
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <nav>
+            <ul style="">
+                <li class="">
+                    <a><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a><i class="fa fa-lg fa-fw fa-bookmark"></i> <span class="menu-item-parent">素材收集</span><b class="collapse-sign"><em class="fa fa-minus-square-o"></em></b></a>
+                    <ul style="display: block;">	
+						<li class="guide-step5">
+                            <a>全网素材</a>
+                        </li>
+						<li class="guide-step1">
+                            <a>我关注的</a>
+                        </li>
+						<li class="guide-step9">
+                            <a>24小时黑马爆文</a>
+                        </li>
+						<li class="guide-step10">
+                            <a>专享素材 <span class="badge inbox-badge bg-color-green font-weight-400">Beta</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">公众号管理</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
+                    <ul style="display: block;">
+                        <li class="guide-step14">
+                            <a>我关注的</a>
+                        </li>
+                        <li>
+                            <a>公众号搜索</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="guide-step13">
+                    <a><i class="fa fa-lg fa-fw fa-bomb"></i> <span class="menu-item-parent">我的素材库</span></a>
+                </li>
+                <li>
+                    <a><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">购买及续费</span></a>
+                </li>
+                <li>
+                    <a><i class="fa fa-lg fa-fw fa-life-saver"></i> <span class="menu-item-parent">西瓜百科</span></a>
+                </li>
+            </ul>
+        </nav>
+        <span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>西瓜公众号助手</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="guidePage1">
+				<div class="mpUserArticleFilter">
+					<div class="row no-margin">
+						<div class="col no-padding col-lg-4"><input type="text" name="TitleKeyword" placeholder="搜索关注的公众号的文章" class="form-control" value=""></div>
+						<div class="col no-padding col-lg-8"><button class="btn btn-primary" id="btnKeyword">搜索</button><div style="display:inline-block" class=" guide-step4"><a class="btn btn-default"><i class="fa fa-plus"></i> 直接添加关注公众号</a><a class="btn btn-default"><i class="fa fa-dribbble"></i> 查找关注更多公众号</a></div></div>
+					</div>
+					<div class="row no-margin mpUserTagsFilter">
+						<a class="allTags"><i class="fa fa-tags"></i>所有分组</a>
+						<a data-id="54" class="myTags selectedTag"><i class="fa fa-tag"></i>搞笑</a>
+					</div>
+					<div class="mpList guide-step3">
+					   <a class="bizs" data-id="246"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc" class="mpListCover">搞笑视频</a>
+					   <a class="bizs" data-id="76"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt1SgdtTmqZ3vvrIaROJP1r4" class="mpListCover">奇乐窝</a>
+					   <a class="bizs" data-id="79"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt1sT7UB3WgapFp74dPEOHLI" class="mpListCover">奔波儿灞与灞波儿奔</a>
+					   <a class="bizs" data-id="82"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt8ReYwRFx7iq01JdRlTlhDE" class="mpListCover">爆笑短片</a>
+					   <a class="bizs" data-id="234"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_KnVyRLXmGJZYewuSDe7XE" class="mpListCover">大风哥</a>
+					   <a class="bizs" data-id="78"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt_iQgrkcxY2KRPmGk7UF_Mk" class="mpListCover">全球搞笑笑话榜</a>
+					</div>
+					<div style=" clear:both;position:relative; z-index:1; width:100%; height:0;"><a class="mpListBtn expanded" style="bottom:-47px;"><span id="listMBiz">关闭当前分组公众号</span> <i class="fa fa-angle-down"></i></a></div>
+				</div>
+				<div class="alert alert-success fade in" style="margin:15px 6px;" id="CloseUserTypeInfoPanel">
+					<button data-dismiss="alert" class="close" id="btnCloseUserTypeInfo">
+						×
+					</button>
+					<i class="fa-fw fa fa-info-circle"></i>
+					本页文章来自你关注的公众号，可至<a href="#/MyMBiz/List">公众号管理-我关注的</a>菜单下修改分组信息、添加关注更多公众号及取消关注等。
+				</div>
+				<div class="guide-step2">
+					<div class="mpUserArticleTimer" id="mpArticleList">
+						<ul class="list-unstyled">
+							<li><a data-id="0.08">最近8小时</a></li>
+							<li><a data-id="1" class="current">最近24小时</a></li>
+							<li><a data-id="2">最近3天</a></li>
+							<li><a data-id="6">最近7天</a></li>
+							<li><a data-id="9">最近10天</a></li>
+							<li><a data-id="14">最近15天</a></li>
+							<li><a data-id="29">最近30天</a></li>
+						</ul>
+					</div>
+					<div class="mpArticleList">
+						<table class="table table-hover">
+							<colgroup>
+								<col width="8%">
+								<col width="33%">
+								<col width="6%">
+								<col width="5%">
+								<col width="10%">
+								<col width="26%">
+							</colgroup>
+							<thead>
+								<tr id="articleHeader">
+									<th><a class="orderBy current" data-id="pointer">传播指数 <i class="fa fa-sort"></i></a></th>
+									<th>文章标题</th>
+									<th><a class="orderBy" data-id="ReadNumber">阅读数 <i class="fa fa-sort"></i></a></th>
+									<th><a class="orderBy" data-id="LikeNumber">赞数 <i class="fa fa-sort"></i></a></th>
+									<th>发文公众号</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id="articleExploreListBody">
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>56.67</span></td>
+							<td><a>穿20cm高跟鞋热舞，屌</a></td>
+							<td>79104</td>
+							<td>274</td>
+							<td><a>搞笑视频</a><span class="artPostTime">14 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>56.58</span></td>
+							<td><a>?已证实，这东西确实存在！吓死了！</a></td>
+							<td>2371</td>
+							<td>5</td>
+							<td><a>奇乐窝</a><span class="artPostTime">13 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>56.40</span></td>
+							<td><a>?妹子把小偷打的满地滚</a></td>
+							<td>79799</td>
+							<td>228</td>
+							<td><a>搞笑视频</a><span class="artPostTime">14 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>55.36</span></td>
+							<td><a>图：偶尔化个妆，惊艳</a></td>
+							<td>96288</td>
+							<td>94</td>
+							<td><a>大风哥</a><span class="artPostTime">04月02日</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.80</span></td>
+							<td><a>老板，这西瓜怎么卖？</a></td>
+							<td>65602</td>
+							<td>250</td>
+							<td><a>全球搞笑笑话榜</a><span class="artPostTime">13 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+							</tbody>
+						</table>
+						<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="guidePage6" style="display:none;">
+				<div class="mpAccountFilter clearfix">
+					<div class="row">
+						<div class="col col-lg-4"><input type="text" class="form-control" placeholder="搜索我关注的公众号" name="BizName" value=""></div>
+						<div class="col col-lg-8"><a class="btn btn-primary search">搜索</a><a class="btn btn-default" href="/MyMBiz/Add" data-toggle="modal" data-target="#remoteModal"><i class="fa fa-plus"></i> 直接添加关注公众号</a><a class="btn btn-default" href="#/MyMBiz/MBizSearch"><i class="fa fa-dribbble"></i> 查找关注更多公众号</a></div>
+					</div>
+					<div class="row mpTagsFilter">
+						<label class="col col-lg-1"><i class="fa fa-tags"></i> 分组查看:</label>
+						<div class="col col-lg-11 mpTagsSelector" id="mpTagsSelector">
+								<a data-realid="71" class=""><i class="fa fa-check-square-o"></i>女人</a>
+								<a data-realid="190" class=""><i class="fa fa-check-square-o"></i>设计</a>
+								<a data-realid="54" class=""><i class="fa fa-check-square-o"></i>搞笑</a>
+								<a data-realid="569" class=""><i class="fa fa-check-square-o"></i>大媒体新闻</a>
+								<a data-realid="570" class=""><i class="fa fa-check-square-o"></i>生活方式</a>
+							<a class="editMyTags" href="/MyMBiz/TagManage" data-toggle="modal" data-target="#remoteModal"><i class="fa fa-pencil"></i>分组修改</a>
+				
+						</div>
+					</div>
+				</div>
+				<div class="mpAccountList clearfix">
+						<section class="col col-md-6">
+							<div class="btns">
+								<a class="add" href="/MyMBiz/UpdateBizTag/?bizId=246" data-toggle="modal" data-target="#remoteModal"><i class="fa fa-pencil"></i></a>
+							<a class="remove" data-id="246"><i class="fa fa-times"></i></a></div>
+				
+							<div class="enter">
+								<div class="mpSide">
+									<div class="mpCover"><a href="#/MBiz/Detail/?mBizId=246"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5eIJfwoVa2uRY4ck85fVvc"></a></div>
+								</div>
+								<a href="#/MBiz/Detail/?mBizId=246"><h3 class="mpName">搞笑视频</h3></a>
+								<h4 class="mpId">微信号：gxsp88</h4>
+								<div class="mpIntro">收集热门搞笑视频,精彩视频片段,开心快乐每一天.</div>
+								<div class="mpTags">
+										<span><i class="fa fa-tag"></i>搞笑</span>
+								</div>
+									<footer id="bizListFoot">
+										数据更新时间：2015/4/7 16:20:47
+				
+									</footer>
+							</div>
+						</section>
+						<section class="col col-md-6">
+							<div class="btns">
+								<a class="add" href="/MyMBiz/UpdateBizTag/?bizId=79" data-toggle="modal" data-target="#remoteModal"><i class="fa fa-pencil"></i></a>
+							<a class="remove" data-id="79"><i class="fa fa-times"></i></a></div>
+				
+							<div class="enter">
+								<div class="mpSide">
+									<div class="mpCover"><a href="#/MBiz/Detail/?mBizId=79"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt1sT7UB3WgapFp74dPEOHLI"></a></div>
+								</div>
+								<a href="#/MBiz/Detail/?mBizId=79"><h3 class="mpName">奔波儿灞与灞波儿奔</h3></a>
+								<h4 class="mpId">微信号：bb2b2bb</h4>
+								<div class="mpIntro">bb2b2bb,逗比中的挖掘机!脱胎于《西游记》,为娱乐大众而生的两条欢乐鱼精!</div>
+								<div class="mpTags">
+										<span><i class="fa fa-tag"></i>搞笑</span>
+								</div>
+									<footer id="bizListFoot">
+										数据更新时间：2015/4/7 13:14:10
+				
+												<a class="btn btn-success btn-xs refreshData" data-id="79"><i class="fa fa-refresh"></i> 刷新数据</a>
+									</footer>
+							</div>
+						</section>
+				</div>
+			</div>
+			<div class="guidePage2" style="display:none;">
+				<div class="mpArticleFilter clearfix">
+					<div class="row">
+						<div class="col col-lg-4"><input type="text" name="TitleKeyword" placeholder="关键字" class="form-control" value=""></div>
+						<div class="col col-lg-2"><button class="btn btn-primary" id="btnKeyword">搜索</button></div>
+					</div>
+					<div class="row">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-clock-o"></i> 时间:</label>
+						<div class="col col-lg-11">
+							<section class="col col-sm-2 calendarGroup">
+								<select name="DayInterval" class="form-control" onchange="triggerArticleFilter()">
+										<option value="0.08">最近8小时</option>
+									<option value="1" selected="">最近24小时</option>
+									<option value="2">最近3天</option>
+									<option value="6">最近7天</option>
+									<option value="9">最近10天</option>
+									<option value="14">最近15天</option>
+									<option value="29">最近30天</option>
+								</select>
+				
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-cogs"></i> 智能过滤:</label>
+						<div class="col col-lg-11">
+							<section class="smartFilterCol">
+								<span>过滤疑似广告</span>
+								<span class="onoffswitch">
+									<input name="filterSuspiciousAds" id="filterSuspiciousAds" type="checkbox" checked="&quot;checked&quot;" class="onoffswitch-checkbox" onclick="triggerArticleFilter()">
+									<label class="onoffswitch-label" for="filterSuspiciousAds">
+										<span class="onoffswitch-inner"></span>
+										<span class="onoffswitch-switch"></span>
+									</label>
+								</span>
+							</section>
+							<section class="smartFilterCol">
+				
+								<span>过滤相似文章 <a rel="tooltip" data-placement="bottom" data-original-title="该选项开启时，系统将根据您已收藏或不再出现的文章来生成数据过滤模型，自动分析过滤与其相似的文章"><i class="fa fa-exclamation-circle"></i></a></span>
+								<span class="onoffswitch">
+									<input name="filterSimilarArticle" id="filterSimilarArticle" type="checkbox" checked="&quot;checked&quot;" class="onoffswitch-checkbox trigger-article-filter" onclick="triggerArticleFilter()">
+									<label class="onoffswitch-label" for="filterSimilarArticle">
+										<span class="onoffswitch-inner"></span>
+										<span class="onoffswitch-switch"></span>
+									</label>
+								</span>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-cogs"></i> 阅赞比例:</label>
+						<div class="col col-lg-11" onchange="triggerArticleFilter(1500)">
+							<section class="sliderCol">阅读数优先</section>
+							<section class="sliderEntry">
+								<!--<div id="readLikeSlider"></div>-->
+								<div class="slider slider-horizontal" style="width: 174px;"><input class="slider slider-primary" type="text" id="readLikeSlider" data-slider-min="0" data-slider-max="10" data-slider-value="2"><div class="slider-track"><div class="slider-selection" style="left: 0%; width: 20%;"></div><div class="slider-handle round" style="left: 20%;"></div><div class="slider-handle round hide" style="left: 0%;"></div></div><div class="tooltip top" style="top: -34px; left: 26.5px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">2</div></div></div>
+							</section>
+							<section class="sliderCol">点赞数优先 <a rel="tooltip" data-placement="bottom" data-original-title="根据阅读数或点赞数占比筛选文章，数值越靠近0阅读数优先度越高，越靠近10点赞数优先度越高"><i class="fa fa-exclamation-circle"></i></a></section>
+						</div>
+					</div>
+					<div class="row mpTagsFilter" style="display:">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-tags"></i> 标签:</label>
+						<div id="tagPool" class="col col-lg-11 mpTagsSelector">
+								<a class="selectedTag" data-enabled="1" data-tagid="27"><i class="fa fa-check-square-o"></i>搞笑趣闻</a>
+								<a data-enabled="1" data-tagid="26"><i class="fa fa-check-square-o"></i>财经时政</a>
+								<a data-enabled="1" data-tagid="97"><i class="fa fa-check-square-o"></i>旅游</a>
+								<a data-enabled="1" data-tagid="28"><i class="fa fa-check-square-o"></i>汽车</a>
+								<a data-enabled="1" data-tagid="29"><i class="fa fa-check-square-o"></i>运动健康</a>
+								<a data-enabled="1" data-tagid="30"><i class="fa fa-check-square-o"></i>数码科技</a>
+								<a data-enabled="1" data-tagid="31"><i class="fa fa-check-square-o"></i>影音娱乐</a>
+								<a data-enabled="1" data-tagid="32"><i class="fa fa-check-square-o"></i>餐饮美食</a>
+								<a data-enabled="1" data-tagid="33"><i class="fa fa-check-square-o"></i>女人时尚</a>
+								<a data-enabled="1" data-tagid="34"><i class="fa fa-check-square-o"></i>职场教育</a>
+								<a data-enabled="1" data-tagid="35"><i class="fa fa-check-square-o"></i>情感励志</a>
+								<a data-enabled="1" data-tagid="36"><i class="fa fa-check-square-o"></i>母婴生活</a>
+								<a data-enabled="1" data-tagid="109"><i class="fa fa-check-square-o"></i>无节操</a>
+								<a data-enabled="1" data-tagid="37"><i class="fa fa-check-square-o"></i>地方</a>
+								<a data-enabled="1" data-tagid="128"><i class="fa fa-check-square-o"></i>房产家居</a>
+						</div>
+					</div>
+				</div>
+				<div id="mpArticleList" class="mpArticleList">
+					<table class="table table-hover">
+						<colgroup>
+							<col width="8%">
+							<col width="43%">
+							<col width="6%">
+							<col width="5%">
+							<col width="10%">
+							<col width="26%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="guide-step6">传播指数</th>
+								<th>文章标题</th>
+								<th>阅读数</th>
+								<th>赞数</th>
+								<th>推文公众号</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="articleExploreListBody">
+						<tr>
+							<td><span class="artRank rank1"><i class="fa fa-trophy"></i>93.96</span></td>
+							<td><a>娱乐|艳照出轨又开房！明星暴露的各种奇葩门事件</a></td>
+							<td>16866</td>
+							<td>11</td>
+							<td><a>女神在线</a><span class="artPostTime">04月02日</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack guide-step8"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info guide-step7"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank2"><i class="fa fa-trophy"></i>85.77</span></td>
+							<td><a>孩子咳嗽克星就在家，你还跑医院吗?</a></td>
+							<td>15370</td>
+							<td>72</td>
+							<td><a>好玩er</a><span class="artPostTime">21 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank2"><i class="fa fa-trophy"></i>81.21</span></td>
+							<td><a>农村户口有重大政策了，快来看看！农村户口赚大了！</a></td>
+							<td>10653</td>
+							<td>40</td>
+							<td><a>有你真好</a><span class="artPostTime">6 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank3"><i class="fa fa-trophy"></i>77.71</span></td>
+							<td><a>??这个社会太现实了，这个小品是潘长江拍过最好的</a></td>
+							<td>19815</td>
+							<td>175</td>
+							<td><a>今日最热门</a><span class="artPostTime">04月02日</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank3"><i class="fa fa-trophy"></i>77.11</span></td>
+							<td><a>母女三人一模一样，老公都认不出了，笑疯了！</a></td>
+							<td>46694</td>
+							<td>181</td>
+							<td><a>视频在线</a><span class="artPostTime">21 小时前</span></td>
+							<td>
+								<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+								<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="loadingMorePanel"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+				</div>
+			</div>
+			<div class="guidePage3" style="display:none;">
+				<div class="popularTab">
+					<ul class="list-unstyled">
+							<li class="current"><a data-tagid="27">搞笑趣闻</a></li>
+							<li><a data-tagid="26">财经时政</a></li>
+							<li><a data-tagid="97">旅游</a></li>
+							<li><a data-tagid="28">汽车</a></li>
+							<li><a data-tagid="29">运动健康</a></li>
+							<li><a data-tagid="30">数码科技</a></li>
+							<li><a data-tagid="31">影音娱乐</a></li>
+							<li><a data-tagid="32">餐饮美食</a></li>
+							<li><a data-tagid="33">女人时尚</a></li>
+							<li><a data-tagid="34">职场教育</a></li>
+							<li><a data-tagid="35">情感励志</a></li>
+							<li><a data-tagid="36">母婴生活</a></li>
+							<li><a data-tagid="109">无节操</a></li>
+							<li><a data-tagid="37">地方</a></li>
+							<li><a data-tagid="128">房产家居</a></li>
+					</ul>
+				</div>
+				<div class="popularArticleList">
+					<table class="table table-hover">
+						<colgroup>
+							<col width="10%">
+							<col width="65%">
+							<col width="25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>黑马指数</th>
+								<th>文章标题</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="popularArticleListBody">
+								<tr>
+						<td><span class="artRank rank1"><i class="fa fa-rocket"></i>91.73</span></td>
+						<td><a>结婚当天新娘不上车，新郎调头娶走前女友！真人真事！</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank1"><i class="fa fa-rocket"></i>90.56</span></td>
+						<td><a>?老板，这西瓜怎么卖？</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank2"><i class="fa fa-rocket"></i>85.88</span></td>
+						<td><a>iPhone7最新十大功能曝光，买6的要哭了......</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank2"><i class="fa fa-rocket"></i>85.59</span></td>
+						<td><a>?同学聚会歌的歌词，太豪迈太霸气</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank2"><i class="fa fa-rocket"></i>83.82</span></td>
+						<td><a>大哥大哥别杀我大结局！此游戏已被终结！</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank2"><i class="fa fa-rocket"></i>83.04</span></td>
+						<td><a>?俩二货又出来了，笑死，不看白不看！</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank2"><i class="fa fa-rocket"></i>80.12</span></td>
+						<td><a>再见！周星驰。</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank3"><i class="fa fa-rocket"></i>79.47</span></td>
+						<td><a>哥~ 只要给钱，让我干啥都行！笑痛了！</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank3"><i class="fa fa-rocket"></i>79.17</span></td>
+						<td><a>青岛小胖妞卖衣服，笑尿了！</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="artRank rank3"><i class="fa fa-rocket"></i>78.02</span></td>
+						<td><a>?穿20cm高跟鞋热舞，屌</a></td>
+						<!--<td class="text-align-center"><span class="badge bg-color-blueLight"></span></td>-->
+						<td>
+							<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+							<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+						</td>
+					</tr>
+						</tbody>
+					</table>
+					<div id="loadMore" class="loadingMorePanel" style="display:"><a id="btnLoadMore" class="btn btn-default">加载更多...</a></div>
+				</div>
+			</div>
+			<div class="guidePage4" style="display:none;">
+				<div class="smartArticleTips">
+					<div class="alert alert-success fade in">
+						<button data-dismiss="alert" class="close" id="btnCloseUserTypeInfo">
+							×
+						</button>
+						<i class="fa-fw fa fa-info-circle"></i>
+						系统根据<strong style="color:#F60;">您运营的公众号</strong>的历史文章进行智能匹配并过滤已推送过的文章，进而推荐最适合您公众号的文章。请添加您本人运营的公众号，首次匹配可能需要等待1到10分钟。
+					</div>
+				</div>
+				<div class="row no-margin smartArticleHeader">
+							<section class="col no-padding col-md-3">
+								<a class="smartArticleMp mbizs smartArticleMpSelected" data-id="77" data-samebizcount="4012">
+									<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt2X-2_yF_D-nT-R4U2-cl4U"></div>
+									<h3 class="mpName">
+										搞笑大百科
+								</h3>
+								<i class="arrow"></i>
+							</a>
+						</section>
+							
+							<section class="col no-padding col-md-3">
+								<a class="smartArticleMp mbizs">
+									<div class="mpCover"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFtxqU8vkt5ZtUw4yVuO6_shg"></div>
+									<h3 class="mpName">
+										内涵笑话
+								</h3>
+								<i class="arrow"></i>
+							</a>
+						</section>
+					<section class="col no-padding col-md-3">
+						<a class="smartArticleMp add guide-step11">
+							<i class="fa fa-plus"></i> 添加我的公众号
+						</a>
+					</section>
+				</div>
+				<div id="recommendArticleList" class="guide-step12">
+					<div class="mpArticleList smartArticleList">
+						<a class="btnRefreshList refreshList">换一批</a>
+						<table class="table table-hover">
+							<colgroup>
+								<col width="8%">
+								<col width="38%">
+								<col width="8%">
+								<col width="8%">
+								<col width="10%">
+								<col width="28%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>封面</th>
+									<th>文章标题</th>
+									<th>传播指数</th>
+									<th>阅读/点赞</th>
+									<th>推文公众号</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/zwUKelQjPmSgl2msicxgYcstogo2DPRnXdzFVD8Wwp2MIAPAhuztkJQnk7SMpQCOWZVojpkNXj5MvvnJKbOQctg/0"><span>下载封面</span></a></td>
+									<td><a>各种最牛B，太坏了，肚子都笑痛了！！！</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>53.81</span></td>
+									<td>3083<span class="listLikes">5</span></td>
+									<td><a>笑多了会怀孕</a><span class="artPostTime">2015/4/6 11:16:42</span></td>
+									<td>
+										<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+										<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+										<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/5cnBV2vk9D3EqKibg8YQYecKgMQickZAlPYrHrANALmBkv3LxYxSKILQ9RNdlBQicDx3eibp2Xk2rysiaY3C5jgoj8g/0"><span>下载封面</span></a></td>
+									<td><a>结婚当天新娘不上车，新郎调头娶走前女友！真人真事！</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>58.10</span></td>
+									<td>6855<span class="listLikes">76</span></td>
+									<td><a>姨妈没我红</a><span class="artPostTime">2015/4/6 17:44:56</span></td>
+									<td>
+										<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+										<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+										<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/Tw19Yjl8wUv6XwCk3nse2j2phFibkeBiaEH1ntqOmvSfr456q7HcV07Yr7ks1FFSUaHSTEiaxsdpOd090f56JqFAQ/0"><span>下载封面</span></a></td>
+									<td><a>壕上加壕: 定制版奢侈 Apple Watch 达百万元人民币</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>56.09</span></td>
+									<td>2721<span class="listLikes">9</span></td>
+									<td><a>苹果</a><span class="artPostTime">2015/4/6 13:21:32</span></td>
+									<td>
+										<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+										<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+										<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/6icb2w0vQibicdTyAEsIAdGnib5T6pp6KYPmyzVJZRQsEnbTmG2SJbH3ibwtzibRTpRLqt0KbL90Dac3I8OzAtbqs3hA/0"><span>下载封面</span></a></td>
+									<td><a>?妻子偷偷看后一夜睡不着</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>55.22</span></td>
+									<td>13115<span class="listLikes">66</span></td>
+									<td><a>爆笑恶搞视频</a><span class="artPostTime">2015/4/6 21:09:08</span></td>
+									<td>
+										<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+										<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+										<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/SZ9D482MBJc4icOQU5sICFGGposNq0FdvhccVDgeXWdhz6M71OUHW085emKQ7tiaL7IJ9Ssr6WxticsMjicF457WCQ/0"><span>下载封面</span></a></td>
+									<td><a>这货一出场，宋祖英甘拜下风！</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.30</span></td>
+									<td>1430<span class="listLikes">5</span></td>
+									<td><a>搞笑视频榜</a><span class="artPostTime">2015/4/7 7:13:08</span></td>
+									<td>
+										<a class="btn btn-primary articlecollect"><i class="fa fa-star"></i> 加入素材库</a>
+										<a class="btn btn-default articleblack"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+										<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="guidePage5" style="display:none;">
+				<div class="mpArticleFilter clearfix">
+					<div class="row">
+						<div class="col col-lg-4"><input type="text" name="TitleKeyword" placeholder="关键字" class="form-control" value=""></div>
+						<div class="col col-lg-2"><button class="btn btn-primary" id="btnKeyword">搜索</button></div>
+					</div>
+					<div class="row artTagsFilter">
+						<label class="filterLabel col col-lg-1"><i class="fa fa-folder"></i> 素材文件夹:</label>
+						<div id="tagPool" class="col col-lg-11 artTagsSelector"><a class="selectable selectedTag" data-tagid="0">未归类<em>7</em></a><a class="selectable hasUsed" data-tagid="-1">已使用<em>4</em></a><a class="selectable" data-tagid="8">设计<em>22</em></a>
+							<div class="hasDropNav dropdown">
+								<a href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-gear"></i> 文件夹 <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a>批量移动素材</a>
+									</li>
+									<li>
+										<a>文件夹管理</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mpArticleList">
+					<table class="table table-hover">
+						<colgroup>
+							<col width="8%">
+							<col width="42%">
+							<col width="10%">
+							<col width="10%">
+							<col width="30%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>传播指数</th>
+								<th>文章标题</th>
+								<th>文章封面图</th>
+								<th>推文时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>86.83</span></td>
+								<td><a>最旺夫的生肖，前四名，有你吗？</a></td>
+								<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/LSUwKf0gzzd4uzDewMpMbtKPzxHKeLicabibOnpW2qfcIWydeaYic7PB8Po1icAZLKqZdxZgfXu4lwozOpJJXts08w/0"><span>下载封面</span></a></td>
+								<td>04月01日</td>
+								<td>
+									<a class="btn btn-default articleuse"><i class="fa fa-cog"></i> 标记已使用</a>
+									<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+									<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr data-articleid="2632032">
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>87.89</span></td>
+								<td><a onclick="event.stopPropagation();">央视报道：身上带这个会害死人！抓紧扔了！</a></td>
+								<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/k8icVgq6trQicl0BB6vbtVVKnRUaiaK6ugzLQxVDBxlw0xAnxVfnhAEqsCcxaNUb10beEmxoYv3S9oibFELJribfOog/0"><span>下载封面</span></a></td>
+								<td>04月01日</td>
+								<td>
+									<a class="btn btn-default articleuse"><i class="fa fa-cog"></i> 标记已使用</a>
+									<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+									<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr data-articleid="2590278">
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>85.94</span></td>
+								<td><a>有些司机就是王八蛋！一定要将这组图发给每个司机！</a></td>
+								<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/VdhzQwNx6GVmibxmpX03ACFYF7QRK2jFq5P6ibQQw74w2EJrrMvT1TVwqxciaErUibyaKj3ulWWMz5XRkxNibo9wBNA/0"><span>下载封面</span></a></td>
+								<td>04月01日</td>
+								<td>
+									<a class="btn btn-default articleuse"><i class="fa fa-cog"></i> 标记已使用</a>
+									<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+									<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr data-articleid="2628417">
+								<td><span class="artRank rank2"><i class="fa fa-trophy"></i>84.74</span></td>
+								<td><a>女生化妆前后的差距，原来街上的美女都是这样产生的</a></td>
+								<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/E6fkhVgKGUr2z6og6dpG1VZntLzFbjj5B9uiaxBIkyAJlyLDlwktWRxHkFqibPibendaSsvFg5WG6Y22OexkmticAA/0"><span>下载封面</span></a></td>
+								<td>04月01日</td>
+								<td>
+									<a class="btn btn-default articleuse"><i class="fa fa-cog"></i> 标记已使用</a>
+									<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+									<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+							<tr data-articleid="1353057">
+								<td><span class="artRank rank1"><i class="fa fa-trophy"></i>92.56</span></td>
+								<td><a>一张让全中国震惊的工资条</a></td>
+								<td><a class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/08ibq7zEE4f1PhH9NNtrtH3qHhia8NZWq7hqJ96egZmnQKYiaYrOoy17SgWA7NTAicZzmjSmwmsupNkutxqL9QqywQ/0"><span>下载封面</span></a></td>
+								<td>03月08日</td>
+								<td>
+									<a class="btn btn-default articleuse"><i class="fa fa-cog"></i> 标记已使用</a>
+									<a class="btn btn-success"><i class="fa fa-cog"></i> 移动到文件夹</a>
+									<a class="btn btn-info"><i class="fa fa-align-left"></i> 指数分析</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="txt-color-white">西瓜微信公众号运营辅助平台 © 2014-2015&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;客服QQ: 278836516&nbsp;&nbsp;|&nbsp;&nbsp;22668566&nbsp;&nbsp;|&nbsp;&nbsp;14952924</span>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <script type="text/javascript">
+        var intro = introJs();
+          intro.setOptions({
+            steps: [
+              {
+                element: '.guide-step1',
+                intro: '系统根据您刚才选择的标签，推荐关注了相应的公众号，进入该页面即可查看这些公众号发布过的文章。',
+				position: 'right'
+              },
+              {
+                element: '.guide-step2',
+                intro: '系统通过智能分析过滤，对您关注的公众号的文章进行排序筛选出最有价值的内容。再也不用在手机上一一查看，从此告别繁琐操作，节省大量时间！',
+                position: 'top'
+              },
+              {
+                element: '.guide-step3',
+                intro: '也可展开当前分组下的公众号，直接选择公众号进行筛选文章素材。',
+                position: 'bottom'
+              },
+              {
+                element: '.guide-step4',
+                intro: '还可随时添加关注更多的公众号，以获得更多您喜欢的素材，同时支持自定义分组，查找更方便。',
+                position: 'bottom'
+              },
+              {
+                element: '.guide-step14',
+                intro: '想要对关注的公众号及分组进行管理，进入“公众号管理-我关注的”页面，可添加、修改或删除关注的公众号及分组。',
+                position: 'right'
+              },
+              {
+                element: '.guide-step5',
+                intro: '添加关注公众号找素材太麻烦，试试全网素材。最全微信素材，精确的类别过滤，强大智能过滤及搜索功能，助你轻松找到好素材。',
+                position: 'right'
+              },
+              {
+                element: '.guide-step6',
+                intro: '传说指数是西瓜助手通过各种数据智能分析得出素材质量的综合评分。传说指数越高，说明该素材受到朋友圈的追捧。不过使用时候还要关注素材属性哦。',
+                position: 'right'
+              },
+              {
+                element: '.guide-step7',
+                intro: '通过指数分析查看该文章的详细推文数据，还可横向对比该文章在多个公众号的推文数据，最专业也最权威。',
+                position: 'left'
+              },
+              { 
+                element: '.guide-step8',
+                intro: '发现不喜欢的素材，点击“不再出现”让它消失吧，同时系统将为您自动过滤与该文章相似的素材。',
+                position: 'left'
+              },
+              {
+                element: '.guide-step9',
+                intro: '想知道哪些文章可能传遍朋友圈，看看24小时黑马爆文，系统通过大数据分析找到24小时内发布过最可能成为爆文的素材。',
+                position: 'right'
+              },
+              {
+                element: '.guide-step10',
+                intro: '专享素材可为您运营的公众号自动匹配个性化素材，通过对您的公众号历史推文进行智能匹配及过滤，推荐最适合您公众号的文章。',
+                position: 'right'
+              },
+              {
+                element: '.guide-step11',
+                intro: '只需在专享素材页面添加您运营的公众号，添加完成后即可自动匹配，无须其他操作，简单方便。',
+                position: 'bottom'
+              },
+              {
+                element: '.guide-step12',
+                intro: '匹配完成后就能看到您的专享素材啦，每天为您推荐不同的文章，觉得不满意还可以随时点击“换一批”。',
+                position: 'top'
+              },
+              {
+                element: '.guide-step13',
+                intro: '在“我的素材库”管理已收集的素材，对素材进行自定义分组归类，设置为“已使用”等操作，编辑与协作从此变得更简单。',
+                position: 'right'
+              }
+            ]
+          });
+          intro.goToStep(1).start().onbeforechange(function(targetElement) {
+			  if ($(targetElement).hasClass('guide-step4'))
+              {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage1').show();
+              }
+			  if ($(targetElement).hasClass('guide-step14'))
+              {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage6').show();
+              }
+              if ($(targetElement).hasClass('guide-step5') || $(targetElement).hasClass('guide-step8'))
+              {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage2').show();
+              }
+              if ($(targetElement).hasClass('guide-step9')) {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage3').show();
+              }
+              if ($(targetElement).hasClass('guide-step10') || $(targetElement).hasClass('guide-step12')) {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage4').show();
+              }
+			  if ($(targetElement).hasClass('guide-step13')) {
+                  $('#content>div').hide();
+                  $('#content>div.guidePage5').show();
+              }
+          });
+    </script>
+	<a class="introjs-close"></a>
+  </body>
+</html>

@@ -1,0 +1,571 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"><img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="messageWarning">
+				<i class="flagNew">NEW</i>
+				全网素材全新改版，加入更强大的自动过滤功能，基本杜绝重复及垃圾文章！！！<a class="btnClose">[我知道了]</a>
+			</div>
+			<div class="mpArticleFilter clearfix">
+				<div class="row hidden">
+					<div class="col col-lg-4"><input type="text" name="TitleKeyword" placeholder="关键字" class="form-control" value=""></div>
+					<div class="col col-lg-2"><button class="btn btn-primary" id="btnKeyword">搜索</button></div>
+				</div>
+				<!--<div class="row no-margin" id="article-explore-time">
+					<label class="filterLabel col no-padding col-lg-1"><i class="fa fa-clock-o"></i> 时间:</label>
+					<div class="col no-padding col-lg-11">
+						<section class="col col-sm-2 calendarGroup">
+							<select class="form-control">
+								<option>昨天</option>
+								<option>最近3天</option>
+								<option>最近7天</option>
+								<option>最近30天</option>
+								<option>自定义</option>
+							</select>
+						</section>
+					</div>
+				</div>
+				<div class="row no-margin">
+					<label class="filterLabel col no-padding col-lg-1"><i class="fa fa-cogs"></i> 显示:</label>
+					<div class="col no-padding col-lg-11">
+						<section class="smartFilterCol">
+							<span>只查看头条推文</span>
+							<span class="onoffswitch">
+								<input type="checkbox" id="autoopen" class="onoffswitch-checkbox">
+								<label for="autoopen" class="onoffswitch-label"> 
+									<span data-swchoff-text="OFF" data-swchon-text="ON" class="onoffswitch-inner"></span> 
+									<span class="onoffswitch-switch"></span>
+								</label> 
+							</span>
+						</section>
+						<section class="smartFilterCol">
+							<span>显示阅读点赞 <a><i class="fa fa-exclamation-circle"></i></a></span>
+							<span class="onoffswitch">
+								<input type="checkbox" id="inline" class="onoffswitch-checkbox">
+								<label for="inline" class="onoffswitch-label"> 
+									<span data-swchoff-text="OFF" data-swchon-text="ON" class="onoffswitch-inner"></span> 
+									<span class="onoffswitch-switch"></span>
+								</label> 
+							</span>
+						</section>
+					</div>
+				</div>-->
+				<div class="row" style="display:none;">
+					<label class="filterLabel col col-lg-1"><i class="fa fa-filter"></i> 不看高危文章:</label>
+					<div class="col col-lg-11">
+						<section class="smartFilterCol">
+							<span class="onoffswitch">
+								<input name="filterSuspiciousAds" id="filterSuspiciousAds" type="checkbox" checked="&quot;checked&quot;" class="onoffswitch-checkbox" onclick="triggerArticleFilter()">
+								<label class="onoffswitch-label" for="filterSuspiciousAds">
+									<span class="onoffswitch-inner"></span>
+									<span class="onoffswitch-switch"></span>
+								</label>
+							</span>
+						</section>
+					</div>
+				</div>
+				<div class="row no-margin mpTagsFilter" id="article-explore-tags">
+					<label class="filterLabel col no-padding col-md-1"><i class="fa fa-tags"></i> 标签:</label>
+					<div class="col no-padding col-md-11 mpTagsSelector">
+						<div class="selectAll">
+							<label class="checkbox-inline"><input type="checkbox" class="checkbox style-0"><span>全选标签</span></label>
+							<a class="searchAll"><i class="fa fa-search"></i> 搜索素材</a>
+						</div>
+						<div class="mpTagsSelectorWrapper">
+							<a data-tagid="35" class="selectedTag"><i class="fa fa-check-square-o"></i>情感励志</a>
+							<a data-tagid="33"><i class="fa fa-check-square-o"></i>女人时尚</a>
+							<a data-tagid="27"><i class="fa fa-check-square-o"></i>搞笑趣闻</a>
+							<a data-tagid="26"><i class="fa fa-check-square-o"></i>资讯</a>
+							<a data-tagid="1443"><i class="fa fa-check-square-o"></i>财经</a>
+							<a data-tagid="1500"><i class="fa fa-check-square-o"></i>运动</a>
+							<a data-tagid="97"><i class="fa fa-check-square-o"></i>旅游</a>
+							<a data-tagid="28"><i class="fa fa-check-square-o"></i>汽车</a>
+							<a data-tagid="29"><i class="fa fa-check-square-o"></i>健康</a>
+							<a data-tagid="32"><i class="fa fa-check-square-o"></i>餐饮美食</a>
+							<a data-tagid="34"><i class="fa fa-check-square-o"></i>职场教育</a>
+							<a data-tagid="30"><i class="fa fa-check-square-o"></i>数码科技</a>
+							<a data-tagid="31"><i class="fa fa-check-square-o"></i>影音娱乐</a>
+							<a data-tagid="36"><i class="fa fa-check-square-o"></i>母婴</a>
+							<a data-tagid="1434"><i class="fa fa-check-square-o"></i>生活</a>
+							<a data-tagid="128"><i class="fa fa-check-square-o"></i>房产家居</a>
+							<a data-tagid="37"><i class="fa fa-check-square-o"></i>地方</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="mpUserArticleTimer mpArticleListTimer">
+				<ul class="list-unstyled artContentSelector">
+					<li><a class="current" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-list-ul"></i></a></li>
+					<li><a data-original-title="纯文字内容" rel="tooltip"><i class="fa fa fa-file-text-o"></i></a></li>
+					<li><a data-original-title="图片内容" rel="tooltip"><i class="fa fa-picture-o"></i></a></li>
+					<li><a data-original-title="视频内容" rel="tooltip"><i class="fa fa-video-camera"></i></a></li>
+				</ul>
+				<ul class="list-unstyled">
+					<li><a data-id="0.08">最近8小时</a></li>
+					<li><a data-id="1" class="current">最近24小时</a></li>
+					<li><a data-id="2">最近3天</a></li>
+					<li><a data-id="6">最近7天</a></li>
+					<li><a data-id="9">最近10天</a></li>
+					<li><a data-id="14">最近15天</a></li>
+					<li><a data-id="29">最近30天</a></li>
+				</ul>
+			</div>
+			<div class="mpArticleList">
+				<table class="table table-hover">
+					<colgroup>
+						<col width="95">
+						<col>
+						<col width="80">
+						<col width="90">
+						<col width="100">
+						<col width="100">
+						<col width="160">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>爆文指数</th>
+							<th>文章标题</th>
+							<th class="text-align-center">内容类型</th>
+							<th>封面</th>
+							<th>发文公众号</th>
+							<th>阅读/点赞</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bgOrange">
+							<td>
+								<span class="artRank rank1"><i class="fa fa-trophy"></i>公益</span>
+							</td>
+							<td><a href="#"> 除了祈福，我们该为天津逆火而行的消防战士做点什么？</a><span class="badge bg-color-red font-weight-400">转发该文章送300元优惠券</span></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mp.weixin.qq.com/s?sn=965aeae7cf6a90416e9411da4f2e9eaf&__biz=MzA3ODI0OTc4NQ%3D%3D&mid=207778704&idx=1&plg_auth=1#rd" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/uploads/jNMLUqwUHUW3fi4HX0cZxQ==.jpg"></a></td>
+							<td><a href="#/MBiz/Detail/?mBizId=8832">西瓜君</a></td>
+							<td>
+								<ul class="artCountInfo list-unstyled">
+									<li><i class="fa fa-eye"></i> 100000+</li>
+									<li><i class="fa fa-thumbs-up"></i> 2560</li>
+								</ul>
+							</td>
+							<td>
+								<a class="btn btn-primary btnIcon" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default btnIcon" id="article-explore-dislike"><i class="fa fa-hand-o-down"></i> 不再出现</a>
+								<a class="btn btn-info btnIcon" id="article-explore-detail"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span>
+							</td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjAxMjYyNw==&amp;amp;mid=208409008&amp;amp;idx=4&amp;amp;sn=530a8d29be620c8cac2bf538d7d6692d&amp;amp;scene=4#wechat_redirect" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/hiaBCpDkzMRhkicc3Ct82p5OEgMPEfD6Je6PibxWUGZicLWvMdzTVRicrvvnQ6SB9BlLNf8FEg7ut30LAVgQNLxj54w/0"></a></td>
+							<td><a href="#">奇乐窝</a><span class="artPostTime">2015/2/9 7:53:57</span></td>
+							<td>
+								<ul class="artCountInfo list-unstyled">
+									<li><i class="fa fa-eye"></i> 100000+</li>
+									<li><i class="fa fa-thumbs-up"></i> 2560</li>
+								</ul>
+							</td>
+							<td>
+								<a class="btn btn-primary btnIcon" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default btnIcon" id="article-explore-dislike"><i class="fa fa-hand-o-down"></i> 不再出现</a>
+								<a class="btn btn-info btnIcon" id="article-explore-detail"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank2"><i class="fa fa-trophy"></i>89.67</span>
+							</td>
+							<td><a href="#" class="danger">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="artDanger" rel="tooltip" data-placement="bottom" data-original-title="该文章标题、图片或内容有可能违反腾讯相关政策，请谨慎选择"></span></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjAxMjYyNw==&amp;amp;mid=208409008&amp;amp;idx=4&amp;amp;sn=530a8d29be620c8cac2bf538d7d6692d&amp;amp;scene=4#wechat_redirect" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/hiaBCpDkzMRhkicc3Ct82p5OEgMPEfD6Je6PibxWUGZicLWvMdzTVRicrvvnQ6SB9BlLNf8FEg7ut30LAVgQNLxj54w/0"></a></td>
+							<td><a href="#">奇乐窝</a><span class="artPostTime">2015/2/9 7:53:57</span></td>
+							<td>
+								<ul class="artCountInfo list-unstyled">
+									<li><i class="fa fa-eye"></i> 100000+</li>
+									<li><i class="fa fa-thumbs-up"></i> 2560</li>
+								</ul>
+							</td>
+							<td>
+								<a class="btn btn-primary btnIcon" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default btnIcon" id="article-explore-dislike"><i class="fa fa-hand-o-down"></i> 不再出现</a>
+								<a class="btn btn-info btnIcon" id="article-explore-detail"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank3"><i class="fa fa-trophy"></i>70.36</span>
+							</td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjAxMjYyNw==&amp;amp;mid=208409008&amp;amp;idx=4&amp;amp;sn=530a8d29be620c8cac2bf538d7d6692d&amp;amp;scene=4#wechat_redirect" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/hiaBCpDkzMRhkicc3Ct82p5OEgMPEfD6Je6PibxWUGZicLWvMdzTVRicrvvnQ6SB9BlLNf8FEg7ut30LAVgQNLxj54w/0"></a></td>
+							<td><a href="#">奇乐窝</a><span class="badge mpNumberCount bg-color-blueLight">20</span><span class="artPostTime">2015/2/9 7:53:57</span></td>
+							<td>
+								<ul class="artCountInfo list-unstyled">
+									<li><i class="fa fa-eye"></i> 100000+</li>
+									<li><i class="fa fa-thumbs-up"></i> 2560</li>
+								</ul>
+							</td>
+							<td>
+								<a class="btn btn-primary btnIcon" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default btnIcon" id="article-explore-dislike"><i class="fa fa-hand-o-down"></i> 不再出现</a>
+								<a class="btn btn-info btnIcon" id="article-explore-detail"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+						<tr>
+							<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.92</span>
+							</td>
+							<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+							<td class="text-align-center"><span class="artContentSort"><i class="fa fa-video-camera"><em></em></i></span></td>
+							<td><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjAxMjYyNw==&amp;amp;mid=208409008&amp;amp;idx=4&amp;amp;sn=530a8d29be620c8cac2bf538d7d6692d&amp;amp;scene=4#wechat_redirect" target="_blank" class="myArticleCover"><img src="http://mmbiz.qpic.cn/mmbiz/hiaBCpDkzMRhkicc3Ct82p5OEgMPEfD6Je6PibxWUGZicLWvMdzTVRicrvvnQ6SB9BlLNf8FEg7ut30LAVgQNLxj54w/0"></a></td>
+							<td><a href="#">奇乐窝</a><span class="artPostTime">2015/2/9 7:53:57</span></td>
+							<td>
+								<ul class="artCountInfo list-unstyled">
+									<li><i class="fa fa-eye"></i> 100000+</li>
+									<li><i class="fa fa-thumbs-up"></i> 2560</li>
+								</ul>
+							</td>
+							<td>
+								<a class="btn btn-primary btnIcon" id="article-explore-favorite"><i class="fa fa-star"></i> 加入素材库</a>
+								<a class="btn btn-default btnIcon" id="article-explore-dislike"><i class="fa fa-hand-o-down"></i> 不再出现</a>
+								<a class="btn btn-info btnIcon" id="article-explore-detail"><i class="fa fa-align-left"></i> 指数分析</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" style="display:block;">
+    <div class="modal-dialog modal-dialog-wide">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">文章详情</h4>
+			</div>
+			<div class="modal-body">
+				 <header class="mpArticleHeader">
+					<div class="cover"><img src="http://mmbiz.qpic.cn/mmbiz/3aSrzVWrESuxkqvgMSoU2mZD3k9D4nLzQjhz3bBSp1PMMq1yUrMvcoXhCz1CkSavYmlNExajhib5oicv9zXFfPqA/0"></div>
+					<h3 class="mpArticleTitle">
+						每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药
+						<div class="mpArticleRate">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						</div>
+					</h3>
+					<h4 class="mpArticleTime">
+						<span><i class="fa fa-clock-o"></i> 推文时间: 2015/2/9 7:53:57</span><span><i class="fa fa-history"></i> 数据更新时间: 2015/2/9 14:56:55</span>
+					</h4>
+					<div class="mpArticleInfo clearfix">
+						<section class="col col-sm-4 no-padding"><i class="fa fa-trophy"></i> 爆文指数: <strong class="txt-color-orange">89.67</strong></section>
+						<section class="col col-sm-4 no-padding"><i class="fa fa-eye"></i> 总阅读数: <strong class="txt-color-green">100000+</strong></section>
+						<section class="col col-sm-4 no-padding"><i class="fa fa-thumbs-o-up"></i> 总点赞数: <strong class="txt-color-blue">5632</strong></section>
+					</div>
+				</header>
+				<div class="mpArticleTab">
+					<ul class="list-unstyled no-margin">
+						<li><a class="current">数据解读</a></li>
+						<li><a>阅读者分析 <span class="badge">NEW</span></a></li>
+					</ul>
+				</div>
+				<div class="mpArticleWrap" style="display:none;">
+					<h4 class="mpArticleColTitle"><i class="fa fa-file-text-o"></i> 该公众号当日推文</h4>
+					<div class="mpArticleRelated">
+						<table class="table table-hover no-margin">
+							<colgroup>
+								<col width="6%">
+								<col width="64%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>顺序</th>
+									<th>文章标题</th>
+									<th>爆文指数</th>
+									<th>阅读数</th>
+									<th>赞数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="artPostOrder">头条</span></td>
+									<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="flagIcon flagRead">阅读最高</span></td>
+									<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+									<td>2568</td>
+									<td>36</td>
+								</tr>
+								<tr>
+									<td><span class="artPostOrder">2</span></td>
+									<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a><span class="flagIcon flagLike">赞数最高</span><span class="flagIcon flagAd">广告嫌疑</span></td>
+									<td><span class="artRank rank2"><i class="fa fa-trophy"></i>89.67</span></td>
+									<td>100000+</td>
+									<td>36</td>
+								</tr>
+								<tr>
+									<td><span class="artPostOrder">3</span></td>
+									<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td><span class="artRank rank3"><i class="fa fa-trophy"></i>70.36</span></td>
+									<td>2568</td>
+									<td>36</td>
+								</tr>
+								<tr>
+									<td><span class="artPostOrder">4</span></td>
+									<td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.92</span></td>
+									<td>2568</td>
+									<td>36</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4 class="mpArticleColTitle"><i class="fa fa-align-left"></i> 该文章指数对比分析</h4>
+					<div class="mpArticleCanvas">
+						<section class="col col-sm-6 no-padding"></section>
+						<section class="col col-sm-6 no-padding"></section>
+					</div>
+					<div class="mpArticleCompare">
+						<table class="table table-hover no-margin">
+							<colgroup>
+								<col width="12%">
+								<col width="20%">
+								<col width="12%">
+								<col width="32%">
+								<col width="12%">
+								<col width="12%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>爆文指数</th>
+									<th>发文公众号</th>
+									<th>推文次序</th>
+									<th>推文时间</th>
+									<th>阅读数</th>
+									<th>点赞数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+									<td><a href="#">搞笑精选</a></td>
+									<td>2/8</td>
+									<td>2015/2/9 7:53:57</td>
+									<td>25680</td>
+									<td>3619</td>
+								</tr>
+								<tr>
+									<td><span class="artRank rank2"><i class="fa fa-trophy"></i>89.67</span></td>
+									<td><a href="#">奇乐窝</a></td>
+									<td>1/5</td>
+									<td>2015/2/7 20:16:32 <span class="mostEarly">最早发文</span></td>
+									<td>25680</td>
+									<td>3619</td>
+								</tr>
+								<tr>
+									<td><span class="artRank rank3"><i class="fa fa-trophy"></i>70.36</span></td>
+									<td><a href="#">搞笑精选</a></td>
+									<td>2/8</td>
+									<td>2015/2/9 7:53:57</td>
+									<td>25680</td>
+									<td>3619</td>
+								</tr>
+								<tr>
+									<td><span class="artRank rank4"><i class="fa fa-trophy"></i>57.92</span></td>
+									<td><a href="#">搞笑精选</a></td>
+									<td>2/8</td>
+									<td>2015/2/9 7:53:57</td>
+									<td>25680</td>
+									<td>3619</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="mpArticleReader">
+					<div class="row">
+						<div class="col col-md-6">
+							<h4 class="mpArticleColTitle"><i class="fa fa-bar-chart"></i> 文章阅读者年龄分布</h4>
+							<div class="mpArticleAge">
+								柱状图表
+							</div>
+						</div>
+						<div class="col col-md-6">
+							<h4 class="mpArticleColTitle"><i class="fa fa-venus-mars"></i> 文章阅读者性别偏向</h4>
+							<div class="mpArticleGender">
+								性别图表
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<h4 class="mpArticleColTitle"><i class="fa fa-graduation-cap"></i> 文章阅读者族群分布</h4>
+						<div class="mpArticleGroup">
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS1" style="width:31.6%; height:31.6%;"><em>1.6%</em></i>
+									</div>
+								</div>
+								<div class="groupName">宅男宅女</div>
+							</section>
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS2" style="width:100%; height:100%;"><em>70%</em></i>
+									</div>
+								</div>
+								<div class="groupName">家庭主妇</div>
+							</section>
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS3" style="width:47.2%; height:47.2%;"><em>17.2%</em></i>
+									</div>
+								</div>
+								<div class="groupName">数码一族</div>
+							</section>
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS4" style="width:40.6%; height:40.6%;"><em>10.6%</em></i>
+									</div>
+								</div>
+								<div class="groupName">时尚女性</div>
+							</section>
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS5" style="width:45%; height:45%;"><em>15.0%</em></i>
+									</div>
+								</div>
+								<div class="groupName">运动一族</div>
+							</section>
+							<section>
+								<div class="groupPercent">
+									<div class="groupBubble">
+										<i class="bubbleS6" style="width:35.6%; height:35.6%;"><em>5.6%</em></i>
+									</div>
+								</div>
+								<div class="groupName">精英人群</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

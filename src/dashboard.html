@@ -1,0 +1,464 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo" class=""> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+			<span class="activity-dropdown" id="activity"> <i class="fa fa-bell"></i> <b class="badge bounceIn animated">3</b></span>
+			<div class="ajax-dropdown" style="display:none;">
+				<div class="btn-group btn-group-justified">
+					<a class="btn btn-default active">全部 <span class="message-count">(14)</span></a>
+					<a class="btn btn-default">未读 <span class="message-count">(3)</a>
+					<a class="btn btn-default">已读 <span class="message-count">(11)</span></a>
+				</div>
+				<!-- notification content -->
+				<div class="ajax-notifications custom-scroll">
+					<div class="alert alert-transparent" style="display:none;">
+						<i class="fa fa-envelope-o fa-4x fa-border"></i>
+						<h4 class="text-align-center">暂无消息</h4>
+					</div>
+					<div class="messageList" style="display:none;">
+						<ul class="messageBody list-unstyled">
+							<li>
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>优惠券</h3>
+									<p>恭喜您，收到1张90元的优惠券，有效期截止至2015年6月1日</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>
+							<li>
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>服务器升级公告</h3>
+									<p>西瓜公众号助手将于2015-5-30 0:00:00至2015-5-30 2:00:00进行服务器升级，届时将暂停本站使用功能。</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>
+							<li class="hasRead">
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>服务器升级公告</h3>
+									<p>西瓜公众号助手将于2015-5-30 0:00:00至2015-5-30 2:00:00进行服务器升级，届时将暂停本站使用功能。</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>	
+						</ul>
+						<a class="btn btn-default moreMessage">加载更多...</a>
+					</div>
+					<div class="messageDetail">
+						<div class="messageEntry">
+							<h3>优惠券</h3>
+							<p>恭喜您，收到1张90元的优惠券，有效期截止至2015年6月1日</p>
+							<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-default">返回</a></div>
+						</div>	
+					</div>
+				</div>
+				<!-- end notification content -->
+			</div>
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="loadingWrap"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></div>
+			<div class="activeWarning" style="display:none;">
+				恭喜您，您的账号获得超长体验机会，输入激活码激活后可<strong>增加3天免费试用时间</strong>，请在账号到期前激活，到期后将无法激活。<a class="btn btn-primary">马上去激活</a>
+			</div>
+			<div class="dashboardBanner" style="display:none;">
+				<a class="dashboardBannerClose"><i class="fa fa-times"></i></a>
+				<ul class="list-unstyled">
+					<li class="purchaseBanner"><a href="#"><img src="img/banner_purchase.jpg" /></a></li>
+				</ul>
+			</div>
+			<div class="row dashboardInfo">
+				<section class="col col-md-3">
+					<dl>
+						<dd class="dashboardInfoIcon"><i class="glyphicon glyphicon-user"></i></dd>
+						<dt class="userInfo">
+							欢迎使用西瓜助手<strong>[基础版]</strong>
+							<span>当前登录IP: 192.168.1.1 <a><i class="fa fa-exclamation-circle"></i></a></span>
+						</dt>
+					</dl>
+				</section>
+				<section class="col col-md-3">
+					<dl>
+						<dd class="dashboardInfoIcon"><i class="glyphicon glyphicon-book"></i></dd>
+						<dt>171<span>我已使用的爆文</span></dt>
+						<dd></dd>
+					</dl>
+				</section>
+				<section class="col col-md-3">
+					<dl>
+						<dd class="dashboardInfoIcon"><i class="glyphicon glyphicon-bookmark"></i></dd>
+						<dt>171<span>我收藏的爆文</span></dt>
+						<dd></dd>
+					</dl>
+				</section>
+				<section class="col col-md-3">
+					<dl>
+						<dd class="dashboardInfoIcon"><i class="glyphicon glyphicon-cloud"></i></dd>
+						<dt>5650<span>公众号总数</span></dt>
+						<dd></dd>
+					</dl>
+				</section>
+			</div>
+			<div class="row">
+				<div class="col col-md-6 col-dashboard-6">
+					<div class="dashboardColTitle"><i class="fa fa-rocket"></i> 快速引导<a href="/Knowledge/" target="_blank" class="colMore">使用帮助 <i class="fa fa-angle-double-right"></i></a></div>
+					<div class="dashboardGuide">
+						<div class="guideline">使用西瓜公众号助手能够节省50%以上的素材查找编辑时间，95%的用户使用一个月后，平均阅读提升160%，增粉速度增加20%，流量主收入增加60%。</div>
+						<div class="entry">
+							<section class="step1">
+								<i class="icon">1</i>
+								<h3><i class="fa fa-file-text-o"></i> 素材收集</h3>
+								<ul class="btns list-unstyled">
+									<li><a href="#">全网素材</a></li>
+									<li><a href="#">我关注的</a></li>
+									<li><a href="#">黑马爆文</a></li>
+									<li><a href="#">专享素材</a></li>
+								</ul>
+							</section>
+							<section class="step2">
+								<i class="icon">2</i>
+								<h3><i class="fa fa-clock-o"></i> 图文同步</h3>
+								<ul class="btns list-unstyled">
+									<li><a href="~/Knowledge/ShowView/?knowledgeId=24" target="_blank">自动签名</a></li>
+									<li><a target="_blank" rel="tooltip" data-placement="top" data-original-title="进入快速编辑模式，按段落编辑删除内容，简单高效">快速编辑</a></li>
+									<li><a href="~/Knowledge/ShowView/?knowledgeId=17" target="_blank" rel="tooltip" data-placement="top" data-original-title="腾讯官方认证支持，一键将素材同步到微信公众号后台，无须繁琐的复制粘贴">一键同步<span class="verify">官</span></a></li>
+									<li><a href="~/Knowledge/ShowView/?knowledgeId=32" target="_blank" rel="tooltip" data-placement="top" data-original-title="腾讯官方认证支持，安全有效。只支持已认证公众号">定时群发<span class="verify">官</span></a></li>
+								</ul>
+							</section>
+							<section class="step3">
+								<i class="icon">3</i>
+								<h3><i class="fa fa-file-text-o"></i> 素材收集</h3>
+								<ul class="btns list-unstyled">
+									<li><a rel="tooltip" data-placement="top" data-original-title="通过西瓜公众号助手，可以直观的查看每天的发文情况及相关数据，及时了解传播效果" >数据汇总</a></li>
+									<li><a rel="tooltip" data-placement="top" data-original-title="可以对比相同文章在其它公众号的传播情况，了解粉丝喜好及竞争对手动向">横向对比</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="col col-md-6 col-dashboard-6">
+					<div class="dashboardColTitle"><i class="fa fa-trophy"></i> 功能更新</div>
+					<div class="dashboardHistory">
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>3月10日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									在线续费购买功能上线。
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>3月09日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									<a class="historyReviewTitle">
+										<i class="fa fa-lg fa-angle-down pull-right"></i>
+										<i class="fa fa-lg fa-angle-up pull-right"></i>
+										高级版新增实时主动刷新个人收藏的公众号的文章数据功能
+									</a>
+									<div class="historyReviewDetail">
+										高级版用户可主动刷新个人收藏的公众号的文章数据。个人收藏的公众号数据更新时间在最近两个小时以外的，可点击页面中的刷新数据按钮进行刷新，1-10分钟之内即可刷新完成，帮您实时掌握最新的爆文数据。
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>3月09日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									爆文收藏更名为“我的素材库”，新增素材封面下载。
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>3月01日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									开放公测，公测期间关注公主号即可获得邀请码注册。
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>2月14日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									加快文章数据刷新频率，高级版用户可查看最近24小时内动态更新的爆文。
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>1月25日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									新增爆文收藏功能，可将选中的爆文收藏备用，提高爆文查找效率。
+								</div>
+							</div>
+						</section>
+						<section class="historyReview">
+							<p class="historyReviewTime"><i class="fa fa-circle"></i>1月15日</p>
+							<div class="historyReviewConent">
+								<div class="historyReviewEntry">
+									<i class="fa fa-square"></i>
+									内测版上线，只有邀请才可注册。
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="col col-md-6 col-dashboard-6" style="display:none;">
+					<h3 class="dashboardColTitle"><i class="fa fa-trophy"></i> 功能更新 <a class="colMore">更多 <i class="fa fa-angle-double-right"></i></a></h3>
+					<div class="memberArticle">
+						<dl>
+							<dt><i class="fa fa-angle-right"></i><a href="/Knowledge/ShowView/?knowledgeId=10" target="_blank">什么是真正的微信爆文？</a></dt>
+							<dd>很多同学经常咨询我，为什么朋友圈转发的一篇文章，阅读100000+,点赞数也很高的一篇文章转载到自己号上效果经常却很差？</dd>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-right"></i><a href="/Knowledge/ShowView/?knowledgeId=9" target="_blank">我是地方公众号，我如何使用西瓜公众号助手来涨粉？</a></dt>
+							<dd>说起地方号，不得不说下地方号的盈利方式，都说2015年是地方公众号的元年，这是因为地方号的盈利方式跟全国号有着很大的不同，地方号的盈利很少是依靠流量主和第三方平台或者派单的方式。地方号主要的盈利方式是依赖本地商家和广告公司，通过线上线下的结合甚至能够演化各种O2O的玩法，基本上10W粉丝的地方号能够做到月入5W甚至更多，当然前提是你走在正确的路子上。总之，地方号，前景一片光明。</dd>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-right"></i><a href="/Knowledge/ShowView/?knowledgeId=8" target="_blank">如何提高微信公众号流量主收入</a></dt>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-right"></i><a href="/Knowledge/ShowView/?knowledgeId=7" target="_blank">如何挑选优秀的微信爆文</a></dt>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-right"></i><a href="/Knowledge/ShowView/?knowledgeId=5" target="_blank">如何添加公众号到西瓜公众号助手</a></dt>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="display:none;">
+				<div class="col col-md-12">
+					<div class="dashboardColTitle"><i class="fa fa-gift"></i> 西瓜助手版本特点</div>
+					<div class="editionFeatures">
+						<section class="col-xs-12 col-sm-6 col-md-4">
+							<dl>
+								<dt>基础版</dt>
+								<dd class="price">
+									¥99 <span class="subscript">/月</span>
+								</dd>
+								<dd class="price-features">
+									<ul class="list-unstyled text-left">
+										<li><i class="fa fa-check text-success"></i> 智能爆文推荐及指数分析</li>
+										<li><i class="fa fa-check text-success"></i> 提供 <strong>1个标签</strong> 下系统精选公众号</li>
+										<li><i class="fa fa-check text-success"></i> 自定义添加收藏个人公众号资源，分析爆文，更支持自定义分组</li>
+										<li><i class="fa fa-check text-success"></i> 推文数据 <strong>每24小时</strong> 更新</li>
+										<li><i class="fa fa-check text-success"></i> 每个账号 <strong>限制1个IP</strong> 登录</li>
+									</ul>
+								</dd>
+								<dd class="btnPurchase text-align-center">
+									<a class="btn btn-default" target="_blank" href="/Purchase">购买续费</a>
+								</dd>
+							</dl>
+						</section>
+						<section class="col-xs-12 col-sm-6 col-md-4">
+							<dl>
+								<dt class="hot">高级版</dt>
+								<dd class="price">
+									¥399 <span class="subscript">/月</span>
+								</dd>
+								<dd class="price-features">
+									<ul class="list-unstyled text-left">
+										<li><i class="fa fa-check text-success"></i> 实时主动刷新个人收藏的公众号的文章数据</li>
+										<li><i class="fa fa-check text-success"></i> 精细化爆文推荐及多维指数对比</li>
+										<li><i class="fa fa-check text-success"></i> 提供 <strong>全部标签</strong> 下系统精选公众号</li>
+										<li><i class="fa fa-check text-success"></i> 自定义添加收藏个人公众号资源，分析爆文，更支持自定义分组</li>
+										<li><i class="fa fa-check text-success"></i> 推文数据 <strong>每2小时</strong> 更新，第一时间发现爆文</li>
+										<li><i class="fa fa-check text-success"></i> 公众号运营干货分享</li>
+										<li><i class="fa fa-check text-success"></i> 每个账号 <strong>限制3个IP</strong> 登录</li>
+									</ul>
+								</dd>
+								<dd class="btnPurchase text-align-center">
+									<a class="btn btn-default" target="_blank" href="/Purchase">购买续费</a>
+								</dd>
+							</dl>
+						</section>
+						<section class="col-xs-12 col-sm-6 col-md-4">
+							<dl>
+								<dt class="free">合作代理</dt>
+								<dd class="price">
+									请联系客服
+								</dd>
+								<dd class="price-features">
+									<ul class="list-unstyled text-left">
+										<li><i class="fa fa-check text-success"></i> 优惠的代理价格，合作共赢</li>
+										<li><i class="fa fa-check text-success"></i> 快速技术响应支持</li>
+										<li><i class="fa fa-check text-success"></i> 特殊功能定制</li>
+										<li><i class="fa fa-check text-success"></i> 运营营销工具及活动组件开发</li>
+										<li><i class="fa fa-check text-success"></i> 高端运营交流群</li>
+									</ul>
+								</dd>
+								<dd class="btnPurchase text-align-center">
+									<a href="tencent://message/?uin=278836516&amp;Site=&amp;Menu=yes" class="btn btn-default">联系客服</a>
+								</dd>
+							</dl>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="display:none;>
+				<div class="col col-md-6"">
+					<div class="dashboardColTitle"><i class="fa fa-coffee"></i> 会员干货分享</div>
+					<div class="memberArticle">
+						<dl>
+							<dt><i class="fa fa-angle-double-right"></i><a href="#">如何注册可修改名称的公众号</a></dt>
+							<dd><i class="fa fa-user"></i> 玉米粥</dd>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-double-right"></i><a href="#">利用BUG修改8月20号以后注册的公众号的主体信息</a></dt>
+							<dd><i class="fa fa-user"></i> 玉米粥</dd>
+						</dl>
+						<dl>
+							<dt><i class="fa fa-angle-double-right"></i><a href="#">从投票功能可设置需关注才能投票说开去</a></dt>
+							<dd><i class="fa fa-user"></i> 玉米粥</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">激活账号</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="row no-margin activeBox" style="display:none;">
+					<div class="col col-md-3">
+						<img src="img/qrcode.png" class="activeBoxQrcode">
+					</div>
+					<div class="col col-md-9">
+						<section>请扫描左侧二维码关注公众号悄悄，即可免费获得激活码，激活码仅限自己使用。</section>
+						<section>
+							<input type="text" placeholder="激活码" class="form-control" />
+							<button type="submit" class="btn btn-primary">
+								激活
+							</button>
+						</section>
+					</div>
+				</div>
+				<div class="activeSuccess">
+					<i class="fa fa-check-circle"></i> 激活成功 [到期时间延长至：2015-09-01]
+					<a class="btn btn-primary">返回</a>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

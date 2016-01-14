@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+		<div style="background:#FFE; border:1px solid #DDD; padding:10px;">
+			我们调整了
+		</div>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+			<div class="appmsgListFilter">
+				<ul class="mpList list-unstyled">
+					<li><a class="selectedMp"><span class="mpListCover all"><i class="fa fa-cloud"></i></span>全部群发日志</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5dbe11zNm8g7fd6odGcMHg">当时</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt5uF0TyhzJ2sYbu-_n8pm2k">不贱不散</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt6LfpVNN6Eg7nX-oxTl3tPI">我与老公的日常</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt8_jYUmdw1PQgNVhH9vOEvI">人民日报</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt3AqaeYmZoWfQbFc5iaQuTU">設計</a></li>
+					<li><a><img class="mpListCover" src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt7AosBjwali3r0188rG9c54">WiFi万能钥匙</a></li>
+				</ul>
+			</div>
+			<div class="sendRecords">
+				<div id="noResultInfo" class="noResultAlert">
+					<div class="alert alert-warning fade in">
+						<strong>暂无群发记录</strong>
+					</div>
+				</div>
+				<table width="100%" cellpadding="0" cellspacing="0" class="table">
+					<colgroup>
+						<col/>
+						<col width="150" />
+						<col width="150" />
+						<col width="150" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>内容</th>
+							<th>群发时间</th>
+							<th>公众号</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<dl class="sendRecordContent">
+									<dt><img src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></dt>
+									<dd>
+										<div class="sendRecordContentItem"><a href="#">奇葩女司机,把交警和她老娘都气坏了....</a></div>
+										<div class="sendRecordContentItem"><a href="#">【大湿兄与小湿妹】有个困扰了我20多年的问题，求小伙伴们科普！</a></div>
+										<div class="sendRecordContentItem"><a href="#">女人暗示男人去开房的六种话</a></div>
+										<div class="sendRecordContentItem"><a href="#">高级黑：日系车因为车身轻才省油！</a></div>
+										<div class="sendRecordContentItem"><a href="#">▶看完又会有多少人睡不着！</a></div>
+										<div class="sendRecordContentItem"><a href="#">看完后你还要戴.套吗？反正我是不敢了！</a></div>
+										<div class="sendRecordContentItem"><a href="#">【巨轻松】男女在恋爱过程中的变化，好生动形象！</a></div> 
+									</dd>
+								</dl>
+							</td>
+							<td><i class="fa fa-clock-o"></i> 20:50<div class="sendDate">2014年10月10日</div></td>
+							<td>最懂女人心</td>
+							<td><span class="sendStatus waiting"><i class="fa fa-calendar-o"></i> 等待群发</span></td>
+						</tr>
+						<tr>
+							<td>
+								<dl class="sendRecordContent">
+									<dt><img src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></dt>
+									<dd>
+										<div class="sendRecordContentItem"><a href="#">奇葩女司机,把交警和她老娘都气坏了....</a></div>
+										<div class="sendRecordContentItem"><a href="#">【大湿兄与小湿妹】有个困扰了我20多年的问题，求小伙伴们科普！</a></div>
+										<div class="sendRecordContentItem"><a href="#">女人暗示男人去开房的六种话</a></div>
+										<div class="sendRecordContentItem"><a href="#">高级黑：日系车因为车身轻才省油！</a></div>
+										<div class="sendRecordContentItem"><a href="#">▶看完又会有多少人睡不着！</a></div>
+										<div class="sendRecordContentItem"><a href="#">看完后你还要戴.套吗？反正我是不敢了！</a></div>
+										<div class="sendRecordContentItem"><a href="#">【巨轻松】男女在恋爱过程中的变化，好生动形象！</a></div> 
+									</dd>
+								</dl>
+							</td>
+							<td><i class="fa fa-clock-o"></i> 20:50<div class="sendDate">2014年10月10日</div></td>
+							<td>最懂女人心</td>
+							<td><span class="sendStatus waiting"><i class="fa fa-rotate-right fa-spin"></i> 群发中</span></td>
+						</tr>
+						<tr>
+							<td>
+								<dl class="sendRecordContent">
+									<dt><img src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></dt>
+									<dd>
+										<div class="sendRecordContentItem"><a href="#">奇葩女司机,把交警和她老娘都气坏了....</a></div>
+										<div class="sendRecordContentItem"><a href="#">【大湿兄与小湿妹】有个困扰了我20多年的问题，求小伙伴们科普！</a></div>
+										<div class="sendRecordContentItem"><a href="#">女人暗示男人去开房的六种话</a></div>
+										<div class="sendRecordContentItem"><a href="#">高级黑：日系车因为车身轻才省油！</a></div>
+										<div class="sendRecordContentItem"><a href="#">▶看完又会有多少人睡不着！</a></div>
+										<div class="sendRecordContentItem"><a href="#">看完后你还要戴.套吗？反正我是不敢了！</a></div>
+										<div class="sendRecordContentItem"><a href="#">【巨轻松】男女在恋爱过程中的变化，好生动形象！</a></div> 
+									</dd>
+								</dl>
+							</td>
+							<td><i class="fa fa-clock-o"></i> 20:50<div class="sendDate">2014年10月10日</div></td>
+							<td>最懂女人心</td>
+							<td><span class="sendStatus successed"><i class="fa fa-check"></i> 群发成功</span></td>
+						</tr>
+						<tr>
+							<td>
+								<dl class="sendRecordContent">
+									<dt><img src="http://f.hiphotos.baidu.com/image/pic/item/bba1cd11728b4710f46db0cdc1cec3fdfc032374.jpg"></dt>
+									<dd>
+										<div class="sendRecordContentItem"><a href="#">奇葩女司机,把交警和她老娘都气坏了....</a></div>
+										<div class="sendRecordContentItem"><a href="#">【大湿兄与小湿妹】有个困扰了我20多年的问题，求小伙伴们科普！</a></div>
+										<div class="sendRecordContentItem"><a href="#">女人暗示男人去开房的六种话</a></div>
+										<div class="sendRecordContentItem"><a href="#">高级黑：日系车因为车身轻才省油！</a></div>
+										<div class="sendRecordContentItem"><a href="#">▶看完又会有多少人睡不着！</a></div>
+										<div class="sendRecordContentItem"><a href="#">看完后你还要戴.套吗？反正我是不敢了！</a></div>
+										<div class="sendRecordContentItem"><a href="#">【巨轻松】男女在恋爱过程中的变化，好生动形象！</a></div> 
+									</dd>
+								</dl>
+							</td>
+							<td><i class="fa fa-clock-o"></i> 20:50<div class="sendDate">2014年10月10日</div></td>
+							<td>最懂女人心</td>
+							<td><span class="sendStatus failed"><i class="fa fa-warning"></i> 群发失败</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="text-center">
+
+					<ul class="pagination pagination-lg">
+			
+								<li class="disabled">
+									<a href="javascript:void(0);"><i class="fa fa-chevron-left"></i></a>
+								</li>
+							
+								<li class="active">
+									<a href="/MArticleUse/ArticleUseListNew/?page=1&amp;partial=1&amp;onlyUnused=True&amp;tagId=0&amp;keyword=">1</a>
+								</li>
+							
+								<li>
+									<a href="/MArticleUse/ArticleUseListNew/?page=2&amp;partial=1&amp;onlyUnused=True&amp;tagId=0&amp;keyword=">2</a>
+								</li>
+							
+								<li>
+									<a href="/MArticleUse/ArticleUseListNew/?page=3&amp;partial=1&amp;onlyUnused=True&amp;tagId=0&amp;keyword=">3</a>
+								</li>
+							
+								<li>
+									<a href="/MArticleUse/ArticleUseListNew/?page=4&amp;partial=1&amp;onlyUnused=True&amp;tagId=0&amp;keyword=">4</a>
+								</li>
+							
+								<li>
+									<a href="/MArticleUse/ArticleUseListNew/?page=2&amp;partial=1&amp;onlyUnused=True&amp;tagId=0&amp;keyword="><i class="fa fa-chevron-right"></i></a>
+								</li>
+							</ul>
+			
+				</div>
+			</div>
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">提取视频网址</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<h3 class="videoLinkTitle"><a href="#">刚流出来的视频，太刺激，，是男人都受不了了！</a></h3>
+				<div class="videoLinkList">
+					<dl>
+						<dt><iframe width="400" height="300" frameborder="0" src="http://v.qq.com/iframe/player.html?vid=e0014xa18f3" scrolling="no"></iframe></dt>
+						<dd>http://v.qq.com/iframe/player.html?vid=e0014xa18f3&width=668&height=501&auto=0&encryptVer=6.0&platform=61001&cKey=J9IcMje93boI0rBmOxzb80ggrlnQe1LFF2QE2Rtjji4gBcRVhiK2pghm2N/CgDdV</dd>
+					</dl>
+					<p class="videoLinkTips">请选中后复制(Ctrl+C)上方视频网址，将视频网址粘贴到添加视频时弹出的输入框即可。</p>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">素材文件夹管理</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<section>
+							<div class="mpUserTags mpUserTagsEdit">
+								<span id="tagContainner">
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="71"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">2篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="71">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+									<section class="col col-sm-6 no-padding">
+										<div class="editTagArea">
+											<div class="tagInfo">
+												<div class="editTagAreaBtn"><a href="javascript:none" class="editMyTag"><i class="fa fa-pencil"></i></a><a href="javascript:none" class="deleteMyTag" data-id="54"><i class="fa fa-trash-o"></i></a></div>
+												<span class="tagName">玉米粥</span>
+												<span class="stat">9篇文章</span>
+											</div>
+											<div class="addNewTagArea" style="display:none;">
+												<label class="input">
+													<input class="form-control" name="TagName" placeholder="玉米粥" type="text" value="">
+												</label>
+												<input type="button" class="btn btn-default btnConfirmChange" value="修改" data-id="54">
+												<input type="button" class="btn btn-default btn-cancel btnCancelChange" value="取消">
+											</div>
+										</div>
+									</section>
+								</span>
+								<section class="col col-sm-6 no-padding">
+									<div class="addNewTag">
+										<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+										<div class="addNewTagArea" style="display:none;">
+											<label class="input">
+												<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+											</label>
+											<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+											<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+										</div>
+									</div>
+								</section>
+							</div>
+						</section>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="modal fade in" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="false" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">移动到文件夹</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<form class="smart-form">
+					<fieldset>
+						<div class="mpUserTags" id="mpUserTags">
+							<span id="tagContainner">
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="71">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">2篇文章</span>
+									</a>
+								</section>
+								<section class="col col-sm-6 no-padding">
+									<a data-realid="190" class="selectedTag">
+										<i class="fa fa-circle"></i>
+										玉米粥
+										<span class="stat">9篇文章</span>
+									</a>
+								</section>
+							</span>
+							<section class="col col-sm-6 no-padding">
+								<div class="addNewTag">
+									<a class="addNewGroup"><i class="fa fa-plus"></i>新建文件夹</a>
+									<div class="addNewTagArea" style="display:none;">
+										<label class="input">
+											<input class="form-control" name="TagName" placeholder="文件夹名称" required type="text" value="">
+										</label>
+										<input type="button" class="btn btn-default" value="添加" id="btnAddNewGroup"> 
+										<input type="button" class="btn btn-default btn-cancel" value="取消" id="btnCancelAdd">
+									</div>
+								</div>
+							</section>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="addMBizBtn" class="btn btn-primary">
+					保存
+				</button>
+				<button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

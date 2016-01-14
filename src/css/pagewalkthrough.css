@@ -1,0 +1,214 @@
+/***
+* Author: Erwin Yusrizal
+* Created On: 27/02/2013
+* Version: 1.0.0
+***/
+
+#jpwOverlay { background: url(../img/pagewalkthrough/overlay.png) repeat; position: fixed;z-index:9999;top:0;width: 100%;height: 100%;display: block;}
+#jpWalkthrough .overlay { background: url(../img/pagewalkthrough/overlay.png) repeat; position: absolute;z-index:9999;}
+#jpWalkthrough .noOverlay { background: none; position: absolute;z-index:9999;}
+#jpWalkthrough #overlayTop {width:100%; top:0; left:0;}
+#jpWalkthrough #overlayLeft {left:0; }
+#jpWalkthrough #highlightedArea {position: absolute; }
+#jpWalkthrough #overlayBottom {width:100%;left:0; }
+#jpWalkthrough #overlayRight { }
+
+#jpWalkthrough #topAccessable, #jpWalkthrough #middleAccessable, #jpWalkthrough #bottomAccessable
+{
+    z-index:9999;
+}
+
+#jpWalkthrough #highlightedArea #topLeft, #jpWalkthrough #topAccessable #topLeft{
+    background: url(../img/pagewalkthrough/rounded.png) no-repeat left top;
+    height: 30px;
+    width:30px;
+    float:left;
+}
+#jpWalkthrough #highlightedArea #topCenter, #jpWalkthrough #topAccessable #topCenter{
+    background: url(../img/pagewalkthrough/borderTop.png) repeat-x 0 0;
+    height: 30px;
+    float:left;
+}
+
+#jpWalkthrough #highlightedArea #topRight, #jpWalkthrough #topAccessable #topRight{
+    background: url(../img/pagewalkthrough/rounded.png) no-repeat right top;
+    height: 30px;
+    width:30px;
+    float:left;
+}
+
+#jpWalkthrough #highlightedArea #middleLeft, #jpWalkthrough #middleAccessable #middleLeft{
+    background: url(../img/pagewalkthrough/borderLeft.png) repeat-y left top;
+    width:30px;
+    height: 30px;
+    float:left;
+}
+
+#jpWalkthrough #highlightedArea #middleCenter, #jpWalkthrough #middleAccessable #middleCenter{
+    background: transparent;
+    float: left;
+    overflow: hidden;
+}
+
+#jpWalkthrough #highlightedArea #middleRight, #jpWalkthrough #middleAccessable #middleRight{
+    background: url(../img/pagewalkthrough/borderRight.png) repeat-y right top;
+    width:30px;
+    height: 30px;
+    float:left;
+}
+
+#jpWalkthrough #highlightedArea #bottomLeft, #jpWalkthrough #bottomAccessable #bottomLeft{
+    background: url(../img/pagewalkthrough/rounded.png) no-repeat left bottom;
+    height: 30px;
+    width:30px;
+    float:left;
+}
+#jpWalkthrough #highlightedArea #bottomCenter, #jpWalkthrough #bottomAccessable #bottomCenter{
+    background: url(../img/pagewalkthrough/borderBottom.png) repeat-x 0 bottom;
+    height: 30px;
+    float:left;
+}
+
+#jpWalkthrough #highlightedArea #bottomRight, #jpWalkthrough #bottomAccessable #bottomRight{
+    background: url(../img/pagewalkthrough/rounded.png) no-repeat right bottom;
+    height: 30px;
+    width:30px;
+    float:left;
+}
+
+
+/*** tooltip ***/
+#jpWalkthrough #jpwTooltip{
+	border:2px solid #F7C168; 
+    overflow: visible;
+	padding:15px;
+	background:#FFE;
+	border-radius:8px;
+}
+
+#jpWalkthrough #jpwTooltip #tooltipWrapper{
+    overflow: visible;
+}
+
+
+#jpWalkthrough #jpwTooltip #bottom-scratch{
+    background: url("../img/pagewalkthrough/scratch-border.png") no-repeat left top;
+    width: 358px;
+    height: 42px;
+    display: block;
+    top: 25px;
+    clear: both;
+} 
+
+#jpWalkthrough #jpwTooltip .draggable-area{
+    display: block;
+    width: 44px;
+    height: 40px;
+    position: absolute;
+    top: -35px;
+    right: -30px;
+    background: url("../img/pagewalkthrough/drag.png") no-repeat;
+    z-index: 10000;
+}
+
+/*** tooltip position ***/
+#jpWalkthrough #jpwTooltip .top{
+    background: url("../img/pagewalkthrough/arrow-bottom.png") no-repeat scroll 0 0 transparent;
+    bottom: -91px;
+    height: 86px;
+    left: 130px;
+    position: absolute;
+    width: 30px;
+    display: block;
+    z-index: 1000;
+}
+
+#jpWalkthrough #jpwTooltip .right{
+    background: url("../img/pagewalkthrough/arrow-left.png") no-repeat scroll 0 0 transparent;
+    height: 56px;
+    left: -96px;
+    position: absolute;
+    top: 35px;
+    width: 86px;
+    display: block;
+    z-index: 1000;
+}
+
+#jpWalkthrough #jpwTooltip .bottom{
+    background: url("../img/pagewalkthrough/arrow-top.png") no-repeat scroll 0 0 transparent;
+    height: 86px;
+    left: 130px;
+    position: absolute;
+    top: -91px;
+    width: 30px;
+    display: block;
+    z-index: 1000;
+}
+
+#jpWalkthrough #jpwTooltip .left{
+    background: url("../img/pagewalkthrough/arrow-right.png") no-repeat scroll 0 0 transparent;
+    height: 56px;
+    position: absolute;
+    right: -96px;
+    top: 35px;
+    width: 86px;
+    display: block;
+    z-index: 1000;
+}
+
+
+/*** close button ***/
+#jpwClose {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 10000;
+}
+
+#jpwClose a{
+    text-align: center;
+    color:#fff;
+    display: block;
+	text-indent:-999em;
+	overflow:hidden;
+}
+
+#jpwClose a:hover{
+    color: #7EFF00;
+
+}
+
+#jpwClose a span{
+    display: block;
+    width: 44px;
+    height: 40px;
+    background: url("../img/pagewalkthrough/close.png") no-repeat;
+}
+
+#jpWalkthrough .killOverlay{
+    background-image: none !important;
+    background-color: none !important;
+}
+
+
+/*** tooltip content ****/
+#jpWalkthrough #jpwTooltip #tooltipInner a,#jpWalkthrough #jpwTooltip #tooltipInner a:hover{ text-decoration:none;}
+#jpWalkthrough #jpwTooltip #tooltipInner{
+    color:#666;
+    text-align:left;
+    font-size:14px;
+	line-height:1.5;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner p{ margin:0 !important;}
+
+#jpWalkthrough #jpwTooltip #tooltipInner .tooltipTitle{
+    font-size:16px;
+}
+
+#jpWalkthrough #jpwTooltip #tooltipInner a.prev-step,#jpWalkthrough #jpwTooltip #tooltipInner a.next-step{ display:inline-block; font-weight:normal; font-size:13px; padding:6px 12px; border:1px solid #FA0; border-radius:36px; background:#FFF; box-shadow:0 1px 1px rgba(0,0,0,0.15); color:#F90;}
+#jpWalkthrough #jpwTooltip #tooltipInner a.prev-step:hover,#jpWalkthrough #jpwTooltip #tooltipInner a.next-step:hover{ border-color:#F60; color:#F60;}
+#jpWalkthrough #jpwTooltip #tooltipInner .tooltipBtn{ display:block; padding-top:12px;}
+#jpWalkthrough #jpwTooltip #tooltipInner a.prev-step{ float:left;}
+#jpWalkthrough #jpwTooltip #tooltipInner a.next-step{ float:right;}
+#jpWalkthrough #jpwTooltip #tooltipInner a.prev-step .fa{ margin-right:5px;}
+#jpWalkthrough #jpwTooltip #tooltipInner a.next-step .fa{ margin-left:5px;}
