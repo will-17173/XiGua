@@ -14,6 +14,26 @@
     <script src="js/libs/jquery-2.0.2.min.js"></script>
     <script src="http://www.xiguaji.com/js/highcharts.js"></script>
     <script src="http://www.xiguaji.com/js/highcharts-more.js"></script>
+    <style type="text/css">
+        .subscribe-wrap{ border: 1px solid #e5e9ed; background: #fff;}
+        .subscribe-charts{ background: url(img/subscribe/demand-bg.png) no-repeat; background-size:100% auto; min-height: 700px; position: relative;}
+        .subscribe-chosen{ background: #f8f9fb; border-left: 1px solid #e5e9ed; min-height: 700px;}
+        .subscribe-list{}
+        .subscribe-list .subscribe-item{ position: absolute;text-align: center; font-size: 16px;}
+        .subscribe-list .subscribe-item div{border-radius: 100%; }
+        .subscribe-item-0{  color: #d34ad8;}
+        .subscribe-item-0 div{ background: #d34ad8;}
+        .subscribe-item-1{ color: #e74c3c;}
+        .subscribe-item-1 div{ background: #e74c3c;}
+        .subscribe-item-2{ color: #ff8106;}
+        .subscribe-item-2 div{ background: #ff8106;}
+        .subscribe-item-3{ color: #46be68;}
+        .subscribe-item-3 div{ background: #46be68;}
+        .subscribe-item-4{ color: #ffb400;}
+        .subscribe-item-4 div{ background: #ffb400;}
+        .subscribe-item-5{ color: #50d2d0;}
+        .subscribe-item-5 div{ background: #50d2d0;}
+    </style>
 </head>
 <body class="fixed-navigation fixed-header fixed-ribbon">
     <!-- #HEADER -->
@@ -69,7 +89,7 @@
 							<h3>优惠券</h3>
 							<p>恭喜您，收到1张90元的优惠券，有效期截止至2015年6月1日</p>
 							<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-default">返回</a></div>
-						</div>	
+						</div>
 					</div>
 				</div>
 				<!-- end notification content -->
@@ -154,8 +174,23 @@
         <!-- #MAIN CONTENT -->
         <div id="content">
 <!-- 			<div class="loadingWrap"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></div> -->
+
+        <div class="container-fluid">
+          <div class="row subscribe-wrap">
+            <div class="col-md-9 subscribe-list">
+                <h1>关键词智能推荐</h1>
+                <p class="subscribe-sub-title">2015-12-21 更新</p>
+                <div id="charts" class="subscribe-charts">
+
+                </div>
+            </div>
+            <div class="col-md-3 subscribe-chosen">
+
+            </div>
+          </div>
+        </div>
 			
-    <div id="charts"></div>
+    
 
 
 
@@ -205,65 +240,345 @@
     </div>
 </div>
 <script>
-$(function () {
-    $('#charts').highcharts({
 
-        chart: {
-            type: 'bubble',
-            plotBorderWidth: 1,
-            zoomType: 'xy'
-        },
 
-        legend: {
-            enabled: true
-        },
+var CollisionResolver = function (radius){
+    this.radius = radius || 3.5; // degrees
+    this.groups = [];
+    this.collision = {};
+    this.objects = {};
+    this.num_obj = 0;
+}
 
 
 
+function GetRandomNum(Min,Max){
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return (Min + Math.round(Rand * Range));
+}
+
+var max = {
+    left: $('#charts').width() - 100,
+    top: $('#charts').height() - 100
+}
+var data = [
+    {weight: 100, name: '妹子222'},
+    {weight: 1, name: '妹子'},
+    {weight: 22, name: '妹子'},
+    {weight: 44, name: '妹子'},
+    {weight: 55, name: '妹子'},
+    {weight: 66, name: '妹子'},
+    {weight: 77, name: '妹子'},
+    {weight: 88, name: '妹子3'},
+    {weight: 99, name: '妹子2'},
+    {weight: 46, name: '妹子'},
+    {weight: 4, name: '妹子'},
+    {weight: 84, name: '妹子'},
+    {weight: 22, name: '妹子'},
+    {weight: 57, name: '妹子'},
+    {weight: 43, name: '妹子'},
+    {weight: 38, name: '妹子'},
+    {weight: 35, name: '妹子'},
+    {weight: 96, name: '妹子325'},
+    {weight: 52, name: '妹子'},
+    {weight: 85, name: '妹子235'},
+    {weight: 35, name: '妹子'}
+];
+
+$.map(data, function(val, i){
+    val.z = GetRandomNum(30, 50);
+    if(val.weight < 34){
+        val.x = GetRandomNum(max.left / 4, max.left / 8 * 5);
+        val.y = Math.random() > 0.5 ? GetRandomNum(max.top / 4, max.top / 8 * 3) : GetRandomNum(max.top / 8 * 5, max.top / 4 * 3);
+    } else if(val.weight < 67){
+        val.x = GetRandomNum(max.left / 8, max.left / 8 * 7);
+        val.y = Math.random() > 0.5 ? GetRandomNum(max.top / 8, max.top / 4) : GetRandomNum(max.top / 4 * 3, max.top / 8 * 7);
+    } else{
+        val.x = GetRandomNum(0, max.left);
+        val.y = Math.random() > 0.5 ? GetRandomNum(0, max.top / 8) : GetRandomNum(max.top / 8 * 7, max.top);
+    }
+    if(val.weight == 100){
+        val.x = max.left / 2 - 50;
+        val.y = max.top / 2 - 50;
+        val.z = 100;
+    }
+    return val;
+});
+
+console.log(data)
+
+for(var i = 0; i < data.length; i++){
+    $('<div style="left: ' + data[i].x + 'px; top: ' + data[i].y + 'px;" class="subscribe-item subscribe-item-' + GetRandomNum(0, 5) + '"><div style=" width:' + data[i].z + 'px; height: ' + data[i].z + 'px; "></div>' + data[i].name + '</div>').appendTo('.subscribe-charts');
+}
 
 
-        tooltip: {
-            useHTML: true,
-            headerFormat: '<table>',
-            pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-                '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-                '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-                '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
-            footerFormat: '</table>',
-            followPointer: true
-        },
 
-        plotOptions: {
-            series: {
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
+// $(function () {
+//     $('#charts').highcharts({
+
+//         chart: {
+//             type: 'bubble',
+//             plotBorderWidth: 0,
+//             zoomType: 'xy',
+//             backgroundColor: 'rgba(0,0,0,0)',
+//             className: 'subscribe-charts',
+//             style: {
+
+//             }
+//         },
+
+//         title: {
+//             text: null
+//         },
+
+//         legend: {
+//             enabled: false
+//         },
+//         tooltip: {
+//             useHTML: true,
+//             headerFormat: '<table>',
+//             pointFormat: '<tr><th colspan="2"><h3>{point.name}</h3></th></tr>' +
+//                 '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
+//                 '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
+//                 '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+//             footerFormat: '</table>',
+//             followPointer: true
+//         },
+
+//         plotOptions: {
+//             series: {
+//                 dataLabels: {
+//                     enabled: true,
+//                     y: -30,
+//                     format: '{point.name}'
+//                 }
+//             }
+//         },
+
+//         series: [{
+//             data: data
+//         }]
+
+//     });
+// });
+</script>
+
+<script type="text/javascript">
+var CollisionResolver = function (radius)
+{
+    this.radius = radius || 3.5; // degrees
+    this.groups = [];
+    this.collision = {};
+    this.objects = {};
+    this.num_obj = 0;
+}
+
+CollisionResolver.prototype = 
+{
+    // add an object to the circle
+    add: function (obj)
+    {
+        function sort_group ()
+        {
+            group.elem.sort(function(a,b) {return a.pos>b.pos; });
+            var middle = 0;
+            for (var i = 0; i != group.elem.length ; i++) middle += group.elem[i].pos;
+            middle /=  group.elem.length;
+            var range = this.radius * group.elem.length;
+            group.min = middle-range;
+            group.max = middle+range;
+            
+            // see if the expanded group now overlaps another
+            for (var g = 0 ; g != this.groups.length ; g++)
+            {
+                var group2 = this.groups[g];
+                if (group2 == group) continue;
+                for (var offset = 0 ; offset <720 ; offset += 360)
+                {
+                    if (  (group2.max+offset > group.min)
+                       && (group2.min+offset < group.max))
+                    {
+console.log ("merge("+offset+") "+Math.round(group.min)+" "+Math.round(group.max)+" into "+Math.round(group2.min)+" "+Math.round(group2.max));
+                        // merge groups
+                        for (var i = 0 ; i != group2.elem.length ; i++) group2.elem[i].pos += offset;
+                        group.elem = group.elem.concat(group2.elem);
+                        this.groups.splice (g, 1);
+                        
+                        // try again with the merged group
+                        sort_group.call (this,group);
+                        return;
+                    }
                 }
             }
-        },
+        }
+        
+        // store the object
+        obj.id = this.num_obj;
+        this.objects[this.num_obj++] = obj;
+        
+        // see if the object falls within a collision group
+        for (var g in this.groups)
+        {
+            var group = this.groups[g];
+            for (var offset = 0 ; offset <720 ; offset += 360)
+            {
+                if (  (obj.pos+offset+this.radius > group.min)
+                   && (obj.pos+offset-this.radius < group.max))
+                {
+                    // insert the object into the collision group
+                    obj.pos += offset;
+                    group.elem.push (obj);
+                    sort_group.call (this, group);
+                    return;
+                }
+            }
+        }
+    
+        // create a new singleton collision group
+        var group = { 
+            elem: [obj],
+            min :obj.pos-this.radius,
+            max :obj.pos+this.radius };
+        this.groups.push (group);
+    },
+    
+    resolve: function ()
+    {
+        // spread the objects inside each group
+        var groups = this.groups;
+        for (var i = 0 ; i != groups.length ; i++)
+        {
+            var group = groups[i];
+            for (var o = 0 ; o != group.elem.length ; o++)
+            {
+console.log ("spread "+i+"."+o+" "+Math.round(group.elem[o].pos)+" -> "+Math.round(group.min + (2*o+1) * this.radius));
+                group.elem[o].pos = (group.min + (2*o+1) * this.radius + 360) % 360;
+            }
+        }
+        
+        // return the positions
+        var res = [];
+        for (var i = 0 ; i != this.num_obj ; i++) res.push (this.objects[i].pos);
+        return res;
+    }
+}
 
-        series: [{
-            data: [
-                { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
-                { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
-                { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-                { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
-                { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
-                { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
-                { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
-                { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
-                { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
-                { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
-                { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
-                { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
-                { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
-                { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
-                { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-            ]
-        }]
+function spread (positions, radius)
+{
+    var collider = new CollisionResolver (radius);
+    
+    // initialize object positions
+    for (var i = 0; i != positions.length ; i++)
+    {
+        collider.add ({ pos:positions[i]} );
+    }
+    
+    draw_collider (collider);
+    
+    // resolve collisions
+    return collider.resolve();  
+}
 
-    });
-});
+function draw_circles (input, output, radius)
+{
+    function is_close (a, b) { return Math.abs (a-b) < 1e-2; }
+    
+    function draw_points (a1, r1, a2, r2)
+    {
+        function draw_point (a, r)
+        {
+            a *= Math.PI/180;
+            var size = radius*Math.PI/180*r;
+            var xc = xd/2+r*Math.cos(a);
+            var yc = xd/2+r*Math.sin(a);
+            ctx.beginPath();
+            ctx.arc (xc, yc, size, 0, 2*Math.PI);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fill ();
+            return {x:xc, y:yc};
+        }
+        
+        ctx.fillStyle = 'blue';
+        var p1 = draw_point (a1,r1);
+        ctx.fillStyle = is_close(a1, a2) ? 'green' : 'orange';
+        var p2 = draw_point (a2,r2);
+        ctx.beginPath();
+        ctx.moveTo (p1.x, p1.y);
+        ctx.lineTo (p2.x, p2.y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    
+    var xd, yd, r1, r2;
+    xd = yd = 400;
+    r1 = xd/2*.6;
+    r2 = xd/2*.8;
+    var canvas = document.getElementById ('canvas');
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = 'red';
+    ctx.beginPath();
+    ctx.arc (xd/2, yd/2, r1, 0, 2*Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc (xd/2, yd/2, r2, 0, 2*Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+    for (var i = 0; i != input.length ; i++)
+    {
+        draw_points (input[i], r1, output[i], r2);
+    }
+}
+
+function draw_collider (collider)
+{
+    function draw_group (group)
+    {
+        ctx.beginPath();
+        ctx.arc (xd/2, yd/2, r1, 0, 2*Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        var amin = group.min*Math.PI/180;
+        var amax = group.max*Math.PI/180;
+        var x2 = xd/2+r2*Math.cos(amax);
+        var y2 = xd/2+r2*Math.sin(amax);
+        ctx.beginPath();
+        ctx.arc (xd/2, yd/2, r1, amin, amax);
+        ctx.lineTo (x2, y2);
+        ctx.arc (xd/2, yd/2, r2, amax, amin, true);
+        ctx.closePath();
+        ctx.fill();
+    }
+    
+    var xd, yd, r1, r2;
+    xd = yd = 400;
+    r1 = xd/2*.6;
+    r2 = xd/2*.8;
+    var canvas = document.getElementById ('canvas');
+    canvas.width  = xd;
+    canvas.height = yd;
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = ctx.strokeStyle='cyan';
+    for (var i = 0; i != collider.groups.length ; i++)
+    {
+        draw_group (collider.groups[i]);
+    }
+}
+
+function demo ()
+{
+    var input = [];
+    for (var i = 0 ; i != 10 ; i++) input[i] = Math.random() * 360;
+    
+    var output = spread (input, 7);
+    draw_circles (input, output, 7);
+    //draw_circles (input, input);
+}
+
+window.onload = demo;
+
 </script>
 </body>
 </html>
