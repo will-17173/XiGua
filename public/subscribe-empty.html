@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
-
 </head>
 <body class="fixed-navigation fixed-header fixed-ribbon">
     <!-- #HEADER -->
@@ -167,61 +166,23 @@
             </div>
         </div>
 
-        <div class="row subscribeKeywords">
-            <a href="javascript:;" class="active"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
-            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
-            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉小魔仙</a>
-            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉仙</a>
-            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴仙</a>
-            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
-        </div>
-
-        <div class="container-fluid">
-          <div class="row subscribeContainer">
-            <div class="col-md-9 subscribeList">
-                <h1>关键词智能推荐</h1>
-                <p class="subscribeSubTitle">2015-12-21 更新</p>
-                <div id="charts" class="subscribeCharts">
-
-                </div>
-                <div class="subscribeGuide">
-                    <div class="subscribeGuideIn">
-                        <p><img src="img/subscribe/guide.png"><br>点击气泡即可添加关键词</p>
-                        <div><button class="btn btn-block btn-success">知道了！</button></div>
-                    </div>
+        <div class="subscribeEmptyWrap container-fluid">
+            <div class="subscribeEmpty">
+                <p>为您的公众号添加关键词订阅获取私人定制文章</p>
+                <p><img src="img/subscribe/subscribe_ins.png"></p>
+                <ul class="clearfix">
+                    <li><img src="img/subscribe/subscribe_icon1.png"><br>精确订阅</li>
+                    <li><img src="img/subscribe/subscribe_icon2.png"><br>实时更新</li>
+                    <li><img src="img/subscribe/subscribe_icon3.png"><br>个性化推荐</li>
+                </ul>
+                <div class="subscribeAddAccount">
+                    <a class="btn btn-block btn-success btn-lg" href="#">立即添加公众号开始体验</a>
                 </div>
             </div>
-            <div class="col-md-3 subscribeSide">
-                
-                <div class="row addKeyword">
-                    <div class="col-md-9"><input type="text" id="" placeholder="输入关键字" class="form-control keywordInput" value=""></div>
-                    <div class="col-md-3"><button class="btn btn-default btn-block" id="btn_add_keyword">添加</button></div>
-                </div>
-
-                <div class="subscribeChosen">
-                    <p>已订阅关键词 :</p>
-                    <ul>
-                        <li>关键词<i class="fa fa-close"></i></li>
-                        <li>关键键词<i class="fa fa-close"></i></li>
-                        <li>关词<i class="fa fa-close"></i></li>
-                        <li>关键键键词<i class="fa fa-close"></i></li>
-                        <li>关键词<i class="fa fa-close"></i></li>
-                        <li>关键词<i class="fa fa-close"></i></li>
-                        <li>关词<i class="fa fa-close"></i></li>
-                        <li>关键词键键<i class="fa fa-close"></i></li>
-                        <li>关键词键键<i class="fa fa-close"></i></li>
-                    </ul>
-                </div>
-
-                <div class="subscribeBtn">
-                    <button class="btn btn-success btn-block">开始订阅</button>
-                </div>  
-                
-            </div>
-          </div>
         </div>
-			
-    
+
+
+
 
 
 
@@ -270,91 +231,6 @@
 		</div>
     </div>
 </div>
-<script src="http://www.xiguaji.com/js/libs/jquery-2.0.2.min.js"></script>
-<script src="http://www.xiguaji.com/js/bootstrap/bootstrap.min.js"></script>
-<script>
-
-$(document).on('click', '.subscribe-item', function(){
-    var keyword = $(this).text();
-    $('<li>' + keyword + '<i class="fa fa-close"></i></li>').appendTo('.subscribeChosen ul');
-}).on('click', '.subscribeChosen i', function(){
-    $(this).parents('li').remove();
-}).on('click', '.subscribeGuide button', function(){
-    $(this).parents('.subscribeGuide').remove();
-}).on('click', '#btn_add_keyword', function(){
-    var keyword = $.trim($('.keywordInput').val());
-    if(keyword !== ''){
-        $('<li>' + keyword + '<i class="fa fa-close"></i></li>').appendTo('.subscribeChosen ul');
-        $('.keywordInput').val('');
-    }
-}).on('mouseover', '.subscribe-item', function(){
-    
-})
-
-function GetRandomNum(Min,Max){
-    var Range = Max - Min;
-    var Rand = Math.random();
-    return (Min + Math.round(Rand * Range));
-}
-
-var max = {
-    width: $('#charts').width() - 100,
-    height: $('#charts').height() - 100
-}
-var data = [
-    {weight: 100, name: '妹子222'},
-    {weight: 1, name: '妹子'},
-    {weight: 22, name: '妹子'},
-    {weight: 44, name: '妹子'},
-    {weight: 55, name: '妹子'},
-    {weight: 66, name: '妹子'},
-    {weight: 77, name: '妹子'},
-    {weight: 88, name: '妹子3'},
-    {weight: 99, name: '妹子2'},
-    {weight: 46, name: '妹子'},
-    {weight: 4, name: '妹子'},
-    {weight: 84, name: '妹子'},
-    {weight: 22, name: '妹子'},
-    {weight: 57, name: '妹子'},
-    {weight: 43, name: '妹子'},
-    {weight: 38, name: '妹子'},
-    {weight: 35, name: '妹子'},
-    {weight: 96, name: '妹子325'},
-    {weight: 52, name: '妹子'},
-    {weight: 85, name: '妹子235'},
-    {weight: 35, name: '妹子'}
-];
-
-function spread(val){
-    if(val.weight < 34){
-        val.x = GetRandomNum(max.width / 4, max.width / 8 * 5);
-        val.y = Math.random() > 0.5 ? GetRandomNum(max.height / 4, max.height / 8 * 3) : GetRandomNum(max.height / 8 * 5, max.height / 4 * 3);
-    } else if(val.weight < 67){
-        val.x = GetRandomNum(max.width / 8, max.width / 8 * 7);
-        val.y = Math.random() > 0.5 ? GetRandomNum(max.height / 8, max.height / 4) : GetRandomNum(max.height / 4 * 3, max.height / 8 * 7);
-    } else{
-        val.x = GetRandomNum(0, max.width);
-        val.y = Math.random() > 0.5 ? GetRandomNum(0, max.height / 8) : GetRandomNum(max.height / 8 * 7, max.height);
-    }
-    val.z = GetRandomNum(35, 55);
-    if(val.weight == 100){
-        val.x = (max.width + 100) / 2 - 40;
-        val.y = (max.height + 100) / 2 - 40;
-        val.z = 80;
-    }
-    return val;
-}
-
-$.map(data, function(val, i){  
-    val = spread(val);
-    return val;
-});
-
-for(var i = 0; i < data.length; i++){
-    $('<div style="left: ' + data[i].x + 'px; top: ' + data[i].y + 'px;" class="bounceIn animated fast subscribe-item subscribe-item-' + GetRandomNum(0, 5) + '"><div style=" width:' + data[i].z + 'px; height: ' + data[i].z + 'px; "></div>' + data[i].name + '</div>').appendTo('.subscribeCharts');
-}
-
-</script>
 
 </body>
 </html>

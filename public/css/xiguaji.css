@@ -2049,3 +2049,67 @@ box-shadow:1px 1px 2px rgba(0,0,0,0.15) inset,1px 1px 2px rgba(255,255,255,1.0) 
 .diagnoseReport .keywords{ letter-spacing:-3px; padding:10px 5px 0 5px;}
 .diagnoseReport .keywords li{ letter-spacing:0; display:inline-block; margin:6px 5px; background:url(../img/diagnose_icons.png) no-repeat 0 -15px; background-size:160px 160px; border-radius:0 3px 3px 0; height:21px; line-height:21px; padding:0 5px 0 16px; font-size:13px; position:relative; z-index:1; color:#FFF;}
 .diagnoseReport .keywords li em{ display:inline-block; background:#FFF; color:#6D7179; height:15px; line-height:15px; border-radius:20px; padding:0 5px; font-size:10px; margin:-2px 0 0 2px; vertical-align:middle;}
+
+/* 关键词订阅 */
+.subscribeContainer{ border: 1px solid #e5e9ed; background: #fff;}
+.subscribeSide{ background: #f8f9fb; border-left: 1px solid #e5e9ed; min-height: 600px; position: relative;}
+.subscribeList{ text-align: center; position: relative; min-height: 600px;}
+.subscribeList h1{ padding-top: 10px; color: #345; font-size: 24px; margin-bottom: 0;}
+.subscribeCharts{ background: url(../img/subscribe/demand-bg.png) no-repeat; background-size:100% auto; position: relative; min-height: 516px; max-width: 900px; margin: 0 auto; }
+.subscribeSubTitle{ color: #89a; font-size: 14px;}
+.subscribeList .subscribe-item{ position: absolute;text-align: center; font-size: 16px; cursor: pointer;}
+.subscribeList .subscribe-item div{border-radius: 100%; }
+.subscribeList .subscribe-item div:hover{transition:all .4s; transform:scale(1.1) }
+.subscribe-item-0{  color: #d34ad8;}
+.subscribe-item-0 div{ background: #d34ad8;}
+.subscribe-item-1{ color: #e74c3c;}
+.subscribe-item-1 div{ background: #e74c3c;}
+.subscribe-item-2{ color: #ff8106;}
+.subscribe-item-2 div{ background: #ff8106;}
+.subscribe-item-3{ color: #46be68;}
+.subscribe-item-3 div{ background: #46be68;}
+.subscribe-item-4{ color: #ffb400;}
+.subscribe-item-4 div{ background: #ffb400;}
+.subscribe-item-5{ color: #50d2d0;}
+.subscribe-item-5 div{ background: #50d2d0;}
+.subscribeChosen p{ font-size: 14px; color: #345;}
+.subscribeChosen ul{ list-style: none; padding: 0; margin:0;}
+.subscribeChosen li{ display: inline-block; font-weight: bold; font-size: 14px; padding: 0 10px; line-height: 36px; background: #89a; border-radius: 5px; color: #fff; margin:0 6px 10px 0;}
+.subscribeChosen li:hover{ background: #9babbb;}
+.subscribeChosen li i{ cursor: pointer; margin-left: 5px; font-weight: normal; color: #bac4ce;}
+.addKeyword{ padding: 13px 0;}
+.addKeyword .btn{ background: #edf0f5; color: #89a; border: 1px solid #e5e9ed; box-shadow: none !important;}
+.addKeyword .col-md-9{ padding-right: 0;}
+.subscribeBtn{ position: absolute; bottom: 10px; left:0; padding: 0 13px; width: 100%; }
+.subscribeBtn .btn{ background: #46be68;}
+.keywordInput{ border-radius: 5px!important; border: 1px solid #e5e9ed;}
+
+.topBar{ height: 85px; border-bottom: 1px solid #e5e9ed; background: #fff; margin-top: -10px;}
+.topBar .userIcon{ background: #9dabb9; width:24px; height: 24px; margin-right: 6px; text-align: center; color: #fff; border-radius: 100%; font-size: 16px;}
+.topBar .userArea{ line-height: 24px; color: #89a; font-size: 14px; padding: 32px 40px 0 0;}
+.topBar .userArea .fa-angle-down{ font-size: 16px;}
+.topBar .navArea{ color: #89a; font-size: 18px; padding: 32px 0 0 40px;}
+.topBar .navArea a{ margin-right: 40px; display: inline-block;}
+.topBar .navArea a:link,
+.topBar .navArea a:visited{ color: #89a;}
+.topBar .navArea a:hover{ color: #a3b7ca;}
+.subscribeKeywords{ border-bottom: 1px solid #e5e9ed;  background: #fff; margin-bottom: 15px; padding: 20px 40px 8px;}
+.subscribeKeywords a{ display: inline-block; border: 1px solid #e5e9ed; border-radius: 5px; padding: 6px 100px 6px 6px; color: #89a; font-size: 14px; font-weight: bold; height: 42px; line-height: 28px; overflow: hidden;  float: left; margin:0 12px 12px 0;}
+.subscribeKeywords a img{ margin-right: 6px; float: left;}
+.subscribeKeywords a:hover,
+.subscribeKeywords .active{ background: #46be68; border: 1px solid #46be68; color: #fff; text-decoration: none;}
+.subscribeEmpty{ width: 452px; margin: 100px auto; color: #89a; font-size: 18px;}
+.subscribeEmpty p:nth-of-type(1){ padding-bottom: 20px;}
+.subscribeEmpty ul{ list-style: none; margin: 0; padding: 40px 0;}
+.subscribeEmpty li{ float: left; width: 33.3%; margin: 0; padding: 0; overflow: hidden; font-size: 14px; text-align: center;}
+.subscribeEmpty li img{ margin-bottom: 5px;}
+.subscribeEmpty li:nth-of-type(1){ padding-right: 80px;}
+.subscribeEmpty li:nth-of-type(3){text-align: center; padding-left: 80px;}
+.subscribeAddAccount .btn{ padding: 14px; background: #44b549; font-size: 22px;}
+.subscribeEmptyWrap{height: 100%; background: #fff; margin:0 -14px;}
+.subscribeGuide{ position: absolute; top: 0; left:0; width: 100%; height: 100%; background: rgba(255,255,255,.9); font-size: 18px; color: #89a;}
+.subscribeGuideIn{ width: 220px; margin: 120px auto;}
+.subscribeGuide img{ margin-bottom: 10px;}
+.subscribeGuide .btn{ background: #44b549;}
+.subscribeArticleList ul:nth-of-type(1){ margin-right: 20px;}
+.subscribeArticleList .mpUserArticleTimer{ margin-top: 0;}

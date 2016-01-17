@@ -1,0 +1,336 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>西瓜记公众号助手</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/xiguaji.css">
+
+</head>
+<body class="fixed-navigation fixed-header fixed-ribbon">
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo" class=""> <img src="img/logo.png" alt="微圈助手管理后台"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+			<span class="activity-dropdown" id="activity"> <i class="fa fa-bell"></i> <b class="badge bounceIn animated">3</b></span>
+			<div class="ajax-dropdown" style="display:none;">
+				<div class="btn-group btn-group-justified">
+					<a class="btn btn-default active">全部 <span class="message-count">(14)</span></a>
+					<a class="btn btn-default">未读 <span class="message-count">(3)</a>
+					<a class="btn btn-default">已读 <span class="message-count">(11)</span></a>
+				</div>
+				<!-- notification content -->
+				<div class="ajax-notifications custom-scroll">
+					<div class="alert alert-transparent" style="display:none;">
+						<i class="fa fa-envelope-o fa-4x fa-border"></i>
+						<h4 class="text-align-center">暂无消息</h4>
+					</div>
+					<div class="messageList" style="display:none;">
+						<ul class="messageBody list-unstyled">
+							<li>
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>优惠券</h3>
+									<p>恭喜您，收到1张90元的优惠券，有效期截止至2015年6月1日</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>
+							<li>
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>服务器升级公告</h3>
+									<p>西瓜公众号助手将于2015-5-30 0:00:00至2015-5-30 2:00:00进行服务器升级，届时将暂停本站使用功能。</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>
+							<li class="hasRead">
+								<i class="openStat fa fa-envelope"><em></em></i>
+								<div class="messageEntry">
+									<h3>服务器升级公告</h3>
+									<p>西瓜公众号助手将于2015-5-30 0:00:00至2015-5-30 2:00:00进行服务器升级，届时将暂停本站使用功能。</p>
+									<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-xs btn-default">查看详情</a></div>
+								</div>
+							</li>	
+						</ul>
+						<a class="btn btn-default moreMessage">加载更多...</a>
+					</div>
+					<div class="messageDetail">
+						<div class="messageEntry">
+							<h3>优惠券</h3>
+							<p>恭喜您，收到1张90元的优惠券，有效期截止至2015年6月1日</p>
+							<div class="messageInfo"><i class="fa fa-clock-o"></i> 04-29 19:35<a class="btn btn-default">返回</a></div>
+						</div>
+					</div>
+				</div>
+				<!-- end notification content -->
+			</div>
+        </div>
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- #NAVIGATION -->
+    <!-- Left panel : Navigation area -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        微圈助手管理员
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end user info -->
+        <nav>
+            <ul>
+                <li class="">
+                    <a href="/Home/Dashboard" title="西瓜记-工作台"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">工作台</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-paper-plane"></i> <span class="menu-item-parent">爆文使用</span></a>
+                    <ul>
+                        <li>
+                            <a href="/Group/List">爆文使用</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">爆文收集</span></a>
+                    <ul>
+                        <li>
+                            <a href="/WeiXinUser/List">我关注的爆文</a>
+                        </li>
+                        <li>
+                            <a href="/UserTopic/List">系统推荐爆文</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-empire"></i> <span class="menu-item-parent">公众号管理</span></a>
+                    <ul>
+                        <li>
+                            <a href="/RealTopic/List">添加公众号</a>
+                        </li>
+                        <li>
+                            <a href="/Subject/List">我关注的公众号</a>
+                        </li>
+                        <li>
+                            <a href="/SubjectUserMap/List">热门爆文来源</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/GlobalConfig/List" title="系统配置"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">系统配置</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb"><li>管理</li><li>爆文收集</li><li>热门爆文</li></ol>
+            <!-- end breadcrumb -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+<!-- 			<div class="loadingWrap"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div></div> -->
+
+        <div class="row topBar">
+            <div class="pull-left navArea">
+                <a href="#" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-bars"></i></a>
+                <a href="#" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-square-o"></i></a>
+                <a href="#" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-bell-o"></i></a>
+                <a href="#" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-search"></i></a>
+            </div>
+            <div class="pull-right userArea">
+                <div class="pull-left userIcon"><i class="fa fa-user"></i></div>
+                ckkdm@gmail.com
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </div>
+
+        <div class="row subscribeKeywords">
+            <a href="javascript:;" class="active"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
+            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
+            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉小魔仙</a>
+            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉仙</a>
+            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴仙</a>
+            <a href="javascript:;"><img src="img/subscribe/temp_avatar.jpg">巴拉巴拉小魔仙</a>
+        </div>
+
+        <div class="container-fluid subscribeArticleList">
+
+
+            <div class="mpUserArticleTimer mpArticleListTimer">
+                <ul class="list-unstyled pull-left">
+                    <li><a class="current" data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-list-ul"></i></a></li>
+                    <li><a data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-file-text-o"></i></a></li>
+                    <li><a data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-picture-o"></i></a></li>
+                    <li><a data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-video-camera"></i></a></li>
+                </ul>
+
+                <ul class="list-unstyled pull-left">
+                    <li><a data-hours="24" class="current">最近24小时</a></li>
+                    <li><a data-hours="72">最近3天</a></li>
+                    <li><a data-hours="168">最近7天</a></li>
+                    <li><a data-hours="720">最近30天</a></li>
+                </ul>
+
+                <div class="list-unstyled pull-right">
+                    <button class="btn btn-default">编辑订阅词汇 <i class="fa fa-cog"></i></button>
+                </div>
+
+
+            </div>
+
+            <div class="alert alert-success fade in" style="margin:10px 6px; font-size:14px;">
+                <i class="fa-fw fa fa-info-circle"></i>已为您生成新的推荐词汇，<a href="#">点击此处</a>添加
+                <i class="fa-fw fa fa-close pull-right"></i>
+            </div>
+
+            <div class="mpArticleList">
+                <table class="table table-hover">
+                    <colgroup>
+                        <col width="95">
+                        <col>
+                        <col width="100">
+                        <col width="100">
+                        <col width="160">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>传播指数</th>
+                            <th>文章标题</th>
+                            <th>封面</th>
+                            <th>来源</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
+                            <td>2015/2/9 14:56:55</td>
+                            <td>
+                                <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
+                                <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+                                <a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=54298484" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="artRank import">外部导入</span></td>
+                            <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
+                            <td>2015/2/9 14:56:55</td>
+                            <td>
+                                <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
+                                <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+                                <a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=54298484" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+                            </td>
+                        </tr>
+                        <tr class="hasSelected">
+                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a>
+                                <ul class="list-unstyled artMpUser">
+                                    <li rel="tooltip" data-placement="top" data-original-title="[最懂女人心]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
+                                    <li rel="tooltip" data-placement="top" data-original-title="[搞笑精选]已使用该文章"><img src="http://7xim13.com1.z0.glb.clouddn.com/BizQrcode/zdnurenxin.jpg-BizLogo"></li>
+                                    <li rel="tooltip" data-placement="top" data-original-title="[搞笑动图]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
+                                </ul>
+                            </td>
+                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
+                            <td>2015/2/9 14:56:55</td>
+                            <td>
+                                <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
+                                <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+                                <a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=54298484" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
+                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
+                            <td>2015/2/9 14:56:55</td>
+                            <td>
+                                <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
+                                <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
+                                <a class="btn btn-info btnIcon" href="/Analyse/ArticleDetail/?articleId=54298484" data-toggle="modal" data-target="#remoteModal" rel="tooltip" data-placement="top" data-original-title="指数分析"><i class="fa fa-align-left"></i> 指数分析</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+			
+    
+
+
+
+        </div>
+        <!-- END #MAIN CONTENT -->
+    </div>
+    <!-- END #MAIN PANEL -->
+    <!-- #PAGE FOOTER -->
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">西瓜公众号助手 &copy; 2014-2016</span>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- END FOOTER -->
+<div class="modal fade in" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">激活账号</h4>
+			</div>
+			<div class="modal-body no-padding">
+				<div class="row no-margin activeBox" style="display:none;">
+					<div class="col col-md-3">
+						<img src="img/qrcode.png" class="activeBoxQrcode">
+					</div>
+					<div class="col col-md-9">
+						<section>请扫描左侧二维码关注公众号悄悄，即可免费获得激活码，激活码仅限自己使用。</section>
+						<section>
+							<input type="text" placeholder="激活码" class="form-control" />
+							<button type="submit" class="btn btn-primary">
+								激活
+							</button>
+						</section>
+					</div>
+				</div>
+				<div class="activeSuccess">
+					<i class="fa fa-check-circle"></i> 激活成功 [到期时间延长至：2015-09-01]
+					<a class="btn btn-primary">返回</a>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>
