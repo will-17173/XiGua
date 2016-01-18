@@ -360,7 +360,8 @@
 <script src="http://www.xiguaji.com/js/plugin/select2/select2.min.js?v1207"></script>
 
 <script>
-    $('.timeSelect').select2({minimumResultsForSearch: -1});
+    var timeSelect = $('.timeSelect').select2({minimumResultsForSearch: -1});
+    timeSelect.data('select2').dropdown.addClass("timeSelectDropdown")
 </script>
 </body>
 </html>
