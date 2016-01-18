@@ -24,7 +24,7 @@
 			<div class="ajax-dropdown" style="display:none;">
 				<div class="btn-group btn-group-justified">
 					<a class="btn btn-default active">全部 <span class="message-count">(14)</span></a>
-					<a class="btn btn-default">未读 <span class="message-count">(3)</a>
+					<a class="btn btn-default">未读 <span class="message-count">(3)</span></a>
 					<a class="btn btn-default">已读 <span class="message-count">(11)</span></a>
 				</div>
 				<!-- notification content -->
@@ -187,12 +187,13 @@
                     <li><a data-original-title="所有类型内容" rel="tooltip"><i class="fa fa-video-camera"></i></a></li>
                 </ul>
 
-                <ul class="list-unstyled pull-left">
-                    <li><a data-hours="24" class="current">最近24小时</a></li>
-                    <li><a data-hours="72">最近3天</a></li>
-                    <li><a data-hours="168">最近7天</a></li>
-                    <li><a data-hours="720">最近30天</a></li>
-                </ul>
+                <select class="timeSelect">
+                    <option>最近24小时</option>
+                    <option>最近3天</option>
+                    <option>最近7天</option>
+                    <option>最近30天</option>
+                </select>
+
 
                 <div class="list-unstyled pull-right">
                     <button class="btn btn-default">编辑订阅词汇 <i class="fa fa-cog"></i></button>
@@ -211,14 +212,17 @@
                     <colgroup>
                         <col width="95">
                         <col>
+                        <col width="80">
+                        <col width="90">
                         <col width="100">
-                        <col width="100">
+                        
                         <col width="160">
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>传播指数</th>
+                            <th>传播指数 <a href="http://www.xiguaji.com/Knowledge/ShowView/?knowledgeId=11" target="_blank" rel="tooltip" data-placement="top" data-original-title="传播指数是系统通过公众号粉丝数、文章阅读数、点赞数、转发数等分析得出的综合评分。点击查看更详细描述" style="margin-top:8px;"><i class="fa fa-exclamation-circle"></i></a></th>
                             <th>文章标题</th>
+                            <th class="text-align-center">类型</th>
                             <th>封面</th>
                             <th>来源</th>
                             <th>操作</th>
@@ -226,10 +230,15 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><span class="artRank rank3"><i class="fa fa-trophy"></i>98.25</span></td>
                             <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
-                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
-                            <td>2015/2/9 14:56:55</td>
+                            <td class="text-align-center">
+                                <span class="artContentSort">
+                                    <i class="fa fa-file-text-o"><em></em></i>
+                                </span>
+                            </td>
+                            <td><a href="#" target="_blank" class="myArticleCover articleCover60"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"></a></td>
+                            <td><a href="#">圈子图卦</a><span class="artPostTime">15 小时前</span></td>
                             <td>
                                 <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
                                 <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
@@ -237,10 +246,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="artRank import">外部导入</span></td>
+                            <td><span class="artRank rank3">外部导入</span></td>
                             <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
-                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
-                            <td>2015/2/9 14:56:55</td>
+                            <td class="text-align-center">
+                                <span class="artContentSort">
+                                    <i class="fa fa-picture-o"><em></em></i>
+                                </span>
+                            </td>
+                            <td><a href="#" target="_blank" class="myArticleCover articleCover60"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"></a></td>
+                            <td><a href="#">圈子图卦</a><span class="artPostTime">15 小时前</span></td>
                             <td>
                                 <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
                                 <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
@@ -248,7 +262,7 @@
                             </td>
                         </tr>
                         <tr class="hasSelected">
-                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><span class="artRank rank3"><i class="fa fa-trophy"></i>98.25</span></td>
                             <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a>
                                 <ul class="list-unstyled artMpUser">
                                     <li rel="tooltip" data-placement="top" data-original-title="[最懂女人心]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
@@ -256,8 +270,13 @@
                                     <li rel="tooltip" data-placement="top" data-original-title="[搞笑动图]已使用该文章"><img src="http://i2.tietuku.com/b857be382cba5d29s.jpg"></li>
                                 </ul>
                             </td>
-                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
-                            <td>2015/2/9 14:56:55</td>
+                            <td class="text-align-center">
+                                <span class="artContentSort">
+                                    <i class="fa fa-video-camera"><em></em></i>
+                                </span>
+                            </td>
+                            <td><a href="#" target="_blank" class="myArticleCover articleCover60"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"></a></td>
+                            <td><a href="#">圈子图卦</a><span class="artPostTime">15 小时前</span></td>
                             <td>
                                 <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
                                 <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
@@ -265,10 +284,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="artRank rank1"><i class="fa fa-trophy"></i>98.25</span></td>
+                            <td><span class="artRank rank3"><i class="fa fa-trophy"></i>98.25</span></td>
                             <td><a href="#">每天一味药：拳参（清热解毒药12）｜彭博士带您了解传统中草药</a></td>
-                            <td><a href="#" target="_blank" class="myArticleCover"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"><span>下载封面</span></a></td>
-                            <td>2015/2/9 14:56:55</td>
+                            <td class="text-align-center">
+                                <span class="artContentSort">
+                                    <i class="fa fa-video-camera"><em></em></i>
+                                </span>
+                            </td>
+                            <td><a href="#" target="_blank" class="myArticleCover articleCover60"><img src="http://7xim13.com1.z0.glb.clouddn.com/ArticleLogos/20160117/54298484-logo80?rndx=xg"></a></td>
+                            <td><a href="#">圈子图卦</a><span class="artPostTime">15 小时前</span></td>
                             <td>
                                 <div class="setFolderDrop dropdown"><a class="btn btn-primary btnIcon articlecollect" href="javascript:void(0);" data-articleid="54298484" data-collected="0" rel="tooltip" data-placement="top" data-original-title="加入素材库" data-toggle="dropdown"><i class="fa fa-star"></i> 加入素材库</a><ul class="dropdown-menu"><li><a href="javascript:void(0);" data-tagid="649" data-articleid="54298484"><i class="fa fa-check"></i>备用</a></li><li><a href="javascript:void(0);" data-tagid="1" data-articleid="54298484"><i class="fa fa-check"></i>搞笑</a></li></ul></div>
                                 <a class="btn btn-default btnIcon articleblack" href="javascript:void(0);" data-articleid="54298484" rel="tooltip" data-placement="top" data-original-title="不再出现"><i class="fa fa-thumbs-o-down"></i> 不再出现</a>
@@ -332,5 +356,11 @@
 		</div>
     </div>
 </div>
+<script src="http://www.xiguaji.com/js/libs/jquery-2.0.2.min.js?v1207"></script>
+<script src="http://www.xiguaji.com/js/plugin/select2/select2.min.js?v1207"></script>
+
+<script>
+    $('.timeSelect').select2({minimumResultsForSearch: -1});
+</script>
 </body>
 </html>

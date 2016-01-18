@@ -2113,3 +2113,7 @@ box-shadow:1px 1px 2px rgba(0,0,0,0.15) inset,1px 1px 2px rgba(255,255,255,1.0) 
 .subscribeGuide .btn{ background: #44b549;}
 .subscribeArticleList ul:nth-of-type(1){ margin-right: 20px;}
 .subscribeArticleList .mpUserArticleTimer{ margin-top: 0;}
+.timeSelect{ width: 130px; color:#89a;}
+.timeSelect.select2-container .select2-choice .select2-arrow{ background: none; border-left:0;}
+.timeSelect.select2-container .select2-choice{ border-radius: 5px; height: 36px; line-height: 36px;}
+.timeSelect.select2-dropdown-open .select2-choice{ border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
